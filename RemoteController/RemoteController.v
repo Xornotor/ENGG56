@@ -1,0 +1,6 @@
+module RemoteController (clk, rst, serial, tecla, ready);
+input clk, rst, serial;
+output reg [7:0] tecla;
+output reg ready;
+
+endmodule
