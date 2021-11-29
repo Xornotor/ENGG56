@@ -12,14 +12,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "c",
-					"strict" : false
-				},
-				{
-					"name" : "d",
-					"strict" : false
-				},
-				{
 					"name" : "a",
 					"strict" : false
 				},
@@ -28,7 +20,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "c",
+					"strict" : false
+				},
+				{
+					"name" : "d",
 					"strict" : false
 				}
 			]

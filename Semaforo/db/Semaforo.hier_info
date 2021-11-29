@@ -1,11 +1,9 @@
 |Semaforo
 a => n_s.IN0
 b => n_s.IN1
-c => n_s.IN1
+c => n_s.IN0
 d => n_s.IN1
-clk => l_o~reg0.CLK
-clk => n_s~reg0.CLK
-n_s << n_s~reg0.DB_MAX_OUTPUT_PORT_TYPE
-l_o << l_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+n_s <= n_s.DB_MAX_OUTPUT_PORT_TYPE
+l_o <= n_s.DB_MAX_OUTPUT_PORT_TYPE
 
 

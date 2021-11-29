@@ -20,7 +20,7 @@
 ## PROGRAM "Quartus Prime"
 ## VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
-## DATE    "Mon Nov 29 15:45:02 2021"
+## DATE    "Mon Nov 29 19:06:50 2021"
 
 ##
 ## DEVICE  "EP4CE115F29C7"
@@ -39,7 +39,6 @@ set_time_format -unit ns -decimal_places 3
 # Create Clock
 #**************************************************************
 
-create_clock -name {clk} -period 20.000 -waveform { 0.000 10.000 } [get_ports {clk}]
 
 
 #**************************************************************
@@ -58,29 +57,18 @@ create_clock -name {clk} -period 20.000 -waveform { 0.000 10.000 } [get_ports {c
 # Set Clock Uncertainty
 #**************************************************************
 
-set_clock_uncertainty -rise_from [get_clocks {clk}] -rise_to [get_clocks {clk}]  0.020  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -fall_to [get_clocks {clk}]  0.020  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -rise_to [get_clocks {clk}]  0.020  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -fall_to [get_clocks {clk}]  0.020  
 
 
 #**************************************************************
 # Set Input Delay
 #**************************************************************
 
-set_input_delay -add_delay  -clock [get_clocks {clk}]  1.000 [get_ports {a}]
-set_input_delay -add_delay  -clock [get_clocks {clk}]  1.000 [get_ports {b}]
-set_input_delay -add_delay  -clock [get_clocks {clk}]  1.000 [get_ports {c}]
-set_input_delay -add_delay  -clock [get_clocks {clk}]  1.000 [get_ports {clk}]
-set_input_delay -add_delay  -clock [get_clocks {clk}]  1.000 [get_ports {d}]
 
 
 #**************************************************************
 # Set Output Delay
 #**************************************************************
 
-set_output_delay -add_delay  -clock [get_clocks {clk}]  1.000 [get_ports {l_o}]
-set_output_delay -add_delay  -clock [get_clocks {clk}]  1.000 [get_ports {n_s}]
 
 
 #**************************************************************
