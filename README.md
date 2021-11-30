@@ -7,7 +7,7 @@
 
 ## Somador (CONTINUAR)
 * Módulo Acumulador feito, testbench e testes efetuados
-* Necessário fazer módulo FSM, bem como sua testbench e testar
+* Módulo FSM feito, necessário fazer sua testbench e testar
 * Necessário fazer módulo TOP, bem como sua testbench e testar
 * Necessário fazer interligação do TOP com pinos físicos do FPGA
 * Timing Analyzer ajustado para o módulo acumulador, necessário revisar após implementação do módulo TOP

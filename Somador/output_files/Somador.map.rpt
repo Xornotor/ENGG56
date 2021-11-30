@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Somador
-Mon Nov 29 22:53:03 2021
+Tue Nov 30 18:09:39 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,10 +13,14 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. State Machine - |FSM|EstadoAtual
+  9. State Machine - |FSM|ProxEstado
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |FSM
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +47,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Nov 29 22:53:03 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 30 18:09:39 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; Somador                                     ;
-; Top-level Entity Name              ; Acumulador                                  ;
+; Top-level Entity Name              ; FSM                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 32                                          ;
-;     Total combinational functions  ; 16                                          ;
-;     Dedicated logic registers      ; 32                                          ;
-; Total registers                    ; 32                                          ;
-; Total pins                         ; 36                                          ;
+; Total logic elements               ; 50                                          ;
+;     Total combinational functions  ; 25                                          ;
+;     Dedicated logic registers      ; 41                                          ;
+; Total registers                    ; 41                                          ;
+; Total pins                         ; 13                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -66,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; Acumulador         ; Somador            ;
+; Top-level entity name                                            ; FSM                ; Somador            ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -163,13 +167,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                 ;
-+----------------------------------+-----------------+------------------------+--------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path   ; Library ;
-+----------------------------------+-----------------+------------------------+--------------------------------+---------+
-; Acumulador.v                     ; yes             ; User Verilog HDL File  ; E:/ENGG56/Somador/Acumulador.v ;         ;
-+----------------------------------+-----------------+------------------------+--------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                               ;
++----------------------------------+-----------------+------------------------+------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------+---------+
+; FSM.v                            ; yes             ; User Verilog HDL File  ; E:/ENGG56/Somador/FSM.v      ;         ;
++----------------------------------+-----------------+------------------------+------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -177,30 +181,30 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 32        ;
+; Estimated Total logic elements              ; 50        ;
 ;                                             ;           ;
-; Total combinational functions               ; 16        ;
+; Total combinational functions               ; 25        ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 0         ;
-;     -- 3 input functions                    ; 15        ;
-;     -- <=2 input functions                  ; 1         ;
+;     -- 4 input functions                    ; 15        ;
+;     -- 3 input functions                    ; 2         ;
+;     -- <=2 input functions                  ; 8         ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 1         ;
-;     -- arithmetic mode                      ; 15        ;
+;     -- normal mode                          ; 21        ;
+;     -- arithmetic mode                      ; 4         ;
 ;                                             ;           ;
-; Total registers                             ; 32        ;
-;     -- Dedicated logic registers            ; 32        ;
+; Total registers                             ; 41        ;
+;     -- Dedicated logic registers            ; 41        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 36        ;
+; I/O pins                                    ; 13        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 32        ;
-; Total fan-out                               ; 211       ;
-; Average fan-out                             ; 1.76      ;
+; Maximum fan-out                             ; 41        ;
+; Total fan-out                               ; 201       ;
+; Average fan-out                             ; 2.18      ;
 +---------------------------------------------+-----------+
 
 
@@ -209,9 +213,74 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |Acumulador                ; 16 (16)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 36   ; 0            ; |Acumulador         ; Acumulador  ; work         ;
+; |FSM                       ; 25 (25)             ; 41 (41)                   ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |FSM                ; FSM         ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |FSM|EstadoAtual                                                                                                                                                                                                                                                                                                                                                                                               ;
++----------------------------+---------------------------+------------------------+--------------------------+-----------------------+----------------------------+------------------------+----------------------------+-------------------------+--------------------------+--------------------------+-----------------------+-----------------------+---------------------------+-----------------------+--------------------+
+; Name                       ; EstadoAtual.DesativaReady ; EstadoAtual.AtivaReady ; EstadoAtual.DesativaWren ; EstadoAtual.AtivaWren ; EstadoAtual.ConfereAddress ; EstadoAtual.IncAddress ; EstadoAtual.DesativaTransf ; EstadoAtual.AtivaTransf ; EstadoAtual.DesativaRden ; EstadoAtual.DesativaLoad ; EstadoAtual.AtivaLoad ; EstadoAtual.AtivaRden ; EstadoAtual.TiraResetInit ; EstadoAtual.ResetInit ; EstadoAtual.Inicio ;
++----------------------------+---------------------------+------------------------+--------------------------+-----------------------+----------------------------+------------------------+----------------------------+-------------------------+--------------------------+--------------------------+-----------------------+-----------------------+---------------------------+-----------------------+--------------------+
+; EstadoAtual.Inicio         ; 0                         ; 0                      ; 0                        ; 0                     ; 0                          ; 0                      ; 0                          ; 0                       ; 0                        ; 0                        ; 0                     ; 0                     ; 0                         ; 0                     ; 0                  ;
+; EstadoAtual.ResetInit      ; 0                         ; 0                      ; 0                        ; 0                     ; 0                          ; 0                      ; 0                          ; 0                       ; 0                        ; 0                        ; 0                     ; 0                     ; 0                         ; 1                     ; 1                  ;
+; EstadoAtual.TiraResetInit  ; 0                         ; 0                      ; 0                        ; 0                     ; 0                          ; 0                      ; 0                          ; 0                       ; 0                        ; 0                        ; 0                     ; 0                     ; 1                         ; 0                     ; 1                  ;
+; EstadoAtual.AtivaRden      ; 0                         ; 0                      ; 0                        ; 0                     ; 0                          ; 0                      ; 0                          ; 0                       ; 0                        ; 0                        ; 0                     ; 1                     ; 0                         ; 0                     ; 1                  ;
+; EstadoAtual.AtivaLoad      ; 0                         ; 0                      ; 0                        ; 0                     ; 0                          ; 0                      ; 0                          ; 0                       ; 0                        ; 0                        ; 1                     ; 0                     ; 0                         ; 0                     ; 1                  ;
+; EstadoAtual.DesativaLoad   ; 0                         ; 0                      ; 0                        ; 0                     ; 0                          ; 0                      ; 0                          ; 0                       ; 0                        ; 1                        ; 0                     ; 0                     ; 0                         ; 0                     ; 1                  ;
+; EstadoAtual.DesativaRden   ; 0                         ; 0                      ; 0                        ; 0                     ; 0                          ; 0                      ; 0                          ; 0                       ; 1                        ; 0                        ; 0                     ; 0                     ; 0                         ; 0                     ; 1                  ;
+; EstadoAtual.AtivaTransf    ; 0                         ; 0                      ; 0                        ; 0                     ; 0                          ; 0                      ; 0                          ; 1                       ; 0                        ; 0                        ; 0                     ; 0                     ; 0                         ; 0                     ; 1                  ;
+; EstadoAtual.DesativaTransf ; 0                         ; 0                      ; 0                        ; 0                     ; 0                          ; 0                      ; 1                          ; 0                       ; 0                        ; 0                        ; 0                     ; 0                     ; 0                         ; 0                     ; 1                  ;
+; EstadoAtual.IncAddress     ; 0                         ; 0                      ; 0                        ; 0                     ; 0                          ; 1                      ; 0                          ; 0                       ; 0                        ; 0                        ; 0                     ; 0                     ; 0                         ; 0                     ; 1                  ;
+; EstadoAtual.ConfereAddress ; 0                         ; 0                      ; 0                        ; 0                     ; 1                          ; 0                      ; 0                          ; 0                       ; 0                        ; 0                        ; 0                     ; 0                     ; 0                         ; 0                     ; 1                  ;
+; EstadoAtual.AtivaWren      ; 0                         ; 0                      ; 0                        ; 1                     ; 0                          ; 0                      ; 0                          ; 0                       ; 0                        ; 0                        ; 0                     ; 0                     ; 0                         ; 0                     ; 1                  ;
+; EstadoAtual.DesativaWren   ; 0                         ; 0                      ; 1                        ; 0                     ; 0                          ; 0                      ; 0                          ; 0                       ; 0                        ; 0                        ; 0                     ; 0                     ; 0                         ; 0                     ; 1                  ;
+; EstadoAtual.AtivaReady     ; 0                         ; 1                      ; 0                        ; 0                     ; 0                          ; 0                      ; 0                          ; 0                       ; 0                        ; 0                        ; 0                     ; 0                     ; 0                         ; 0                     ; 1                  ;
+; EstadoAtual.DesativaReady  ; 1                         ; 0                      ; 0                        ; 0                     ; 0                          ; 0                      ; 0                          ; 0                       ; 0                        ; 0                        ; 0                     ; 0                     ; 0                         ; 0                     ; 1                  ;
++----------------------------+---------------------------+------------------------+--------------------------+-----------------------+----------------------------+------------------------+----------------------------+-------------------------+--------------------------+--------------------------+-----------------------+-----------------------+---------------------------+-----------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |FSM|ProxEstado                                                                                                                                                                                                                                                                                                                                                                                ;
++---------------------------+--------------------------+-----------------------+-------------------------+----------------------+---------------------------+-----------------------+---------------------------+------------------------+-------------------------+-------------------------+----------------------+----------------------+--------------------------+----------------------+-------------------+
+; Name                      ; ProxEstado.DesativaReady ; ProxEstado.AtivaReady ; ProxEstado.DesativaWren ; ProxEstado.AtivaWren ; ProxEstado.ConfereAddress ; ProxEstado.IncAddress ; ProxEstado.DesativaTransf ; ProxEstado.AtivaTransf ; ProxEstado.DesativaRden ; ProxEstado.DesativaLoad ; ProxEstado.AtivaLoad ; ProxEstado.AtivaRden ; ProxEstado.TiraResetInit ; ProxEstado.ResetInit ; ProxEstado.Inicio ;
++---------------------------+--------------------------+-----------------------+-------------------------+----------------------+---------------------------+-----------------------+---------------------------+------------------------+-------------------------+-------------------------+----------------------+----------------------+--------------------------+----------------------+-------------------+
+; ProxEstado.Inicio         ; 0                        ; 0                     ; 0                       ; 0                    ; 0                         ; 0                     ; 0                         ; 0                      ; 0                       ; 0                       ; 0                    ; 0                    ; 0                        ; 0                    ; 0                 ;
+; ProxEstado.ResetInit      ; 0                        ; 0                     ; 0                       ; 0                    ; 0                         ; 0                     ; 0                         ; 0                      ; 0                       ; 0                       ; 0                    ; 0                    ; 0                        ; 1                    ; 1                 ;
+; ProxEstado.TiraResetInit  ; 0                        ; 0                     ; 0                       ; 0                    ; 0                         ; 0                     ; 0                         ; 0                      ; 0                       ; 0                       ; 0                    ; 0                    ; 1                        ; 0                    ; 1                 ;
+; ProxEstado.AtivaRden      ; 0                        ; 0                     ; 0                       ; 0                    ; 0                         ; 0                     ; 0                         ; 0                      ; 0                       ; 0                       ; 0                    ; 1                    ; 0                        ; 0                    ; 1                 ;
+; ProxEstado.AtivaLoad      ; 0                        ; 0                     ; 0                       ; 0                    ; 0                         ; 0                     ; 0                         ; 0                      ; 0                       ; 0                       ; 1                    ; 0                    ; 0                        ; 0                    ; 1                 ;
+; ProxEstado.DesativaLoad   ; 0                        ; 0                     ; 0                       ; 0                    ; 0                         ; 0                     ; 0                         ; 0                      ; 0                       ; 1                       ; 0                    ; 0                    ; 0                        ; 0                    ; 1                 ;
+; ProxEstado.DesativaRden   ; 0                        ; 0                     ; 0                       ; 0                    ; 0                         ; 0                     ; 0                         ; 0                      ; 1                       ; 0                       ; 0                    ; 0                    ; 0                        ; 0                    ; 1                 ;
+; ProxEstado.AtivaTransf    ; 0                        ; 0                     ; 0                       ; 0                    ; 0                         ; 0                     ; 0                         ; 1                      ; 0                       ; 0                       ; 0                    ; 0                    ; 0                        ; 0                    ; 1                 ;
+; ProxEstado.DesativaTransf ; 0                        ; 0                     ; 0                       ; 0                    ; 0                         ; 0                     ; 1                         ; 0                      ; 0                       ; 0                       ; 0                    ; 0                    ; 0                        ; 0                    ; 1                 ;
+; ProxEstado.IncAddress     ; 0                        ; 0                     ; 0                       ; 0                    ; 0                         ; 1                     ; 0                         ; 0                      ; 0                       ; 0                       ; 0                    ; 0                    ; 0                        ; 0                    ; 1                 ;
+; ProxEstado.ConfereAddress ; 0                        ; 0                     ; 0                       ; 0                    ; 1                         ; 0                     ; 0                         ; 0                      ; 0                       ; 0                       ; 0                    ; 0                    ; 0                        ; 0                    ; 1                 ;
+; ProxEstado.AtivaWren      ; 0                        ; 0                     ; 0                       ; 1                    ; 0                         ; 0                     ; 0                         ; 0                      ; 0                       ; 0                       ; 0                    ; 0                    ; 0                        ; 0                    ; 1                 ;
+; ProxEstado.DesativaWren   ; 0                        ; 0                     ; 1                       ; 0                    ; 0                         ; 0                     ; 0                         ; 0                      ; 0                       ; 0                       ; 0                    ; 0                    ; 0                        ; 0                    ; 1                 ;
+; ProxEstado.AtivaReady     ; 0                        ; 1                     ; 0                       ; 0                    ; 0                         ; 0                     ; 0                         ; 0                      ; 0                       ; 0                       ; 0                    ; 0                    ; 0                        ; 0                    ; 1                 ;
+; ProxEstado.DesativaReady  ; 1                        ; 0                     ; 0                       ; 0                    ; 0                         ; 0                     ; 0                         ; 0                      ; 0                       ; 0                       ; 0                    ; 0                    ; 0                        ; 0                    ; 1                 ;
++---------------------------+--------------------------+-----------------------+-------------------------+----------------------+---------------------------+-----------------------+---------------------------+------------------------+-------------------------+-------------------------+----------------------+----------------------+--------------------------+----------------------+-------------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; EstadoAtual~4                         ; Lost fanout        ;
+; EstadoAtual~5                         ; Lost fanout        ;
+; EstadoAtual~6                         ; Lost fanout        ;
+; EstadoAtual~7                         ; Lost fanout        ;
+; ProxEstado~2                          ; Lost fanout        ;
+; ProxEstado~3                          ; Lost fanout        ;
+; ProxEstado~4                          ; Lost fanout        ;
+; ProxEstado~5                          ; Lost fanout        ;
+; Total Number of Removed Registers = 8 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -219,14 +288,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 32    ;
+; Total registers                              ; 41    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 16    ;
+; Number of registers using Asynchronous Clear ; 15    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |FSM ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; Inicio         ; 0000  ; Unsigned Binary                            ;
+; ResetInit      ; 0001  ; Unsigned Binary                            ;
+; TiraResetInit  ; 0010  ; Unsigned Binary                            ;
+; AtivaRden      ; 0011  ; Unsigned Binary                            ;
+; AtivaLoad      ; 0100  ; Unsigned Binary                            ;
+; DesativaLoad   ; 0101  ; Unsigned Binary                            ;
+; DesativaRden   ; 0110  ; Unsigned Binary                            ;
+; AtivaTransf    ; 0111  ; Unsigned Binary                            ;
+; DesativaTransf ; 1000  ; Unsigned Binary                            ;
+; IncAddress     ; 1001  ; Unsigned Binary                            ;
+; ConfereAddress ; 1010  ; Unsigned Binary                            ;
+; AtivaWren      ; 1011  ; Unsigned Binary                            ;
+; DesativaWren   ; 1100  ; Unsigned Binary                            ;
+; AtivaReady     ; 1101  ; Unsigned Binary                            ;
+; DesativaReady  ; 1110  ; Unsigned Binary                            ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------+
@@ -234,18 +327,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 36                          ;
-; cycloneiii_ff         ; 32                          ;
-;     ENA               ; 16                          ;
-;     ENA CLR           ; 16                          ;
-; cycloneiii_lcell_comb ; 16                          ;
-;     arith             ; 15                          ;
-;         3 data inputs ; 15                          ;
-;     normal            ; 1                           ;
-;         2 data inputs ; 1                           ;
+; boundary_port         ; 13                          ;
+; cycloneiii_ff         ; 41                          ;
+;     CLR               ; 15                          ;
+;     plain             ; 26                          ;
+; cycloneiii_lcell_comb ; 25                          ;
+;     arith             ; 4                           ;
+;         2 data inputs ; 4                           ;
+;     normal            ; 21                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 15                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.50                        ;
-; Average LUT depth     ; 1.46                        ;
+; Max LUT depth         ; 2.40                        ;
+; Average LUT depth     ; 1.24                        ;
 +-----------------------+-----------------------------+
 
 
@@ -264,7 +360,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Nov 29 22:52:55 2021
+    Info: Processing started: Tue Nov 30 18:09:30 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Somador -c Somador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -274,18 +370,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file fsm.v
     Info (12023): Found entity 1: FSM File: E:/ENGG56/Somador/FSM.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file top.v
     Info (12023): Found entity 1: TOP File: E:/ENGG56/Somador/TOP.v Line: 1
-Info (12127): Elaborating entity "Acumulador" for the top level hierarchy
+Info (12127): Elaborating entity "FSM" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at FSM.v(80): truncated value with size 32 to match size of target (5) File: E:/ENGG56/Somador/FSM.v Line: 80
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 68 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 20 input pins
-    Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 32 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+Info (21057): Implemented 63 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21061): Implemented 50 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 4821 megabytes
-    Info: Processing ended: Mon Nov 29 22:53:03 2021
-    Info: Elapsed time: 00:00:08
+    Info: Processing ended: Tue Nov 30 18:09:39 2021
+    Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:15
 
 

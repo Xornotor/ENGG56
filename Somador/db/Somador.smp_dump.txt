@@ -1,0 +1,36 @@
+
+State Machine - |FSM|EstadoAtual
+Name EstadoAtual.DesativaReady EstadoAtual.AtivaReady EstadoAtual.DesativaWren EstadoAtual.AtivaWren EstadoAtual.ConfereAddress EstadoAtual.IncAddress EstadoAtual.DesativaTransf EstadoAtual.AtivaTransf EstadoAtual.DesativaRden EstadoAtual.DesativaLoad EstadoAtual.AtivaLoad EstadoAtual.AtivaRden EstadoAtual.TiraResetInit EstadoAtual.ResetInit EstadoAtual.Inicio 
+EstadoAtual.Inicio 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+EstadoAtual.ResetInit 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+EstadoAtual.TiraResetInit 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+EstadoAtual.AtivaRden 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+EstadoAtual.AtivaLoad 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+EstadoAtual.DesativaLoad 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+EstadoAtual.DesativaRden 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+EstadoAtual.AtivaTransf 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+EstadoAtual.DesativaTransf 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+EstadoAtual.IncAddress 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+EstadoAtual.ConfereAddress 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+EstadoAtual.AtivaWren 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+EstadoAtual.DesativaWren 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+EstadoAtual.AtivaReady 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+EstadoAtual.DesativaReady 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |FSM|ProxEstado
+Name ProxEstado.DesativaReady ProxEstado.AtivaReady ProxEstado.DesativaWren ProxEstado.AtivaWren ProxEstado.ConfereAddress ProxEstado.IncAddress ProxEstado.DesativaTransf ProxEstado.AtivaTransf ProxEstado.DesativaRden ProxEstado.DesativaLoad ProxEstado.AtivaLoad ProxEstado.AtivaRden ProxEstado.TiraResetInit ProxEstado.ResetInit ProxEstado.Inicio 
+ProxEstado.Inicio 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+ProxEstado.ResetInit 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+ProxEstado.TiraResetInit 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+ProxEstado.AtivaRden 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+ProxEstado.AtivaLoad 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+ProxEstado.DesativaLoad 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+ProxEstado.DesativaRden 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+ProxEstado.AtivaTransf 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+ProxEstado.DesativaTransf 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+ProxEstado.IncAddress 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+ProxEstado.ConfereAddress 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+ProxEstado.AtivaWren 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+ProxEstado.DesativaWren 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+ProxEstado.AtivaReady 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ProxEstado.DesativaReady 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
