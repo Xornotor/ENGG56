@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Programas/IntelFPGA
+vFSM
+!s110 1638309616
+!i10b 1
+!s100 ;^RB3:dCezBSkin27kR7c0
+Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Ia<:TM_NlE]S7fJg5Xf?zI2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dE:/ENGG56/Somador
+w1638306561
+8E:/ENGG56/Somador/FSM.v
+FE:/ENGG56/Somador/FSM.v
+!i122 0
+L0 1 128
+Z3 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1638309615.000000
+!s107 E:/ENGG56/Somador/FSM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/ENGG56/Somador/FSM.v|
+!i113 1
+Z4 o-work work
+Z5 tCvgOpt 0
+n@f@s@m
+vFSM_TB
+!s110 1638309879
+!i10b 1
+!s100 l`MVk5gdo5KH4jfAVQkNg3
+R0
+I=HB>PL26g4ObkM6eN6oAe0
+R1
+R2
+w1638309874
+8E:/ENGG56/Somador/FSM_TB.v
+FE:/ENGG56/Somador/FSM_TB.v
+!i122 2
+L0 4 21
+R3
+r1
+!s85 0
+31
+!s108 1638309879.000000
+!s107 E:/ENGG56/Somador/FSM_TB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/ENGG56/Somador/FSM_TB.v|
+!i113 1
+R4
+R5
+n@f@s@m_@t@b

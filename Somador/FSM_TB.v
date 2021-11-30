@@ -1,0 +1,24 @@
+/*TESTBENCH DO FSM*/
+
+`timescale 1ns/1ns
+module FSM_TB;
+reg clk, reset;
+wire [4:0] address;
+wire rden, wren, load, transf, clear, ready;
+
+FSM fsm_test(.clk(clk), .reset(reset), .address(address), .rden(rden), .wren(wren), .load(load), .transf(transf), .clear(clear), .ready(ready));
+
+initial begin
+	reset = 0;
+	#10 clk = 0;
+	#10 clk = 1;
+	#10 clk = 0;
+	#10 clk = 1;
+	reset = 1;
+end
+
+always begin
+	#10 clk <= ~clk;
+end
+
+endmodule
