@@ -22,8 +22,8 @@ always begin
 end
 
 always @ (posedge clk) begin
-	load <= ~load;
-	transf <= ~transf;
+	#2 load <= ~load;
+	#3 transf <= ~transf;
 	if(load == 1'b0)
 		#4 in <= in * 2;
 	if(in == 16'b0000000000000000)

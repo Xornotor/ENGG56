@@ -1,94 +1,38 @@
 /*TESTBENCH DO ACUMULADOR*/
 
 `timescale 1ns/1ns
-module Semaforo_TB;
-reg a, b, c, d;
-wire n_s, l_o;
+module Acumulador_TB;
+reg clk, load, transf, clear;
+reg [15:0] in;
+wire [15:0] out;
 
-Semaforo sem(.a(a), .b(b), .c(c), .d(d), .n_s(n_s), .l_o(l_o));
+Acumulador acc(.clk(clk), .load(load), .transf(transf), .clear(clear), .in(in), .out(out));
 
 initial begin
-	a = 0;
-	b = 0;
-	c = 0;
-	d = 0;
+	clk = 1'b0;
+	load = 1'b0;
+	transf = 1'b1;
+	clear = 1'b0;
+	in = 16'b0000000000000000;
+	#33 clear = 1'b1;
+end
 
-	#5 a = 1'b0;
-	b = 0;
-	c = 0;
-	d = 1;
+always begin
+	#10 clk <= ~clk;
+end
 
-	#5 a = 0;
-	b = 0;
-	c = 1;
-	d = 0;
-
-	#5 a = 0;
-	b = 0;
-	c = 1;
-	d = 1;
-
-	#5 a = 0;
-	b = 1;
-	c = 0;
-	d = 0;
-
-	#5 a = 0;
-	b = 1;
-	c = 0;
-	d = 1;
-
-	#5 a = 0;
-	b = 1;
-	c = 1;
-	d = 0;
-
-	#5 a = 0;
-	b = 1;
-	c = 1;
-	d = 1;
-
-	#5 a = 1;
-	b = 0;
-	c = 0;
-	d = 0;
-
-	#5 a = 1;
-	b = 0;
-	c = 0;
-	d = 1;
-
-	#5 a = 1;
-	b = 0;
-	c = 1;
-	d = 0;
-
-	#5 a = 1;
-	b = 0;
-	c = 1;
-	d = 1;
-
-	#5 a = 1;
-	b = 1;
-	c = 0;
-	d = 0;
-
-	#5 a = 1;
-	b = 1;
-	c = 0;
-	d = 1;
-
-	#5 a = 1;
-	b = 1;
-	c = 1;
-	d = 0;
-
-	#5 a = 1;
-	b = 1;
-	c = 1;
-	d = 1;
-
-	#5;
+always @ (posedge clk) begin
+	load <= ~load;
+	transf <= ~transf;
+	if(load == 1'b0)
+		#4 in <= in * 2;
+	if(in == 16'b0000000000000000)
+		begin
+			in <= 16'b0000000000000001;
+			#3 clear <= 1'b0;
+		end
+	else
+		#3 clear <= 1'b1;
 end
 
 endmodule

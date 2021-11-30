@@ -6,7 +6,7 @@
 * Necessário ajustar Timing Analyzer após implementação do módulo RemoteController
 
 ## Somador (CONTINUAR)
-* Módulo Acumulador feito, testbench precisa de debug para finalizar testes
+* Módulo Acumulador feito, testbench e testes efetuados
 * Necessário fazer módulo FSM, bem como sua testbench e testar
 * Necessário fazer módulo TOP, bem como sua testbench e testar
 * Necessário fazer interligação do TOP com pinos físicos do FPGA
