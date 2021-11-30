@@ -1,4 +1,4 @@
-/*TESTBENCH DO PROCESSADOR*/
+/*TESTBENCH DO SEMAFORO*/
 
 `timescale 1ns/1ns
 module Semaforo_TB;
