@@ -4,27 +4,23 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "n_s",
+					"name" : "LEDG[1]",
 					"strict" : false
 				},
 				{
-					"name" : "l_o",
+					"name" : "LEDG[0]",
 					"strict" : false
 				},
 				{
-					"name" : "a",
+					"name" : "SW[1]",
 					"strict" : false
 				},
 				{
-					"name" : "b",
+					"name" : "SW[0]",
 					"strict" : false
 				},
 				{
-					"name" : "c",
-					"strict" : false
-				},
-				{
-					"name" : "d",
+					"name" : "SW[2]",
 					"strict" : false
 				}
 			]

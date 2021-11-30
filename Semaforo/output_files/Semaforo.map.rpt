@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Semaforo
-Mon Nov 29 20:51:37 2021
+Tue Nov 30 19:23:25 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -43,10 +43,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Nov 29 20:51:37 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 30 19:23:25 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; Semaforo                                    ;
-; Top-level Entity Name              ; Semaforo                                    ;
+; Top-level Entity Name              ; SemaforoDiagrama                            ;
 ; Family                             ; Cyclone IV E                                ;
 ; Total logic elements               ; 1                                           ;
 ;     Total combinational functions  ; 1                                           ;
@@ -66,7 +66,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; Semaforo           ; Semaforo           ;
+; Top-level entity name                                            ; SemaforoDiagrama   ; Semaforo           ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -162,54 +162,56 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                ;
-+----------------------------------+-----------------+------------------------+-------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path  ; Library ;
-+----------------------------------+-----------------+------------------------+-------------------------------+---------+
-; Semaforo.v                       ; yes             ; User Verilog HDL File  ; E:/ENGG56/Semaforo/Semaforo.v ;         ;
-+----------------------------------+-----------------+------------------------+-------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                      ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path            ; Library ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------+---------+
+; Semaforo.v                       ; yes             ; User Verilog HDL File              ; E:/ENGG56/Semaforo/Semaforo.v           ;         ;
+; SemaforoDiagrama.bdf             ; yes             ; User Block Diagram/Schematic File  ; E:/ENGG56/Semaforo/SemaforoDiagrama.bdf ;         ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 1     ;
-;                                             ;       ;
-; Total combinational functions               ; 1     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 1     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 1     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 6     ;
-;                                             ;       ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; n_s~0 ;
-; Maximum fan-out                             ; 2     ;
-; Total fan-out                               ; 12    ;
-; Average fan-out                             ; 0.92  ;
-+---------------------------------------------+-------+
++-------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                       ;
++---------------------------------------------+---------------------+
+; Resource                                    ; Usage               ;
++---------------------------------------------+---------------------+
+; Estimated Total logic elements              ; 1                   ;
+;                                             ;                     ;
+; Total combinational functions               ; 1                   ;
+; Logic element usage by number of LUT inputs ;                     ;
+;     -- 4 input functions                    ; 0                   ;
+;     -- 3 input functions                    ; 1                   ;
+;     -- <=2 input functions                  ; 0                   ;
+;                                             ;                     ;
+; Logic elements by mode                      ;                     ;
+;     -- normal mode                          ; 1                   ;
+;     -- arithmetic mode                      ; 0                   ;
+;                                             ;                     ;
+; Total registers                             ; 0                   ;
+;     -- Dedicated logic registers            ; 0                   ;
+;     -- I/O registers                        ; 0                   ;
+;                                             ;                     ;
+; I/O pins                                    ; 6                   ;
+;                                             ;                     ;
+; Embedded Multiplier 9-bit elements          ; 0                   ;
+;                                             ;                     ;
+; Maximum fan-out node                        ; Semaforo:inst|n_s~0 ;
+; Maximum fan-out                             ; 2                   ;
+; Total fan-out                               ; 11                  ;
+; Average fan-out                             ; 0.85                ;
++---------------------------------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |Semaforo                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |Semaforo           ; Semaforo    ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                       ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name             ; Entity Name      ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+------------------+--------------+
+; |SemaforoDiagrama          ; 1 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |SemaforoDiagrama               ; SemaforoDiagrama ; work         ;
+;    |Semaforo:inst|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SemaforoDiagrama|Semaforo:inst ; Semaforo         ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -237,7 +239,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; cycloneiii_lcell_comb ; 2                           ;
 ;     normal            ; 2                           ;
 ;         1 data inputs ; 1                           ;
-;         4 data inputs ; 1                           ;
+;         3 data inputs ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
 ; Average LUT depth     ; 2.00                        ;
@@ -259,23 +261,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Nov 29 20:51:29 2021
+    Info: Processing started: Tue Nov 30 19:23:17 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Semaforo -c Semaforo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file semaforo.v
     Info (12023): Found entity 1: Semaforo File: E:/ENGG56/Semaforo/Semaforo.v Line: 1
-Info (12127): Elaborating entity "Semaforo" for the top level hierarchy
+Info (12021): Found 1 design units, including 1 entities, in source file semaforodiagrama.bdf
+    Info (12023): Found entity 1: SemaforoDiagrama
+Info (12127): Elaborating entity "SemaforoDiagrama" for the top level hierarchy
+Info (12128): Elaborating entity "Semaforo" for hierarchy "Semaforo:inst"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[3]"
 Info (21057): Implemented 7 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 2 output pins
     Info (21061): Implemented 1 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4777 megabytes
-    Info: Processing ended: Mon Nov 29 20:51:37 2021
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4773 megabytes
+    Info: Processing ended: Tue Nov 30 19:23:25 2021
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:15
 

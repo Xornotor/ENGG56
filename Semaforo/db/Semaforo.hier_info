@@ -1,4 +1,13 @@
-|Semaforo
+|SemaforoDiagrama
+LEDG[0] <= Semaforo:inst.n_s
+LEDG[1] <= Semaforo:inst.l_o
+SW[0] => Semaforo:inst.a
+SW[1] => Semaforo:inst.b
+SW[2] => Semaforo:inst.c
+SW[3] => ~NO_FANOUT~
+
+
+|SemaforoDiagrama|Semaforo:inst
 a => n_s.IN0
 b => n_s.IN1
 c => n_s.IN0

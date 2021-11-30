@@ -1,7 +1,7 @@
-Fitter Status : Successful - Mon Nov 29 20:51:45 2021
+Fitter Status : Successful - Tue Nov 30 19:23:33 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : Semaforo
-Top-level Entity Name : Semaforo
+Top-level Entity Name : SemaforoDiagrama
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
