@@ -1,0 +1,15 @@
+E:/ENGG56/Somador/Acumulador.v {1 {vlog -work work_acumulador -stats=none {E:\ENGG56\Somador\Acumulador.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Acumulador
+
+Top level modules:
+	Acumulador
+
+} {} {}} E:/ENGG56/Somador/Acumulador_TB.v {1 {vlog -work work_acumulador -stats=none {E:\ENGG56\Somador\Acumulador_TB.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Acumulador_TB
+
+Top level modules:
+	Acumulador_TB
+
+} {} {}}
