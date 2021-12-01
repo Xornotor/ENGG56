@@ -5,12 +5,12 @@
 * Necessário fazer interligação do módulo RemoteController com pinos físicos do FPGA
 * Necessário ajustar Timing Analyzer após implementação do módulo RemoteController
 
-## Somador (CONTINUAR)
+## Somador (PRONTO, TIRAR DÚVIDAS)
 * Módulo Acumulador pronto, testbench e testes efetuados
 * Módulo FSM pronto, testbench e testes efetuados
-* Módulo TOP pronto, necessário fazer testbench e testar
+* Módulo TOP pronto, testbench e testes efetuados
 * Conexão com pinos físicos do FPGA efetuada
-* Necessário criar arquivo `.mif` de dados para a memória RAM
+* Criado arquivo `.mif` de dados para a memória RAM e arquivo `data.txt` correspondente para testbench
 * Timing Analyzer ajustado para o módulo TOP, **TIRAR DÚVIDA COM O PROFESSOR SOBRE TIMING ANALYZER PARA DIAGRAMA DE BLOCOS**
 
 ## MPEG (FAZER)

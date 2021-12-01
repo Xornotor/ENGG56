@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Tue Nov 30 21:22:56 2021
+Analysis & Synthesis Status : Successful - Tue Nov 30 22:33:41 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : Somador
 Top-level Entity Name : SomadorDiagrama
 Family : Cyclone IV E
-Total logic elements : 81
-    Total combinational functions : 40
+Total logic elements : 82
+    Total combinational functions : 41
     Dedicated logic registers : 73
 Total registers : 73
 Total pins : 19

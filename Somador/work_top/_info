@@ -1,0 +1,107 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/ENGG56/Somador
+vAcumulador
+!s110 1638321996
+!i10b 1
+!s100 _h:O5OA=ja:18<U6:0:nP0
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I5l8jJGl=52ALX>6=oc<Vj2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1638236480
+8E:/ENGG56/Somador/Acumulador.v
+FE:/ENGG56/Somador/Acumulador.v
+!i122 11
+L0 1 23
+Z3 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z4 !s108 1638321995.000000
+!s107 E:/ENGG56/Somador/Acumulador.v|
+!s90 -reportprogress|300|-work|work_top|-stats=none|E:/ENGG56/Somador/Acumulador.v|
+!i113 1
+Z5 o-work work_top
+Z6 tCvgOpt 0
+n@acumulador
+vFSM
+!s110 1638322493
+!i10b 1
+!s100 JG@K]<mB0ozoGSWC4=:mi3
+R1
+ICl21A?>OigSDUGd7F2EFI1
+R2
+R0
+w1638322381
+8E:/ENGG56/Somador/FSM.v
+FE:/ENGG56/Somador/FSM.v
+!i122 12
+L0 1 130
+R3
+r1
+!s85 0
+31
+!s108 1638322493.000000
+!s107 E:/ENGG56/Somador/FSM.v|
+!s90 -reportprogress|300|-work|work_top|-stats=none|E:/ENGG56/Somador/FSM.v|
+!i113 1
+R5
+R6
+n@f@s@m
+vTOP
+Z7 !s110 1638321995
+!i10b 1
+!s100 h?kY^ZJ^n^OXZkWMVadz]0
+R1
+Ij@eJjLZUQ1SmC<[jUBcZd0
+R2
+R0
+w1638316214
+8E:/ENGG56/Somador/TOP.v
+FE:/ENGG56/Somador/TOP.v
+!i122 8
+L0 1 12
+R3
+r1
+!s85 0
+31
+!s108 1638321994.000000
+!s107 E:/ENGG56/Somador/TOP.v|
+!s90 -reportprogress|300|-work|work_top|-stats=none|E:/ENGG56/Somador/TOP.v|
+!i113 1
+R5
+R6
+n@t@o@p
+vTOP_TB
+R7
+!i10b 1
+!s100 eN=mb`k7L?3H[P1iXILAj0
+R1
+I>nNH9`?YHnm?;U`142HnI1
+R2
+R0
+w1638321226
+8E:/ENGG56/Somador/TOP_TB.v
+FE:/ENGG56/Somador/TOP_TB.v
+!i122 9
+L0 4 36
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/ENGG56/Somador/TOP_TB.v|
+!s90 -reportprogress|300|-work|work_top|-stats=none|E:/ENGG56/Somador/TOP_TB.v|
+!i113 1
+R5
+R6
+n@t@o@p_@t@b

@@ -84,6 +84,8 @@ always @ (negedge clk) begin
 		ConfereAddress: begin
 			if(address == 7 || address == 15 || address == 23 || address == 31)
 				ProxEstado <= AtivaWren;
+			else if(address == 0 || address == 8 || address == 16 || address == 24)
+				ProxEstado <= ResetInit;
 			else
 				ProxEstado <= AtivaRden;
 		end
