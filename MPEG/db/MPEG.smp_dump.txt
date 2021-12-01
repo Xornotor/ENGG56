@@ -1,0 +1,28 @@
+
+State Machine - |MPEG_Diagrama|FSM_Control:inst|EstadoAtual
+Name EstadoAtual.Inc_XY EstadoAtual.DesativaReady EstadoAtual.AtivaReady EstadoAtual.Inc_UV_Addr EstadoAtual.DesativaRden EstadoAtual.DesativaMac EstadoAtual.AtivaMac EstadoAtual.AtivaRden EstadoAtual.TiraResetInit EstadoAtual.ResetInit EstadoAtual.Inicio 
+EstadoAtual.Inicio 0 0 0 0 0 0 0 0 0 0 0 
+EstadoAtual.ResetInit 0 0 0 0 0 0 0 0 0 1 1 
+EstadoAtual.TiraResetInit 0 0 0 0 0 0 0 0 1 0 1 
+EstadoAtual.AtivaRden 0 0 0 0 0 0 0 1 0 0 1 
+EstadoAtual.AtivaMac 0 0 0 0 0 0 1 0 0 0 1 
+EstadoAtual.DesativaMac 0 0 0 0 0 1 0 0 0 0 1 
+EstadoAtual.DesativaRden 0 0 0 0 1 0 0 0 0 0 1 
+EstadoAtual.Inc_UV_Addr 0 0 0 1 0 0 0 0 0 0 1 
+EstadoAtual.AtivaReady 0 0 1 0 0 0 0 0 0 0 1 
+EstadoAtual.DesativaReady 0 1 0 0 0 0 0 0 0 0 1 
+EstadoAtual.Inc_XY 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |MPEG_Diagrama|FSM_Control:inst|ProxEstado
+Name ProxEstado.Inc_XY ProxEstado.DesativaReady ProxEstado.AtivaReady ProxEstado.Inc_UV_Addr ProxEstado.DesativaRden ProxEstado.DesativaMac ProxEstado.AtivaMac ProxEstado.AtivaRden ProxEstado.TiraResetInit ProxEstado.ResetInit ProxEstado.Inicio 
+ProxEstado.Inicio 0 0 0 0 0 0 0 0 0 0 0 
+ProxEstado.ResetInit 0 0 0 0 0 0 0 0 0 1 1 
+ProxEstado.TiraResetInit 0 0 0 0 0 0 0 0 1 0 1 
+ProxEstado.AtivaRden 0 0 0 0 0 0 0 1 0 0 1 
+ProxEstado.AtivaMac 0 0 0 0 0 0 1 0 0 0 1 
+ProxEstado.DesativaMac 0 0 0 0 0 1 0 0 0 0 1 
+ProxEstado.DesativaRden 0 0 0 0 1 0 0 0 0 0 1 
+ProxEstado.Inc_UV_Addr 0 0 0 1 0 0 0 0 0 0 1 
+ProxEstado.AtivaReady 0 0 1 0 0 0 0 0 0 0 1 
+ProxEstado.DesativaReady 0 1 0 0 0 0 0 0 0 0 1 
+ProxEstado.Inc_XY 1 0 0 0 0 0 0 0 0 0 1 
