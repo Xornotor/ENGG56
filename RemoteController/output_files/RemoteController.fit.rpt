@@ -1,5 +1,5 @@
 Fitter report for RemoteController
-Wed Dec 01 19:11:09 2021
+Wed Dec 01 19:30:24 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -70,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Wed Dec 01 19:11:09 2021       ;
+; Fitter Status                      ; Successful - Wed Dec 01 19:30:24 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; RemoteController                            ;
 ; Top-level Entity Name              ; RemoteDiagrama                              ;
@@ -157,12 +157,12 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
+; Average used               ; 1.02        ;
 ; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.1%      ;
+;     Processors 2-12        ;   0.2%      ;
 +----------------------------+-------------+
 
 
@@ -3282,7 +3282,7 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 2 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
     Info (169178): Pin IRDA_RXD uses I/O standard 3.3-V LVTTL at Y15
@@ -3290,7 +3290,7 @@ Warning (169177): 2 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2
 Info (144001): Generated suppressed messages file E:/ENGG56/RemoteController/output_files/RemoteController.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 567 warnings
     Info: Peak virtual memory: 6304 megabytes
-    Info: Processing ended: Wed Dec 01 19:11:09 2021
+    Info: Processing ended: Wed Dec 01 19:30:24 2021
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:15
 

@@ -1,22 +1,22 @@
 # PCID - Etapas
 
-## RemoteController (PRONTO, TIRAR DÚVIDAS)
+## RemoteController (PRONTO)
 * Módulo Remote Controller pronto, testbench e testes efetuados
 * Conexão com pinos físicos do FPGA efetuada
-* Timing Analyzer ajustado para o módulo RemoteController, **TIRAR DÚVIDA COM O PROFESSOR SOBRE TIMING ANALYZER PARA DIAGRAMA DE BLOCOS**
+* Timing Analyzer ajustado
 
-## Somador (PRONTO, TIRAR DÚVIDAS)
+## Somador (PRONTO)
 * Módulo Acumulador pronto, testbench e testes efetuados
 * Módulo FSM pronto, testbench e testes efetuados
 * Módulo TOP pronto, testbench e testes efetuados
 * Conexão com pinos físicos do FPGA efetuada
 * Criado arquivo `.mif` de dados para a memória RAM e arquivo `data.txt` correspondente para testbench
-* Timing Analyzer ajustado para o módulo TOP, **TIRAR DÚVIDA COM O PROFESSOR SOBRE TIMING ANALYZER PARA DIAGRAMA DE BLOCOS**
+* Timing Analyzer ajustado
 
-## MPEG (PRONTO, TIRAR DÚVIDAS)
+## MPEG (PRONTO)
 * Módulo FSM_Control pronto, testbench e testes efetuados
 * Conexão com pinos físicos do FPGA efetuada
-* Timing Analyzer ajustado para o módulo FSM_Control, **TIRAR DÚVIDA COM O PROFESSOR SOBRE TIMING ANALYZER PARA DIAGRAMA DE BLOCOS**
+* Timing Analyzer ajustado
 
 ## Semaforo (PRONTO)
 * Módulo Semaforo pronto, testbench e testes efetuados

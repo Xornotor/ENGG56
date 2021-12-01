@@ -20,7 +20,7 @@
 ## PROGRAM "Quartus Prime"
 ## VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
-## DATE    "Tue Nov 30 23:42:55 2021"
+## DATE    "Wed Dec 01 19:32:05 2021"
 
 ##
 ## DEVICE  "EP4CE115F29C7"
@@ -39,13 +39,14 @@ set_time_format -unit ns -decimal_places 3
 # Create Clock
 #**************************************************************
 
-create_clock -name {clk} -period 26000.000 -waveform { 0.000 13000.000 } [get_ports {clk}]
+create_clock -name {CLOCK_50} -period 20.000 -waveform { 0.000 10.000 } [get_ports {CLOCK_50}]
 
 
 #**************************************************************
 # Create Generated Clock
 #**************************************************************
 
+create_generated_clock -name {inst2|altpll_component|auto_generated|pll1|clk[0]} -source [get_pins {inst2|altpll_component|auto_generated|pll1|inclk[0]}] -duty_cycle 50/1 -multiply_by 53 -divide_by 68901 -master_clock {CLOCK_50} [get_pins {inst2|altpll_component|auto_generated|pll1|clk[0]}] 
 
 
 #**************************************************************
@@ -58,34 +59,34 @@ create_clock -name {clk} -period 26000.000 -waveform { 0.000 13000.000 } [get_po
 # Set Clock Uncertainty
 #**************************************************************
 
-set_clock_uncertainty -rise_from [get_clocks {clk}] -rise_to [get_clocks {clk}]  0.020  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -fall_to [get_clocks {clk}]  0.020  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -rise_to [get_clocks {clk}]  0.020  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -fall_to [get_clocks {clk}]  0.020  
+set_clock_uncertainty -rise_from [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}] -rise_to [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  0.020  
+set_clock_uncertainty -rise_from [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}] -fall_to [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  0.020  
+set_clock_uncertainty -fall_from [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}] -rise_to [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  0.020  
+set_clock_uncertainty -fall_from [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}] -fall_to [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  0.020  
 
 
 #**************************************************************
 # Set Input Delay
 #**************************************************************
 
-set_input_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {clk}]
-set_input_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {rst}]
-set_input_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {serial}]
+set_input_delay -add_delay  -clock [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  2600.000 [get_ports {CLOCK_50}]
+set_input_delay -add_delay  -clock [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  2600.000 [get_ports {IRDA_RXD}]
+set_input_delay -add_delay  -clock [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  2600.000 [get_ports {SW[0]}]
 
 
 #**************************************************************
 # Set Output Delay
 #**************************************************************
 
-set_output_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {ready}]
-set_output_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {tecla[0]}]
-set_output_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {tecla[1]}]
-set_output_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {tecla[2]}]
-set_output_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {tecla[3]}]
-set_output_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {tecla[4]}]
-set_output_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {tecla[5]}]
-set_output_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {tecla[6]}]
-set_output_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {tecla[7]}]
+set_output_delay -add_delay  -clock [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  2600.000 [get_ports {LEDG[0]}]
+set_output_delay -add_delay  -clock [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  2600.000 [get_ports {LEDR[0]}]
+set_output_delay -add_delay  -clock [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  2600.000 [get_ports {LEDR[1]}]
+set_output_delay -add_delay  -clock [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  2600.000 [get_ports {LEDR[2]}]
+set_output_delay -add_delay  -clock [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  2600.000 [get_ports {LEDR[3]}]
+set_output_delay -add_delay  -clock [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  2600.000 [get_ports {LEDR[4]}]
+set_output_delay -add_delay  -clock [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  2600.000 [get_ports {LEDR[5]}]
+set_output_delay -add_delay  -clock [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  2600.000 [get_ports {LEDR[6]}]
+set_output_delay -add_delay  -clock [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  2600.000 [get_ports {LEDR[7]}]
 
 
 #**************************************************************
