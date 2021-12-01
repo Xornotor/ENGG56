@@ -3,6 +3,22 @@ LEDG[0] <= TOP:inst.ready
 CLOCK_50 => TOP:inst.clk
 CLOCK_50 => Mem:inst2.clock
 SW[0] => TOP:inst.reset
+LEDR[0] <= Mem:inst2.q[0]
+LEDR[1] <= Mem:inst2.q[1]
+LEDR[2] <= Mem:inst2.q[2]
+LEDR[3] <= Mem:inst2.q[3]
+LEDR[4] <= Mem:inst2.q[4]
+LEDR[5] <= Mem:inst2.q[5]
+LEDR[6] <= Mem:inst2.q[6]
+LEDR[7] <= Mem:inst2.q[7]
+LEDR[8] <= Mem:inst2.q[8]
+LEDR[9] <= Mem:inst2.q[9]
+LEDR[10] <= Mem:inst2.q[10]
+LEDR[11] <= Mem:inst2.q[11]
+LEDR[12] <= Mem:inst2.q[12]
+LEDR[13] <= Mem:inst2.q[13]
+LEDR[14] <= Mem:inst2.q[14]
+LEDR[15] <= Mem:inst2.q[15]
 
 
 |SomadorDiagrama|TOP:inst

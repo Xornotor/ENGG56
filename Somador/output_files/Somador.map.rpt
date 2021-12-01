@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Somador
-Tue Nov 30 21:13:15 2021
+Tue Nov 30 21:22:56 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,11 +13,11 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis IP Cores Summary
-  9. State Machine - |SomadorDiagrama|TOP:inst|FSM:fsm|EstadoAtual
- 10. State Machine - |SomadorDiagrama|TOP:inst|FSM:fsm|ProxEstado
- 11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |SomadorDiagrama|TOP:inst|FSM:fsm|EstadoAtual
+ 11. State Machine - |SomadorDiagrama|TOP:inst|FSM:fsm|ProxEstado
+ 12. Registers Removed During Synthesis
  13. General Register Statistics
  14. Source assignments for Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated
  15. Parameter Settings for User Entity Instance: TOP:inst|FSM:fsm
@@ -52,18 +52,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 30 21:13:15 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 30 21:22:56 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; Somador                                     ;
 ; Top-level Entity Name              ; SomadorDiagrama                             ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 44                                          ;
-;     Total combinational functions  ; 19                                          ;
-;     Dedicated logic registers      ; 36                                          ;
-; Total registers                    ; 36                                          ;
-; Total pins                         ; 3                                           ;
+; Total logic elements               ; 81                                          ;
+;     Total combinational functions  ; 40                                          ;
+;     Dedicated logic registers      ; 73                                          ;
+; Total registers                    ; 73                                          ;
+; Total pins                         ; 19                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
+; Total memory bits                  ; 512                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
@@ -201,43 +201,57 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 44             ;
+; Estimated Total logic elements              ; 81             ;
 ;                                             ;                ;
-; Total combinational functions               ; 19             ;
+; Total combinational functions               ; 40             ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 10             ;
-;     -- 3 input functions                    ; 2              ;
-;     -- <=2 input functions                  ; 7              ;
+;     -- 4 input functions                    ; 15             ;
+;     -- 3 input functions                    ; 17             ;
+;     -- <=2 input functions                  ; 8              ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 15             ;
-;     -- arithmetic mode                      ; 4              ;
+;     -- normal mode                          ; 21             ;
+;     -- arithmetic mode                      ; 19             ;
 ;                                             ;                ;
-; Total registers                             ; 36             ;
-;     -- Dedicated logic registers            ; 36             ;
+; Total registers                             ; 73             ;
+;     -- Dedicated logic registers            ; 73             ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
-; I/O pins                                    ; 3              ;
+; I/O pins                                    ; 19             ;
+; Total memory bits                           ; 512            ;
 ;                                             ;                ;
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 36             ;
-; Total fan-out                               ; 149            ;
-; Average fan-out                             ; 2.44           ;
+; Maximum fan-out                             ; 89             ;
+; Total fan-out                               ; 514            ;
+; Average fan-out                             ; 3.08           ;
 +---------------------------------------------+----------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                        ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Entity Name     ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+-----------------+--------------+
-; |SomadorDiagrama           ; 19 (0)              ; 36 (0)                    ; 0           ; 0            ; 0       ; 0         ; 3    ; 0            ; |SomadorDiagrama                  ; SomadorDiagrama ; work         ;
-;    |TOP:inst|              ; 19 (0)              ; 36 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SomadorDiagrama|TOP:inst         ; TOP             ; work         ;
-;       |FSM:fsm|            ; 19 (19)             ; 36 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SomadorDiagrama|TOP:inst|FSM:fsm ; FSM             ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+-----------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                               ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                       ; Entity Name     ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------+-----------------+--------------+
+; |SomadorDiagrama                          ; 40 (0)              ; 73 (0)                    ; 512         ; 0            ; 0       ; 0         ; 19   ; 0            ; |SomadorDiagrama                                                                          ; SomadorDiagrama ; work         ;
+;    |Mem:inst2|                            ; 0 (0)               ; 0 (0)                     ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |SomadorDiagrama|Mem:inst2                                                                ; Mem             ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |SomadorDiagrama|Mem:inst2|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
+;          |altsyncram_8sp3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |SomadorDiagrama|Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated ; altsyncram_8sp3 ; work         ;
+;    |TOP:inst|                             ; 40 (0)              ; 73 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SomadorDiagrama|TOP:inst                                                                 ; TOP             ; work         ;
+;       |Acumulador:acc|                    ; 16 (16)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SomadorDiagrama|TOP:inst|Acumulador:acc                                                  ; Acumulador      ; work         ;
+;       |FSM:fsm|                           ; 24 (24)             ; 41 (41)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SomadorDiagrama|TOP:inst|FSM:fsm                                                         ; FSM             ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                   ;
++-------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++-------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
+; Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 32           ; 16           ; --           ; --           ; 512  ; None ;
++-------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
 
 
 +--------------------------------------------------------------------------------------------------------------+
@@ -297,42 +311,21 @@ Encoding Type:  One-Hot
 +---------------------------+--------------------------+-----------------------+-------------------------+----------------------+---------------------------+-----------------------+---------------------------+------------------------+-------------------------+-------------------------+----------------------+----------------------+--------------------------+----------------------+-------------------+
 
 
-+-------------------------------------------------------------+
-; Registers Removed During Synthesis                          ;
-+----------------------------------------+--------------------+
-; Register name                          ; Reason for Removal ;
-+----------------------------------------+--------------------+
-; TOP:inst|FSM:fsm|clear                 ; Lost fanout        ;
-; TOP:inst|FSM:fsm|transf                ; Lost fanout        ;
-; TOP:inst|FSM:fsm|load                  ; Lost fanout        ;
-; TOP:inst|FSM:fsm|wren                  ; Lost fanout        ;
-; TOP:inst|FSM:fsm|rden                  ; Lost fanout        ;
-; TOP:inst|Acumulador:acc|out[0]         ; Lost fanout        ;
-; TOP:inst|Acumulador:acc|r_in[0]        ; Lost fanout        ;
-; TOP:inst|Acumulador:acc|out[1..15]     ; Lost fanout        ;
-; TOP:inst|Acumulador:acc|r_in[1..15]    ; Lost fanout        ;
-; TOP:inst|FSM:fsm|EstadoAtual~4         ; Lost fanout        ;
-; TOP:inst|FSM:fsm|EstadoAtual~5         ; Lost fanout        ;
-; TOP:inst|FSM:fsm|EstadoAtual~6         ; Lost fanout        ;
-; TOP:inst|FSM:fsm|EstadoAtual~7         ; Lost fanout        ;
-; TOP:inst|FSM:fsm|ProxEstado~2          ; Lost fanout        ;
-; TOP:inst|FSM:fsm|ProxEstado~3          ; Lost fanout        ;
-; TOP:inst|FSM:fsm|ProxEstado~4          ; Lost fanout        ;
-; TOP:inst|FSM:fsm|ProxEstado~5          ; Lost fanout        ;
-; Total Number of Removed Registers = 45 ;                    ;
-+----------------------------------------+--------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                               ;
-+--------------------------------+--------------------+---------------------------------------------------------------------+
-; Register name                  ; Reason for Removal ; Registers Removed due to This Register                              ;
-+--------------------------------+--------------------+---------------------------------------------------------------------+
-; TOP:inst|Acumulador:acc|out[0] ; Lost Fanouts       ; TOP:inst|Acumulador:acc|r_in[8], TOP:inst|Acumulador:acc|r_in[9],   ;
-;                                ;                    ; TOP:inst|Acumulador:acc|r_in[10], TOP:inst|Acumulador:acc|r_in[11], ;
-;                                ;                    ; TOP:inst|Acumulador:acc|r_in[12], TOP:inst|Acumulador:acc|r_in[13], ;
-;                                ;                    ; TOP:inst|Acumulador:acc|r_in[14], TOP:inst|Acumulador:acc|r_in[15]  ;
-+--------------------------------+--------------------+---------------------------------------------------------------------+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; TOP:inst|FSM:fsm|EstadoAtual~4        ; Lost fanout        ;
+; TOP:inst|FSM:fsm|EstadoAtual~5        ; Lost fanout        ;
+; TOP:inst|FSM:fsm|EstadoAtual~6        ; Lost fanout        ;
+; TOP:inst|FSM:fsm|EstadoAtual~7        ; Lost fanout        ;
+; TOP:inst|FSM:fsm|ProxEstado~2         ; Lost fanout        ;
+; TOP:inst|FSM:fsm|ProxEstado~3         ; Lost fanout        ;
+; TOP:inst|FSM:fsm|ProxEstado~4         ; Lost fanout        ;
+; TOP:inst|FSM:fsm|ProxEstado~5         ; Lost fanout        ;
+; Total Number of Removed Registers = 8 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -340,12 +333,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 36    ;
+; Total registers                              ; 73    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 15    ;
+; Number of registers using Asynchronous Clear ; 31    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 32    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -469,21 +462,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 3                           ;
-; cycloneiii_ff         ; 36                          ;
+; boundary_port         ; 19                          ;
+; cycloneiii_ff         ; 73                          ;
 ;     CLR               ; 15                          ;
-;     plain             ; 21                          ;
-; cycloneiii_lcell_comb ; 19                          ;
-;     arith             ; 4                           ;
+;     ENA               ; 16                          ;
+;     ENA CLR           ; 16                          ;
+;     plain             ; 26                          ;
+; cycloneiii_lcell_comb ; 40                          ;
+;     arith             ; 19                          ;
 ;         2 data inputs ; 4                           ;
-;     normal            ; 15                          ;
+;         3 data inputs ; 15                          ;
+;     normal            ; 21                          ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 2                           ;
+;         2 data inputs ; 3                           ;
 ;         3 data inputs ; 2                           ;
-;         4 data inputs ; 10                          ;
+;         4 data inputs ; 15                          ;
+; cycloneiii_ram_block  ; 16                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.40                        ;
-; Average LUT depth     ; 1.16                        ;
+; Max LUT depth         ; 2.50                        ;
+; Average LUT depth     ; 1.39                        ;
 +-----------------------+-----------------------------+
 
 
@@ -502,7 +499,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Nov 30 21:13:06 2021
+    Info: Processing started: Tue Nov 30 21:22:47 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Somador -c Somador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -579,35 +576,18 @@ Info (12133): Instantiated megafunction "Mem:inst2|altsyncram:altsyncram_compone
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_8sp3.tdf
     Info (12023): Found entity 1: altsyncram_8sp3 File: E:/ENGG56/Somador/db/altsyncram_8sp3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_8sp3" for hierarchy "Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated" File: d:/programas/intelfpga/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated|q_a[0]" File: E:/ENGG56/Somador/db/altsyncram_8sp3.tdf Line: 38
-        Warning (14320): Synthesized away node "Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated|q_a[1]" File: E:/ENGG56/Somador/db/altsyncram_8sp3.tdf Line: 61
-        Warning (14320): Synthesized away node "Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated|q_a[2]" File: E:/ENGG56/Somador/db/altsyncram_8sp3.tdf Line: 84
-        Warning (14320): Synthesized away node "Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated|q_a[3]" File: E:/ENGG56/Somador/db/altsyncram_8sp3.tdf Line: 107
-        Warning (14320): Synthesized away node "Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated|q_a[4]" File: E:/ENGG56/Somador/db/altsyncram_8sp3.tdf Line: 130
-        Warning (14320): Synthesized away node "Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated|q_a[5]" File: E:/ENGG56/Somador/db/altsyncram_8sp3.tdf Line: 153
-        Warning (14320): Synthesized away node "Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated|q_a[6]" File: E:/ENGG56/Somador/db/altsyncram_8sp3.tdf Line: 176
-        Warning (14320): Synthesized away node "Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated|q_a[7]" File: E:/ENGG56/Somador/db/altsyncram_8sp3.tdf Line: 199
-        Warning (14320): Synthesized away node "Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated|q_a[8]" File: E:/ENGG56/Somador/db/altsyncram_8sp3.tdf Line: 222
-        Warning (14320): Synthesized away node "Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated|q_a[9]" File: E:/ENGG56/Somador/db/altsyncram_8sp3.tdf Line: 245
-        Warning (14320): Synthesized away node "Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated|q_a[10]" File: E:/ENGG56/Somador/db/altsyncram_8sp3.tdf Line: 268
-        Warning (14320): Synthesized away node "Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated|q_a[11]" File: E:/ENGG56/Somador/db/altsyncram_8sp3.tdf Line: 291
-        Warning (14320): Synthesized away node "Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated|q_a[12]" File: E:/ENGG56/Somador/db/altsyncram_8sp3.tdf Line: 314
-        Warning (14320): Synthesized away node "Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated|q_a[13]" File: E:/ENGG56/Somador/db/altsyncram_8sp3.tdf Line: 337
-        Warning (14320): Synthesized away node "Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated|q_a[14]" File: E:/ENGG56/Somador/db/altsyncram_8sp3.tdf Line: 360
-        Warning (14320): Synthesized away node "Mem:inst2|altsyncram:altsyncram_component|altsyncram_8sp3:auto_generated|q_a[15]" File: E:/ENGG56/Somador/db/altsyncram_8sp3.tdf Line: 383
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 45 registers lost all their fanouts during netlist optimizations.
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 47 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 116 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 44 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
-    Info: Peak virtual memory: 4846 megabytes
-    Info: Processing ended: Tue Nov 30 21:13:15 2021
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 81 logic cells
+    Info (21064): Implemented 16 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4849 megabytes
+    Info: Processing ended: Tue Nov 30 21:22:56 2021
     Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:16
 
