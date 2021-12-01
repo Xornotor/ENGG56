@@ -1,5 +1,5 @@
 
-State Machine - |FSM|EstadoAtual
+State Machine - |SomadorDiagrama|TOP:inst|FSM:fsm|EstadoAtual
 Name EstadoAtual.DesativaReady EstadoAtual.AtivaReady EstadoAtual.DesativaWren EstadoAtual.AtivaWren EstadoAtual.ConfereAddress EstadoAtual.IncAddress EstadoAtual.DesativaTransf EstadoAtual.AtivaTransf EstadoAtual.DesativaRden EstadoAtual.DesativaLoad EstadoAtual.AtivaLoad EstadoAtual.AtivaRden EstadoAtual.TiraResetInit EstadoAtual.ResetInit EstadoAtual.Inicio 
 EstadoAtual.Inicio 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 EstadoAtual.ResetInit 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
@@ -17,7 +17,7 @@ EstadoAtual.DesativaWren 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1
 EstadoAtual.AtivaReady 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
 EstadoAtual.DesativaReady 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
-State Machine - |FSM|ProxEstado
+State Machine - |SomadorDiagrama|TOP:inst|FSM:fsm|ProxEstado
 Name ProxEstado.DesativaReady ProxEstado.AtivaReady ProxEstado.DesativaWren ProxEstado.AtivaWren ProxEstado.ConfereAddress ProxEstado.IncAddress ProxEstado.DesativaTransf ProxEstado.AtivaTransf ProxEstado.DesativaRden ProxEstado.DesativaLoad ProxEstado.AtivaLoad ProxEstado.AtivaRden ProxEstado.TiraResetInit ProxEstado.ResetInit ProxEstado.Inicio 
 ProxEstado.Inicio 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 ProxEstado.ResetInit 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 

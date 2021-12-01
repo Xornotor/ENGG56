@@ -4,55 +4,15 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "address[0]",
+					"name" : "LEDG[0]",
 					"strict" : false
 				},
 				{
-					"name" : "address[1]",
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
-					"name" : "address[2]",
-					"strict" : false
-				},
-				{
-					"name" : "address[3]",
-					"strict" : false
-				},
-				{
-					"name" : "address[4]",
-					"strict" : false
-				},
-				{
-					"name" : "rden",
-					"strict" : false
-				},
-				{
-					"name" : "wren",
-					"strict" : false
-				},
-				{
-					"name" : "load",
-					"strict" : false
-				},
-				{
-					"name" : "clear",
-					"strict" : false
-				},
-				{
-					"name" : "transf",
-					"strict" : false
-				},
-				{
-					"name" : "ready",
-					"strict" : false
-				},
-				{
-					"name" : "clk",
-					"strict" : false
-				},
-				{
-					"name" : "reset",
+					"name" : "SW[0]",
 					"strict" : false
 				}
 			]

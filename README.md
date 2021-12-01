@@ -8,9 +8,10 @@
 ## Somador (CONTINUAR)
 * Módulo Acumulador pronto, testbench e testes efetuados
 * Módulo FSM pronto, testbench e testes efetuados
-* Necessário fazer módulo TOP, bem como sua testbench e testar
-* Necessário fazer interligação do TOP com pinos físicos do FPGA
-* Timing Analyzer ajustado para o módulo acumulador, necessário revisar após implementação do módulo TOP
+* Módulo TOP pronto, necessário fazer testbench e testar
+* Conexão com pinos físicos do FPGA efetuada
+* Necessário criar arquivo `.mif` de dados para a memória RAM
+* Timing Analyzer ajustado para o módulo TOP, **TIRAR DÚVIDA COM O PROFESSOR SOBRE TIMING ANALYZER PARA DIAGRAMA DE BLOCOS**
 
 ## MPEG (FAZER)
 * Necessário fazer módulo FSM_Control, bem como sua testbench e testar
