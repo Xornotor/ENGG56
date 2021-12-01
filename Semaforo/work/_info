@@ -34,23 +34,23 @@ Z4 o-work work
 Z5 tCvgOpt 0
 n@semaforo
 vSemaforo_TB
-!s110 1638229954
+!s110 1638328278
 !i10b 1
 !s100 fI2G1@9AI>3^i<]O>R4JW3
 R0
 I_]gHClQ[VaHACW5Lz>V[T2
 R1
 R2
-w1638229494
+w1638237985
 8E:/ENGG56/Semaforo/Semaforo_TB.v
 FE:/ENGG56/Semaforo/Semaforo_TB.v
-!i122 7
+!i122 8
 L0 4 91
 R3
 r1
 !s85 0
 31
-!s108 1638229954.000000
+!s108 1638328278.000000
 !s107 E:/ENGG56/Semaforo/Semaforo_TB.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/ENGG56/Semaforo/Semaforo_TB.v|
 !i113 1
