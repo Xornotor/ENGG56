@@ -1,9 +1,9 @@
 # PCID - Etapas
 
 ## RemoteController (FAZER)
-* Necessário fazer módulo RemoteController, bem como sua testbench e testar
-* Necessário fazer interligação do módulo RemoteController com pinos físicos do FPGA
-* Necessário ajustar Timing Analyzer após implementação do módulo RemoteController
+* Módulo Remote Controller e testbench feitos, necessário Debug
+* Conexão com pinos físicos do FPGA efetuada
+* Timing Analyzer ajustado para o módulo RemoteController, **TIRAR DÚVIDA COM O PROFESSOR SOBRE TIMING ANALYZER PARA DIAGRAMA DE BLOCOS**
 
 ## Somador (PRONTO, TIRAR DÚVIDAS)
 * Módulo Acumulador pronto, testbench e testes efetuados

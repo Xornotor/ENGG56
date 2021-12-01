@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dE:/ENGG56/Semaforo
+vRemote_TB
+!s110 1638330234
+!i10b 1
+!s100 ]nG0N0B_b:n[kz]J=Wcn=3
+Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IMl<GM6B@ggjEm?5ohTWBf0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dE:/ENGG56/RemoteController
+w1638330222
+8E:/ENGG56/RemoteController/Remote_TB.v
+FE:/ENGG56/RemoteController/Remote_TB.v
+!i122 11
+L0 4 36
+Z3 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1638330233.000000
+!s107 E:/ENGG56/RemoteController/Remote_TB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/ENGG56/RemoteController/Remote_TB.v|
+!i113 1
+Z4 o-work work
+Z5 tCvgOpt 0
+n@remote_@t@b
+vRemoteController
+!s110 1638329360
+!i10b 1
+!s100 0TD40n>SgAk<i;P<<b8;80
+R0
+IYeS]i;8]gWiCc@=Gl@2C:3
+R1
+R2
+w1638329300
+8E:/ENGG56/RemoteController/RemoteController.v
+FE:/ENGG56/RemoteController/RemoteController.v
+!i122 5
+L0 1 59
+R3
+r1
+!s85 0
+31
+!s108 1638329360.000000
+!s107 E:/ENGG56/RemoteController/RemoteController.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/ENGG56/RemoteController/RemoteController.v|
+!i113 1
+R4
+R5
+n@remote@controller

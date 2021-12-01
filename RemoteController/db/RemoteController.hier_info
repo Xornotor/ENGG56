@@ -1,0 +1,167 @@
+|RemoteDiagrama
+LEDG[0] <= RemoteController:inst.ready
+CLOCK_50 => PLL:inst2.inclk0
+SW[0] => RemoteController:inst.rst
+IRDA_RXD => RemoteController:inst.serial
+LEDR[0] <= RemoteController:inst.tecla[0]
+LEDR[1] <= RemoteController:inst.tecla[1]
+LEDR[2] <= RemoteController:inst.tecla[2]
+LEDR[3] <= RemoteController:inst.tecla[3]
+LEDR[4] <= RemoteController:inst.tecla[4]
+LEDR[5] <= RemoteController:inst.tecla[5]
+LEDR[6] <= RemoteController:inst.tecla[6]
+LEDR[7] <= RemoteController:inst.tecla[7]
+
+
+|RemoteDiagrama|RemoteController:inst
+clk => data_inv[0].CLK
+clk => data_inv[1].CLK
+clk => data_inv[2].CLK
+clk => data_inv[3].CLK
+clk => data_inv[4].CLK
+clk => data_inv[5].CLK
+clk => data_inv[6].CLK
+clk => data_inv[7].CLK
+clk => data[0].CLK
+clk => data[1].CLK
+clk => data[2].CLK
+clk => data[3].CLK
+clk => data[4].CLK
+clk => data[5].CLK
+clk => data[6].CLK
+clk => data[7].CLK
+clk => tecla[0]~reg0.CLK
+clk => tecla[1]~reg0.CLK
+clk => tecla[2]~reg0.CLK
+clk => tecla[3]~reg0.CLK
+clk => tecla[4]~reg0.CLK
+clk => tecla[5]~reg0.CLK
+clk => tecla[6]~reg0.CLK
+clk => tecla[7]~reg0.CLK
+clk => cont[0].CLK
+clk => cont[1].CLK
+clk => cont[2].CLK
+clk => cont[3].CLK
+clk => cont[4].CLK
+clk => cont[5].CLK
+clk => ready~reg0.CLK
+rst => ready.OUTPUTSELECT
+rst => cont.OUTPUTSELECT
+rst => cont.OUTPUTSELECT
+rst => cont.OUTPUTSELECT
+rst => cont.OUTPUTSELECT
+rst => cont.OUTPUTSELECT
+rst => cont.OUTPUTSELECT
+rst => tecla.OUTPUTSELECT
+rst => tecla.OUTPUTSELECT
+rst => tecla.OUTPUTSELECT
+rst => tecla.OUTPUTSELECT
+rst => tecla.OUTPUTSELECT
+rst => tecla.OUTPUTSELECT
+rst => tecla.OUTPUTSELECT
+rst => tecla.OUTPUTSELECT
+rst => data.OUTPUTSELECT
+rst => data.OUTPUTSELECT
+rst => data.OUTPUTSELECT
+rst => data.OUTPUTSELECT
+rst => data.OUTPUTSELECT
+rst => data.OUTPUTSELECT
+rst => data.OUTPUTSELECT
+rst => data.OUTPUTSELECT
+rst => data_inv.OUTPUTSELECT
+rst => data_inv.OUTPUTSELECT
+rst => data_inv.OUTPUTSELECT
+rst => data_inv.OUTPUTSELECT
+rst => data_inv.OUTPUTSELECT
+rst => data_inv.OUTPUTSELECT
+rst => data_inv.OUTPUTSELECT
+rst => data_inv.OUTPUTSELECT
+serial => data_inv.DATAB
+serial => data.DATAB
+serial => always0.IN1
+tecla[0] <= tecla[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tecla[1] <= tecla[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tecla[2] <= tecla[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tecla[3] <= tecla[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tecla[4] <= tecla[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tecla[5] <= tecla[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tecla[6] <= tecla[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tecla[7] <= tecla[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RemoteDiagrama|PLL:inst2
+inclk0 => altpll:altpll_component.inclk[0]
+c0 <= altpll:altpll_component.clk[0]
+
+
+|RemoteDiagrama|PLL:inst2|altpll:altpll_component
+inclk[0] => PLL_altpll:auto_generated.inclk[0]
+inclk[1] => PLL_altpll:auto_generated.inclk[1]
+fbin => ~NO_FANOUT~
+pllena => ~NO_FANOUT~
+clkswitch => ~NO_FANOUT~
+areset => ~NO_FANOUT~
+pfdena => ~NO_FANOUT~
+clkena[0] => ~NO_FANOUT~
+clkena[1] => ~NO_FANOUT~
+clkena[2] => ~NO_FANOUT~
+clkena[3] => ~NO_FANOUT~
+clkena[4] => ~NO_FANOUT~
+clkena[5] => ~NO_FANOUT~
+extclkena[0] => ~NO_FANOUT~
+extclkena[1] => ~NO_FANOUT~
+extclkena[2] => ~NO_FANOUT~
+extclkena[3] => ~NO_FANOUT~
+scanclk => ~NO_FANOUT~
+scanclkena => ~NO_FANOUT~
+scanaclr => ~NO_FANOUT~
+scanread => ~NO_FANOUT~
+scanwrite => ~NO_FANOUT~
+scandata => ~NO_FANOUT~
+phasecounterselect[0] => ~NO_FANOUT~
+phasecounterselect[1] => ~NO_FANOUT~
+phasecounterselect[2] => ~NO_FANOUT~
+phasecounterselect[3] => ~NO_FANOUT~
+phaseupdown => ~NO_FANOUT~
+phasestep => ~NO_FANOUT~
+configupdate => ~NO_FANOUT~
+fbmimicbidir <> <GND>
+clk[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
+clk[1] <= clk[1].DB_MAX_OUTPUT_PORT_TYPE
+clk[2] <= clk[2].DB_MAX_OUTPUT_PORT_TYPE
+clk[3] <= clk[3].DB_MAX_OUTPUT_PORT_TYPE
+clk[4] <= clk[4].DB_MAX_OUTPUT_PORT_TYPE
+extclk[0] <= <GND>
+extclk[1] <= <GND>
+extclk[2] <= <GND>
+extclk[3] <= <GND>
+clkbad[0] <= <GND>
+clkbad[1] <= <GND>
+enable1 <= <GND>
+enable0 <= <GND>
+activeclock <= <GND>
+clkloss <= <GND>
+locked <= <GND>
+scandataout <= <GND>
+scandone <= <GND>
+sclkout0 <= <GND>
+sclkout1 <= <GND>
+phasedone <= <GND>
+vcooverrange <= <GND>
+vcounderrange <= <GND>
+fbout <= <GND>
+fref <= <GND>
+icdrclk <= <GND>
+
+
+|RemoteDiagrama|PLL:inst2|altpll:altpll_component|PLL_altpll:auto_generated
+clk[0] <= pll1.CLK
+clk[1] <= pll1.CLK1
+clk[2] <= pll1.CLK2
+clk[3] <= pll1.CLK3
+clk[4] <= pll1.CLK4
+inclk[0] => pll1.CLK
+inclk[1] => pll1.CLK1
+
+
