@@ -1,7 +1,7 @@
 # PCID - Etapas
 
-## RemoteController (CONTINUAR, TIRAR DÚVIDAS)
-* Módulo Remote Controller e testbench feitos, necessário Debug
+## RemoteController (PRONTO, TIRAR DÚVIDAS)
+* Módulo Remote Controller pronto, testbench e testes efetuados
 * Conexão com pinos físicos do FPGA efetuada
 * Timing Analyzer ajustado para o módulo RemoteController, **TIRAR DÚVIDA COM O PROFESSOR SOBRE TIMING ANALYZER PARA DIAGRAMA DE BLOCOS**
 

@@ -1,12 +1,12 @@
-Fitter Status : Successful - Wed Dec 01 00:28:40 2021
+Fitter Status : Successful - Wed Dec 01 19:11:09 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : RemoteController
 Top-level Entity Name : RemoteDiagrama
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 78 / 114,480 ( < 1 % )
-    Total combinational functions : 78 / 114,480 ( < 1 % )
+Total logic elements : 70 / 114,480 ( < 1 % )
+    Total combinational functions : 70 / 114,480 ( < 1 % )
     Dedicated logic registers : 23 / 114,480 ( < 1 % )
 Total registers : 32
 Total pins : 12 / 529 ( 2 % )

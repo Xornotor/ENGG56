@@ -5,4 +5,11 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	RemoteController
 
+} {} {}} E:/ENGG56/RemoteController/Remote_TB.v {1 {vlog -work work -stats=none E:/ENGG56/RemoteController/Remote_TB.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Remote_TB
+
+Top level modules:
+	Remote_TB
+
 } {} {}}

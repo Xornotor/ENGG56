@@ -23,19 +23,19 @@ always @ (posedge clk) begin
 				cont <= 1;
 			end
 		end
-	if (cont >= 1 && cont <= 17) begin
+	if (cont >= 1 && cont <= 16) begin
 		custom <= (custom * 2) + serial;
 		cont <= cont + 1;
 	end
-	else if (cont >= 18 && cont <= 25) begin
+	else if (cont >= 17 && cont <= 24) begin
 		data <= (data * 2) + serial;
 		cont <= cont + 1;
 	end
-	else if (cont >= 26 && cont <= 33) begin
+	else if (cont >= 25 && cont <= 32) begin
 		data_inv <= (data_inv * 2) + serial;
 		cont <= cont + 1;
 	end
-	else if (cont == 34) begin
+	else if (cont == 33) begin
 		if(data + data_inv == 8'hFF) begin
 			if(data <= 8'h1F && (data != 8'h0a && data != 8'h0b && data != 8'h0d && data != 8'h0e && data != 8'h15 && data != 8'h19 && data != 8'h1c && data != 8'h1d)) begin
 				ready <= 1;
@@ -44,9 +44,9 @@ always @ (posedge clk) begin
 		end
 		cont <= cont + 1;
 	end
-	else if (cont >= 35 && cont <= 36)
+	else if (cont >= 34 && cont <= 35)
 		cont <= cont + 1;
-	else if (cont >= 37) begin
+	else if (cont >= 36) begin
 		cont <= 0;
 		ready <= 0;
 		tecla <= 8'hFF;

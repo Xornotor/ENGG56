@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RemoteController
-Wed Dec 01 00:28:31 2021
+Wed Dec 01 19:11:00 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -47,13 +47,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Dec 01 00:28:31 2021       ;
+; Analysis & Synthesis Status        ; Successful - Wed Dec 01 19:11:00 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; RemoteController                            ;
 ; Top-level Entity Name              ; RemoteDiagrama                              ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 78                                          ;
-;     Total combinational functions  ; 78                                          ;
+; Total logic elements               ; 70                                          ;
+;     Total combinational functions  ; 70                                          ;
 ;     Dedicated logic registers      ; 31                                          ;
 ; Total registers                    ; 31                                          ;
 ; Total pins                         ; 12                                          ;
@@ -189,16 +189,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                        ;
 +---------------------------------------------+------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 78                                                                           ;
+; Estimated Total logic elements              ; 70                                                                           ;
 ;                                             ;                                                                              ;
-; Total combinational functions               ; 78                                                                           ;
+; Total combinational functions               ; 70                                                                           ;
 ; Logic element usage by number of LUT inputs ;                                                                              ;
-;     -- 4 input functions                    ; 39                                                                           ;
-;     -- 3 input functions                    ; 11                                                                           ;
-;     -- <=2 input functions                  ; 28                                                                           ;
+;     -- 4 input functions                    ; 30                                                                           ;
+;     -- 3 input functions                    ; 20                                                                           ;
+;     -- <=2 input functions                  ; 20                                                                           ;
 ;                                             ;                                                                              ;
 ; Logic elements by mode                      ;                                                                              ;
-;     -- normal mode                          ; 66                                                                           ;
+;     -- normal mode                          ; 58                                                                           ;
 ;     -- arithmetic mode                      ; 12                                                                           ;
 ;                                             ;                                                                              ;
 ; Total registers                             ; 31                                                                           ;
@@ -214,8 +214,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                              ;
 ; Maximum fan-out node                        ; PLL:inst2|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 32                                                                           ;
-; Total fan-out                               ; 353                                                                          ;
-; Average fan-out                             ; 2.63                                                                         ;
+; Total fan-out                               ; 328                                                                          ;
+; Average fan-out                             ; 2.60                                                                         ;
 +---------------------------------------------+------------------------------------------------------------------------------+
 
 
@@ -224,11 +224,11 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                         ; Entity Name      ; Library Name ;
 +--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------+------------------+--------------+
-; |RemoteDiagrama                      ; 78 (0)              ; 31 (0)                    ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |RemoteDiagrama                                                             ; RemoteDiagrama   ; work         ;
+; |RemoteDiagrama                      ; 70 (0)              ; 31 (0)                    ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |RemoteDiagrama                                                             ; RemoteDiagrama   ; work         ;
 ;    |PLL:inst2|                       ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RemoteDiagrama|PLL:inst2                                                   ; PLL              ; work         ;
 ;       |altpll:altpll_component|      ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RemoteDiagrama|PLL:inst2|altpll:altpll_component                           ; altpll           ; work         ;
 ;          |PLL_altpll:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RemoteDiagrama|PLL:inst2|altpll:altpll_component|PLL_altpll:auto_generated ; PLL_altpll       ; work         ;
-;    |RemoteController:inst|           ; 78 (78)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RemoteDiagrama|RemoteController:inst                                       ; RemoteController ; work         ;
+;    |RemoteController:inst|           ; 70 (70)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RemoteDiagrama|RemoteController:inst                                       ; RemoteController ; work         ;
 +--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -669,19 +669,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cycloneiii_ff         ; 31                          ;
 ;     ENA               ; 24                          ;
 ;     plain             ; 7                           ;
-; cycloneiii_lcell_comb ; 78                          ;
+; cycloneiii_lcell_comb ; 70                          ;
 ;     arith             ; 12                          ;
 ;         2 data inputs ; 5                           ;
 ;         3 data inputs ; 7                           ;
-;     normal            ; 66                          ;
+;     normal            ; 58                          ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 22                          ;
-;         3 data inputs ; 4                           ;
-;         4 data inputs ; 39                          ;
+;         2 data inputs ; 14                          ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 30                          ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 4.72                        ;
+; Max LUT depth         ; 6.10                        ;
+; Average LUT depth     ; 3.96                        ;
 +-----------------------+-----------------------------+
 
 
@@ -700,7 +700,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Dec 01 00:28:22 2021
+    Info: Processing started: Wed Dec 01 19:10:51 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RemoteController -c RemoteController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -785,15 +785,15 @@ Info (12128): Elaborating entity "PLL_altpll" for hierarchy "PLL:inst2|altpll:al
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 91 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 83 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 78 logic cells
+    Info (21061): Implemented 70 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
     Info: Peak virtual memory: 4842 megabytes
-    Info: Processing ended: Wed Dec 01 00:28:31 2021
+    Info: Processing ended: Wed Dec 01 19:11:00 2021
     Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Total CPU time (on all processors): 00:00:16
 
 
