@@ -1,0 +1,15 @@
+E:/ENGG56/MPEG/FSM_Control_TB.v {1 {vlog -work work -stats=none E:/ENGG56/MPEG/FSM_Control_TB.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module FSM_Control_TB
+
+Top level modules:
+	FSM_Control_TB
+
+} {} {}} E:/ENGG56/MPEG/FSM_Control.v {1 {vlog -work work -stats=none E:/ENGG56/MPEG/FSM_Control.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module FSM_Control
+
+Top level modules:
+	FSM_Control
+
+} {} {}}

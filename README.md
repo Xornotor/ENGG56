@@ -13,8 +13,8 @@
 * Criado arquivo `.mif` de dados para a memória RAM e arquivo `data.txt` correspondente para testbench
 * Timing Analyzer ajustado para o módulo TOP, **TIRAR DÚVIDA COM O PROFESSOR SOBRE TIMING ANALYZER PARA DIAGRAMA DE BLOCOS**
 
-## MPEG (CONTINUAR, TIRAR DÚVIDAS)
-* Módulo FSM_Control pronto, necessário fazer testbench e testar
+## MPEG (PRONTO, TIRAR DÚVIDAS)
+* Módulo FSM_Control pronto, testbench e testes efetuados
 * Conexão com pinos físicos do FPGA efetuada
 * Timing Analyzer ajustado para o módulo FSM_Control, **TIRAR DÚVIDA COM O PROFESSOR SOBRE TIMING ANALYZER PARA DIAGRAMA DE BLOCOS**
 
