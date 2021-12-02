@@ -3,6 +3,8 @@ input clk, reset;
 output reg [4:0] address;
 output reg rden, wren, load, clear, transf, ready;
 
+reg address_inc, address_zero;
+
 reg [3:0] EstadoAtual, ProxEstado;
 
 parameter	Inicio = 4'b0000,
@@ -15,116 +17,121 @@ parameter	Inicio = 4'b0000,
 				AtivaTransf = 4'b0111,
 				DesativaTransf = 4'b1000,
 				IncAddress = 4'b1001,
-				ConfereAddress = 4'b1010,
-				AtivaWren = 4'b1011,
-				DesativaWren = 4'b1100,
-				AtivaReady = 4'b1101,
-				DesativaReady = 4'b1110;
+				WaitAddress = 4'b1010,
+				ConfereAddress = 4'b1011,
+				AtivaWren = 4'b1100,
+				DesativaWren = 4'b1101,
+				AtivaReady = 4'b1110,
+				DesativaReady = 4'b1111;
 				
-always @ (negedge clk) begin
+always @ (EstadoAtual) begin
 
 	case (EstadoAtual)
 	
-		Inicio: begin
-			address <= 0;
-			rden <= 1'b0;
-			wren <= 1'b0;
-			load <= 1'b0;
-			clear <= 1'b0;
-			transf <= 1'b0;
-			ready <= 1'b0;
-			ProxEstado <= ResetInit;
-		end
+		Inicio: ProxEstado = ResetInit;
 		
-		ResetInit: begin
-			clear <= 1'b0;
-			ProxEstado <= TiraResetInit;
-		end
+		ResetInit: ProxEstado = TiraResetInit;
 		
-		TiraResetInit: begin
-			clear <= 1'b1;
-			ProxEstado <= AtivaRden;
-		end
+		TiraResetInit: ProxEstado = AtivaRden;
 		
-		AtivaRden: begin
-			rden <= 1'b1;
-			ProxEstado <= AtivaLoad;
-		end
+		AtivaRden: ProxEstado = AtivaLoad;
 		
-		AtivaLoad: begin
-			load <= 1'b1;
-			ProxEstado <= DesativaLoad;
-		end
+		AtivaLoad: ProxEstado = DesativaLoad;
 		
-		DesativaLoad: begin
-			load <= 1'b0;
-			ProxEstado <= DesativaRden;
-		end
+		DesativaLoad: ProxEstado = DesativaRden;
 		
-		DesativaRden: begin
-			rden <= 1'b0;
-			ProxEstado <= AtivaTransf;
-		end
+		DesativaRden: ProxEstado = AtivaTransf;
 		
-		AtivaTransf: begin
-			transf <= 1'b1;
-			ProxEstado <= DesativaTransf;
-		end
+		AtivaTransf: ProxEstado = DesativaTransf;
 		
-		DesativaTransf: begin
-			transf <= 1'b0;
-			ProxEstado <= IncAddress;
-		end
+		DesativaTransf: ProxEstado = IncAddress;
 		
-		IncAddress: begin
-			address <= address + 1;
-			ProxEstado <= ConfereAddress;
-		end
+		IncAddress: ProxEstado = WaitAddress;
+		
+		WaitAddress: ProxEstado = ConfereAddress;
 		
 		ConfereAddress: begin
 			if(address == 7 || address == 15 || address == 23 || address == 31)
-				ProxEstado <= AtivaWren;
+				ProxEstado = AtivaWren;
 			else if(address == 0 || address == 8 || address == 16 || address == 24)
-				ProxEstado <= ResetInit;
+				ProxEstado = ResetInit;
 			else
-				ProxEstado <= AtivaRden;
+				ProxEstado = AtivaRden;
 		end
 		
-		AtivaWren: begin
-			wren <= 1'b1;
-			ProxEstado <= DesativaWren;
-		end
+		AtivaWren: ProxEstado = DesativaWren;
 		
 		DesativaWren: begin
-			wren <= 1'b0;
 			if(address >= 31)
-				ProxEstado <= AtivaReady;
+				ProxEstado = AtivaReady;
 			else
-				ProxEstado <= IncAddress;
+				ProxEstado = IncAddress;
 		end
 		
-		AtivaReady: begin
-			ready <= 1'b1;
-			address <= 0;
-			ProxEstado <= DesativaReady;
-		end
+		AtivaReady: ProxEstado = DesativaReady;
 		
-		DesativaReady: begin
-			ready <= 1'b0;
-			ProxEstado <= ResetInit;
-		end	
+		DesativaReady: ProxEstado = ResetInit;	
 		
-		default: ProxEstado <= Inicio;
+		default: ProxEstado = Inicio;
 		
 		endcase
 		
 end
 
-always @ (posedge clk or negedge reset) begin
+always @ (negedge clk or negedge reset) begin
 	if(reset == 0)
-		EstadoAtual = Inicio;
+		EstadoAtual <= Inicio;
 	else
-		EstadoAtual = ProxEstado;
+		EstadoAtual <= ProxEstado;
+end
+
+always @ (EstadoAtual) begin
+
+	if(EstadoAtual == AtivaRden || EstadoAtual == AtivaLoad || EstadoAtual == DesativaLoad)
+		rden = 1'b1;
+	else
+		rden = 1'b0;
+		
+	if(EstadoAtual == AtivaLoad)
+		load = 1'b1;
+	else
+		load = 1'b0;
+		
+	if(EstadoAtual == AtivaWren)
+		wren = 1'b1;
+	else
+		wren = 1'b0;
+		
+	if(EstadoAtual == Inicio || EstadoAtual == ResetInit)
+		clear = 1'b0;
+	else
+		clear = 1'b1;
+		
+	if(EstadoAtual == AtivaTransf)
+		transf = 1'b1;
+	else
+		transf = 1'b0;
+		
+	if(EstadoAtual == AtivaReady)
+		ready = 1'b1;
+	else
+		ready = 1'b0;
+		
+	if(EstadoAtual == Inicio || EstadoAtual == AtivaReady)
+		address_zero = 1'b1;
+	else
+		address_zero = 1'b0;
+		
+	if(EstadoAtual == IncAddress)
+		address_inc = 1'b1;
+	else
+		address_inc = 1'b0;
+		
+end
+
+always @ (negedge clk) begin
+	if(address_zero) address <= 0;
+	if(address_inc) address <= address + 1;
 end
 
 endmodule

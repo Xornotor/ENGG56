@@ -6,13 +6,13 @@
 * **(OK)** Automatizar validação do testbench
 
 ## Somador (A FAZER)
-* Corrigir lista de sensibilidade da FSM
-* Refazer Timing Analysis
+* **(OK)** Corrigir lista de sensibilidade da FSM
+* **(OK)** Refazer Timing Analysis
 * Incorporar memória RAM no testbench do módulo TOP
 * Automatizar validação dos três testbenches
 
 ## MPEG (A FAZER)
-* **(OK)** Corrigir lista de sensibilidade da FSM
+* **(ALTERAR)** Corrigir lista de sensibilidade da FSM
 * **(OK)** Refazer Timing Analysis
 * Automatizar validação do testbench
 

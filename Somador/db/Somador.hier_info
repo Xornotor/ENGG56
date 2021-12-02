@@ -182,31 +182,24 @@ out[15] <= out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |SomadorDiagrama|TOP:inst|FSM:fsm
-clk => EstadoAtual~1.DATAIN
-clk => ready~reg0.CLK
-clk => transf~reg0.CLK
-clk => clear~reg0.CLK
-clk => load~reg0.CLK
-clk => wren~reg0.CLK
-clk => rden~reg0.CLK
 clk => address[0]~reg0.CLK
 clk => address[1]~reg0.CLK
 clk => address[2]~reg0.CLK
 clk => address[3]~reg0.CLK
 clk => address[4]~reg0.CLK
-clk => ProxEstado~1.DATAIN
+clk => EstadoAtual~1.DATAIN
 reset => EstadoAtual~3.DATAIN
 address[0] <= address[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 address[1] <= address[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 address[2] <= address[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 address[3] <= address[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 address[4] <= address[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-rden <= rden~reg0.DB_MAX_OUTPUT_PORT_TYPE
-wren <= wren~reg0.DB_MAX_OUTPUT_PORT_TYPE
-load <= load~reg0.DB_MAX_OUTPUT_PORT_TYPE
-clear <= clear~reg0.DB_MAX_OUTPUT_PORT_TYPE
-transf <= transf~reg0.DB_MAX_OUTPUT_PORT_TYPE
-ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rden <= always2.DB_MAX_OUTPUT_PORT_TYPE
+wren <= wren.DB_MAX_OUTPUT_PORT_TYPE
+load <= load.DB_MAX_OUTPUT_PORT_TYPE
+clear <= always2.DB_MAX_OUTPUT_PORT_TYPE
+transf <= transf.DB_MAX_OUTPUT_PORT_TYPE
+ready <= ready.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |SomadorDiagrama|Mem:inst2
