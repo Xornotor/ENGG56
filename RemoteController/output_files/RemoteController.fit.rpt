@@ -1,5 +1,5 @@
 Fitter report for RemoteController
-Wed Dec 01 19:30:24 2021
+Thu Dec 02 14:58:37 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -70,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Wed Dec 01 19:30:24 2021       ;
+; Fitter Status                      ; Successful - Thu Dec 02 14:58:37 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; RemoteController                            ;
 ; Top-level Entity Name              ; RemoteDiagrama                              ;
@@ -157,12 +157,14 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.02        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.2%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processors 4-12        ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -520,7 +522,6 @@ https://fpgasoftware.intel.com/eula.
 ; Location                ;                ;              ; HSMC_TX_D_P[9]   ; PIN_P27       ; QSF Assignment ;
 ; Location                ;                ;              ; I2C_SCLK         ; PIN_B7        ; QSF Assignment ;
 ; Location                ;                ;              ; I2C_SDAT         ; PIN_A8        ; QSF Assignment ;
-; Location                ;                ;              ; KEY[0]           ; PIN_M23       ; QSF Assignment ;
 ; Location                ;                ;              ; KEY[1]           ; PIN_M21       ; QSF Assignment ;
 ; Location                ;                ;              ; KEY[2]           ; PIN_N21       ; QSF Assignment ;
 ; Location                ;                ;              ; KEY[3]           ; PIN_R24       ; QSF Assignment ;
@@ -640,6 +641,7 @@ https://fpgasoftware.intel.com/eula.
 ; Location                ;                ;              ; SRAM_OE_N        ; PIN_AD5       ; QSF Assignment ;
 ; Location                ;                ;              ; SRAM_UB_N        ; PIN_AC4       ; QSF Assignment ;
 ; Location                ;                ;              ; SRAM_WE_N        ; PIN_AE8       ; QSF Assignment ;
+; Location                ;                ;              ; SW[0]            ; PIN_AB28      ; QSF Assignment ;
 ; Location                ;                ;              ; SW[10]           ; PIN_AC24      ; QSF Assignment ;
 ; Location                ;                ;              ; SW[11]           ; PIN_AB24      ; QSF Assignment ;
 ; Location                ;                ;              ; SW[12]           ; PIN_AB23      ; QSF Assignment ;
@@ -707,7 +709,7 @@ https://fpgasoftware.intel.com/eula.
 ; I/O Maximum Toggle Rate ; RemoteDiagrama ;              ; HEX1             ; 0 MHz         ; QSF Assignment ;
 ; I/O Maximum Toggle Rate ; RemoteDiagrama ;              ; HEX2             ; 0 MHz         ; QSF Assignment ;
 ; I/O Maximum Toggle Rate ; RemoteDiagrama ;              ; HEX3             ; 0 MHz         ; QSF Assignment ;
-; I/O Maximum Toggle Rate ; RemoteDiagrama ;              ; KEY              ; 0 MHz         ; QSF Assignment ;
+; I/O Maximum Toggle Rate ; RemoteDiagrama ;              ; SW               ; 0 MHz         ; QSF Assignment ;
 ; I/O Standard            ; RemoteDiagrama ;              ; AUD_ADCDAT       ; 3.3-V LVTTL   ; QSF Assignment ;
 ; I/O Standard            ; RemoteDiagrama ;              ; AUD_ADCLRCK      ; 3.3-V LVTTL   ; QSF Assignment ;
 ; I/O Standard            ; RemoteDiagrama ;              ; AUD_BCLK         ; 3.3-V LVTTL   ; QSF Assignment ;
@@ -1039,7 +1041,6 @@ https://fpgasoftware.intel.com/eula.
 ; I/O Standard            ; RemoteDiagrama ;              ; HSMC_TX_D_P[9]   ; LVDS          ; QSF Assignment ;
 ; I/O Standard            ; RemoteDiagrama ;              ; I2C_SCLK         ; 3.3-V LVTTL   ; QSF Assignment ;
 ; I/O Standard            ; RemoteDiagrama ;              ; I2C_SDAT         ; 3.3-V LVTTL   ; QSF Assignment ;
-; I/O Standard            ; RemoteDiagrama ;              ; KEY[0]           ; 2.5 V         ; QSF Assignment ;
 ; I/O Standard            ; RemoteDiagrama ;              ; KEY[1]           ; 2.5 V         ; QSF Assignment ;
 ; I/O Standard            ; RemoteDiagrama ;              ; KEY[2]           ; 2.5 V         ; QSF Assignment ;
 ; I/O Standard            ; RemoteDiagrama ;              ; KEY[3]           ; 2.5 V         ; QSF Assignment ;
@@ -1159,6 +1160,7 @@ https://fpgasoftware.intel.com/eula.
 ; I/O Standard            ; RemoteDiagrama ;              ; SRAM_OE_N        ; 3.3-V LVTTL   ; QSF Assignment ;
 ; I/O Standard            ; RemoteDiagrama ;              ; SRAM_UB_N        ; 3.3-V LVTTL   ; QSF Assignment ;
 ; I/O Standard            ; RemoteDiagrama ;              ; SRAM_WE_N        ; 3.3-V LVTTL   ; QSF Assignment ;
+; I/O Standard            ; RemoteDiagrama ;              ; SW[0]            ; 2.5 V         ; QSF Assignment ;
 ; I/O Standard            ; RemoteDiagrama ;              ; SW[10]           ; 2.5 V         ; QSF Assignment ;
 ; I/O Standard            ; RemoteDiagrama ;              ; SW[11]           ; 2.5 V         ; QSF Assignment ;
 ; I/O Standard            ; RemoteDiagrama ;              ; SW[12]           ; 2.5 V         ; QSF Assignment ;
@@ -1308,9 +1310,9 @@ The pin-out file can be found in E:/ENGG56/RemoteController/output_files/RemoteC
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )          ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )          ;
 ; Average interconnect usage (total/H/V)      ; 0.0% / 0.0% / 0.0%     ;
-; Peak interconnect usage (total/H/V)         ; 0.6% / 0.5% / 0.7%     ;
+; Peak interconnect usage (total/H/V)         ; 0.7% / 0.6% / 0.8%     ;
 ; Maximum fan-out                             ; 32                     ;
-; Highest non-global fan-out                  ; 12                     ;
+; Highest non-global fan-out                  ; 11                     ;
 ; Total fan-out                               ; 336                    ;
 ; Average fan-out                             ; 2.43                   ;
 +---------------------------------------------+------------------------+
@@ -1363,7 +1365,7 @@ The pin-out file can be found in E:/ENGG56/RemoteController/output_files/RemoteC
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
 ;     -- Total Connections                    ; 329                   ; 40                             ;
-;     -- Registered Connections               ; 132                   ; 0                              ;
+;     -- Registered Connections               ; 131                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 33                             ;
@@ -1397,7 +1399,7 @@ The pin-out file can be found in E:/ENGG56/RemoteController/output_files/RemoteC
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; CLOCK_50 ; Y2    ; 2        ; 0            ; 36           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; no        ;
 ; IRDA_RXD ; Y15   ; 3        ; 56           ; 0            ; 0            ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; no        ;
-; SW[0]    ; AB28  ; 5        ; 115          ; 17           ; 0            ; 6                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; KEY[0]   ; M23   ; 6        ; 115          ; 40           ; 7            ; 6                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
 
@@ -1448,8 +1450,8 @@ The pin-out file can be found in E:/ENGG56/RemoteController/output_files/RemoteC
 ; 2        ; 1 / 63 ( 2 % )  ; 3.3V          ; --           ;
 ; 3        ; 1 / 73 ( 1 % )  ; 3.3V          ; --           ;
 ; 4        ; 0 / 71 ( 0 % )  ; 2.5V          ; --           ;
-; 5        ; 1 / 65 ( 2 % )  ; 2.5V          ; --           ;
-; 6        ; 1 / 58 ( 2 % )  ; 2.5V          ; --           ;
+; 5        ; 0 / 65 ( 0 % )  ; 2.5V          ; --           ;
+; 6        ; 2 / 58 ( 3 % )  ; 2.5V          ; --           ;
 ; 7        ; 9 / 72 ( 13 % ) ; 2.5V          ; --           ;
 ; 8        ; 0 / 71 ( 0 % )  ; 2.5V          ; --           ;
 +----------+-----------------+---------------+--------------+
@@ -1541,7 +1543,7 @@ The pin-out file can be found in E:/ENGG56/RemoteController/output_files/RemoteC
 ; AB25     ; 292        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AB26     ; 291        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AB27     ; 296        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; AB28     ; 295        ; 5        ; SW[0]                                                     ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; AB28     ; 295        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AC1      ; 94         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AC2      ; 93         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AC3      ; 95         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -2010,7 +2012,7 @@ The pin-out file can be found in E:/ENGG56/RemoteController/output_files/RemoteC
 ; M20      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; M21      ; 368        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; M22      ; 342        ; 6        ; ^MSEL2                                                    ;        ;              ;         ; --         ;                 ; --       ; --           ;
-; M23      ; 344        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; M23      ; 344        ; 6        ; KEY[0]                                                    ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; M24      ; 347        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; M25      ; 356        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; M26      ; 355        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -2326,24 +2328,24 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------------------------------------------------------------+
-; Delay Chain Summary                                                                           ;
-+----------+----------+---------------+---------------+-----------------------+----------+------+
-; Name     ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO      ; TCOE ;
-+----------+----------+---------------+---------------+-----------------------+----------+------+
-; LEDG[0]  ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
-; LEDR[7]  ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
-; LEDR[6]  ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
-; LEDR[5]  ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
-; LEDR[4]  ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
-; LEDR[3]  ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
-; LEDR[2]  ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
-; LEDR[1]  ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
-; LEDR[0]  ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
-; SW[0]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --       ; --   ;
-; IRDA_RXD ; Input    ; --            ; (6) 1314 ps   ; --                    ; --       ; --   ;
-; CLOCK_50 ; Input    ; --            ; --            ; --                    ; --       ; --   ;
-+----------+----------+---------------+---------------+-----------------------+----------+------+
++-------------------------------------------------------------------------------------------------+
+; Delay Chain Summary                                                                             ;
++----------+----------+---------------+---------------+-----------------------+------------+------+
+; Name     ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO        ; TCOE ;
++----------+----------+---------------+---------------+-----------------------+------------+------+
+; LEDG[0]  ; Output   ; --            ; --            ; --                    ; (1) 437 ps ; --   ;
+; LEDR[7]  ; Output   ; --            ; --            ; --                    ; (1) 437 ps ; --   ;
+; LEDR[6]  ; Output   ; --            ; --            ; --                    ; (1) 437 ps ; --   ;
+; LEDR[5]  ; Output   ; --            ; --            ; --                    ; (1) 437 ps ; --   ;
+; LEDR[4]  ; Output   ; --            ; --            ; --                    ; (1) 437 ps ; --   ;
+; LEDR[3]  ; Output   ; --            ; --            ; --                    ; (1) 437 ps ; --   ;
+; LEDR[2]  ; Output   ; --            ; --            ; --                    ; (1) 437 ps ; --   ;
+; LEDR[1]  ; Output   ; --            ; --            ; --                    ; (1) 437 ps ; --   ;
+; LEDR[0]  ; Output   ; --            ; --            ; --                    ; (1) 437 ps ; --   ;
+; KEY[0]   ; Input    ; --            ; (6) 1314 ps   ; --                    ; --         ; --   ;
+; IRDA_RXD ; Input    ; (6) 1314 ps   ; --            ; --                    ; --         ; --   ;
+; CLOCK_50 ; Input    ; --            ; --            ; --                    ; --         ; --   ;
++----------+----------+---------------+---------------+-----------------------+------------+------+
 
 
 +--------------------------------------------------------------------------+
@@ -2351,17 +2353,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------+-------------------+---------+
 ; Source Pin / Fanout                        ; Pad To Core Index ; Setting ;
 +--------------------------------------------+-------------------+---------+
-; SW[0]                                      ;                   ;         ;
-;      - RemoteController:inst|ready~5       ; 0                 ; 6       ;
-;      - RemoteController:inst|tecla[7]~1    ; 0                 ; 6       ;
-;      - RemoteController:inst|cont[0]~2     ; 0                 ; 6       ;
-;      - RemoteController:inst|cont[0]~4     ; 0                 ; 6       ;
-;      - RemoteController:inst|data[7]~3     ; 0                 ; 6       ;
-;      - RemoteController:inst|data_inv[3]~2 ; 0                 ; 6       ;
+; KEY[0]                                     ;                   ;         ;
+;      - RemoteController:inst|ready~5       ; 1                 ; 6       ;
+;      - RemoteController:inst|tecla[7]~2    ; 1                 ; 6       ;
+;      - RemoteController:inst|cont[0]~2     ; 1                 ; 6       ;
+;      - RemoteController:inst|cont[0]~4     ; 1                 ; 6       ;
+;      - RemoteController:inst|data[7]~3     ; 1                 ; 6       ;
+;      - RemoteController:inst|data_inv[3]~2 ; 1                 ; 6       ;
 ; IRDA_RXD                                   ;                   ;         ;
-;      - RemoteController:inst|cont[0]~3     ; 1                 ; 6       ;
-;      - RemoteController:inst|data~4        ; 1                 ; 6       ;
-;      - RemoteController:inst|data_inv~9    ; 1                 ; 6       ;
+;      - RemoteController:inst|cont[0]~3     ; 0                 ; 6       ;
+;      - RemoteController:inst|data~4        ; 0                 ; 6       ;
+;      - RemoteController:inst|data_inv~9    ; 0                 ; 6       ;
 ; CLOCK_50                                   ;                   ;         ;
 +--------------------------------------------+-------------------+---------+
 
@@ -2373,9 +2375,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; CLOCK_50                                                                     ; PIN_Y2             ; 1       ; Clock        ; no     ; --                   ; --               ; --                        ;
 ; PLL:inst2|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ; PLL_1              ; 32      ; Clock        ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; RemoteController:inst|data[7]~3                                              ; LCCOMB_X88_Y69_N6  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RemoteController:inst|data_inv[3]~2                                          ; LCCOMB_X89_Y70_N14 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RemoteController:inst|tecla[7]~2                                             ; LCCOMB_X89_Y69_N28 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RemoteController:inst|data[7]~3                                              ; LCCOMB_X86_Y67_N2  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RemoteController:inst|data_inv[3]~2                                          ; LCCOMB_X86_Y67_N22 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RemoteController:inst|tecla[7]~2                                             ; LCCOMB_X86_Y69_N30 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
 +------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -2393,14 +2395,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 82 / 342,891 ( < 1 % ) ;
+; Block interconnects   ; 84 / 342,891 ( < 1 % ) ;
 ; C16 interconnects     ; 8 / 10,120 ( < 1 % )   ;
-; C4 interconnects      ; 34 / 209,544 ( < 1 % ) ;
-; Direct links          ; 34 / 342,891 ( < 1 % ) ;
+; C4 interconnects      ; 37 / 209,544 ( < 1 % ) ;
+; Direct links          ; 31 / 342,891 ( < 1 % ) ;
 ; Global clocks         ; 1 / 20 ( 5 % )         ;
-; Local interconnects   ; 37 / 119,088 ( < 1 % ) ;
-; R24 interconnects     ; 8 / 9,963 ( < 1 % )    ;
-; R4 interconnects      ; 41 / 289,782 ( < 1 % ) ;
+; Local interconnects   ; 35 / 119,088 ( < 1 % ) ;
+; R24 interconnects     ; 9 / 9,963 ( < 1 % )    ;
+; R4 interconnects      ; 40 / 289,782 ( < 1 % ) ;
 +-----------------------+------------------------+
 
 
@@ -2409,11 +2411,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+-----------------------------+
 ; Number of Logic Elements  (Average = 11.67) ; Number of LABs  (Total = 6) ;
 +---------------------------------------------+-----------------------------+
-; 1                                           ; 0                           ;
-; 2                                           ; 1                           ;
+; 1                                           ; 1                           ;
+; 2                                           ; 0                           ;
 ; 3                                           ; 0                           ;
-; 4                                           ; 1                           ;
-; 5                                           ; 0                           ;
+; 4                                           ; 0                           ;
+; 5                                           ; 1                           ;
 ; 6                                           ; 0                           ;
 ; 7                                           ; 0                           ;
 ; 8                                           ; 0                           ;
@@ -2431,10 +2433,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------+
 ; LAB-wide Signals                                                 ;
 +------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 0.83) ; Number of LABs  (Total = 6) ;
+; LAB-wide Signals  (Average = 1.17) ; Number of LABs  (Total = 6) ;
 +------------------------------------+-----------------------------+
 ; 1 Clock                            ; 4                           ;
-; 1 Clock enable                     ; 1                           ;
+; 1 Clock enable                     ; 3                           ;
 +------------------------------------+-----------------------------+
 
 
@@ -2444,11 +2446,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of Signals Sourced  (Average = 15.50) ; Number of LABs  (Total = 6) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
-; 1                                            ; 0                           ;
-; 2                                            ; 1                           ;
+; 1                                            ; 1                           ;
+; 2                                            ; 0                           ;
 ; 3                                            ; 0                           ;
-; 4                                            ; 1                           ;
-; 5                                            ; 0                           ;
+; 4                                            ; 0                           ;
+; 5                                            ; 1                           ;
 ; 6                                            ; 0                           ;
 ; 7                                            ; 0                           ;
 ; 8                                            ; 0                           ;
@@ -2464,11 +2466,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 18                                           ; 0                           ;
 ; 19                                           ; 1                           ;
 ; 20                                           ; 0                           ;
-; 21                                           ; 1                           ;
-; 22                                           ; 1                           ;
+; 21                                           ; 2                           ;
+; 22                                           ; 0                           ;
 ; 23                                           ; 0                           ;
 ; 24                                           ; 0                           ;
-; 25                                           ; 1                           ;
+; 25                                           ; 0                           ;
+; 26                                           ; 1                           ;
 +----------------------------------------------+-----------------------------+
 
 
@@ -2481,51 +2484,45 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 1                                               ; 1                           ;
 ; 2                                               ; 0                           ;
 ; 3                                               ; 0                           ;
-; 4                                               ; 1                           ;
-; 5                                               ; 0                           ;
+; 4                                               ; 0                           ;
+; 5                                               ; 1                           ;
 ; 6                                               ; 0                           ;
 ; 7                                               ; 0                           ;
 ; 8                                               ; 0                           ;
 ; 9                                               ; 0                           ;
 ; 10                                              ; 0                           ;
 ; 11                                              ; 1                           ;
-; 12                                              ; 2                           ;
-; 13                                              ; 0                           ;
-; 14                                              ; 0                           ;
-; 15                                              ; 0                           ;
-; 16                                              ; 1                           ;
+; 12                                              ; 1                           ;
+; 13                                              ; 1                           ;
+; 14                                              ; 1                           ;
 +-------------------------------------------------+-----------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 10.83) ; Number of LABs  (Total = 6) ;
+; Number of Distinct Inputs  (Average = 11.00) ; Number of LABs  (Total = 6) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 0                           ;
 ; 2                                            ; 0                           ;
 ; 3                                            ; 0                           ;
-; 4                                            ; 0                           ;
-; 5                                            ; 1                           ;
+; 4                                            ; 1                           ;
+; 5                                            ; 0                           ;
 ; 6                                            ; 1                           ;
-; 7                                            ; 1                           ;
-; 8                                            ; 0                           ;
+; 7                                            ; 0                           ;
+; 8                                            ; 1                           ;
 ; 9                                            ; 0                           ;
 ; 10                                           ; 0                           ;
 ; 11                                           ; 0                           ;
-; 12                                           ; 2                           ;
+; 12                                           ; 0                           ;
 ; 13                                           ; 0                           ;
-; 14                                           ; 0                           ;
-; 15                                           ; 0                           ;
+; 14                                           ; 1                           ;
+; 15                                           ; 1                           ;
 ; 16                                           ; 0                           ;
 ; 17                                           ; 0                           ;
 ; 18                                           ; 0                           ;
-; 19                                           ; 0                           ;
-; 20                                           ; 0                           ;
-; 21                                           ; 0                           ;
-; 22                                           ; 0                           ;
-; 23                                           ; 1                           ;
+; 19                                           ; 1                           ;
 +----------------------------------------------+-----------------------------+
 
 
@@ -2599,7 +2596,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LEDR[2]            ; Pass      ; Pass         ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDR[1]            ; Pass      ; Pass         ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDR[0]            ; Pass      ; Pass         ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[0]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; KEY[0]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; IRDA_RXD           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; CLOCK_50           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
@@ -2673,75 +2670,12 @@ Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Ass
 Info (176353): Automatically promoted node PLL:inst2|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C1 of PLL_1) File: E:/ENGG56/RemoteController/db/pll_altpll.v Line: 78
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G4
 Info (332104): Reading SDC File: 'RemoteController.out.sdc'
-Warning (332174): Ignored filter at RemoteController.out.sdc(42): clk could not be matched with a port File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 42
-Warning (332049): Ignored create_clock at RemoteController.out.sdc(42): Argument <targets> is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 42
-    Info (332050): create_clock -name {clk} -period 26000.000 -waveform { 0.000 13000.000 } [get_ports {clk}] File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 42
-Warning (332174): Ignored filter at RemoteController.out.sdc(61): clk could not be matched with a clock File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 61
-Warning (332049): Ignored set_clock_uncertainty at RemoteController.out.sdc(61): Argument -rise_from with value [get_clocks {clk}] contains zero elements File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 61
-    Info (332050): set_clock_uncertainty -rise_from [get_clocks {clk}] -rise_to [get_clocks {clk}]  0.020   File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 61
-Warning (332049): Ignored set_clock_uncertainty at RemoteController.out.sdc(61): Argument -rise_to with value [get_clocks {clk}] contains zero elements File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 61
-Warning (332049): Ignored set_clock_uncertainty at RemoteController.out.sdc(62): Argument -rise_from with value [get_clocks {clk}] contains zero elements File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 62
-    Info (332050): set_clock_uncertainty -rise_from [get_clocks {clk}] -fall_to [get_clocks {clk}]  0.020   File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 62
-Warning (332049): Ignored set_clock_uncertainty at RemoteController.out.sdc(62): Argument -fall_to with value [get_clocks {clk}] contains zero elements File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 62
-Warning (332049): Ignored set_clock_uncertainty at RemoteController.out.sdc(63): Argument -fall_from with value [get_clocks {clk}] contains zero elements File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 63
-    Info (332050): set_clock_uncertainty -fall_from [get_clocks {clk}] -rise_to [get_clocks {clk}]  0.020   File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 63
-Warning (332049): Ignored set_clock_uncertainty at RemoteController.out.sdc(63): Argument -rise_to with value [get_clocks {clk}] contains zero elements File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 63
-Warning (332049): Ignored set_clock_uncertainty at RemoteController.out.sdc(64): Argument -fall_from with value [get_clocks {clk}] contains zero elements File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 64
-    Info (332050): set_clock_uncertainty -fall_from [get_clocks {clk}] -fall_to [get_clocks {clk}]  0.020   File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 64
-Warning (332049): Ignored set_clock_uncertainty at RemoteController.out.sdc(64): Argument -fall_to with value [get_clocks {clk}] contains zero elements File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 64
-Warning (332049): Ignored set_input_delay at RemoteController.out.sdc(71): Argument <targets> is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 71
-    Info (332050): set_input_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {clk}] File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 71
-Warning (332049): Ignored set_input_delay at RemoteController.out.sdc(71): Argument -clock is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 71
-Warning (332174): Ignored filter at RemoteController.out.sdc(72): rst could not be matched with a port File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 72
-Warning (332049): Ignored set_input_delay at RemoteController.out.sdc(72): Argument <targets> is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 72
-    Info (332050): set_input_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {rst}] File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 72
-Warning (332049): Ignored set_input_delay at RemoteController.out.sdc(72): Argument -clock is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 72
-Warning (332174): Ignored filter at RemoteController.out.sdc(73): serial could not be matched with a port File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 73
-Warning (332049): Ignored set_input_delay at RemoteController.out.sdc(73): Argument <targets> is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 73
-    Info (332050): set_input_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {serial}] File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 73
-Warning (332049): Ignored set_input_delay at RemoteController.out.sdc(73): Argument -clock is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 73
-Warning (332174): Ignored filter at RemoteController.out.sdc(80): ready could not be matched with a port File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 80
-Warning (332049): Ignored set_output_delay at RemoteController.out.sdc(80): Argument <targets> is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 80
-    Info (332050): set_output_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {ready}] File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 80
-Warning (332049): Ignored set_output_delay at RemoteController.out.sdc(80): Argument -clock is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 80
-Warning (332174): Ignored filter at RemoteController.out.sdc(81): tecla[0] could not be matched with a port File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 81
-Warning (332049): Ignored set_output_delay at RemoteController.out.sdc(81): Argument <targets> is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 81
-    Info (332050): set_output_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {tecla[0]}] File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 81
-Warning (332049): Ignored set_output_delay at RemoteController.out.sdc(81): Argument -clock is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 81
-Warning (332174): Ignored filter at RemoteController.out.sdc(82): tecla[1] could not be matched with a port File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 82
-Warning (332049): Ignored set_output_delay at RemoteController.out.sdc(82): Argument <targets> is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 82
-    Info (332050): set_output_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {tecla[1]}] File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 82
-Warning (332049): Ignored set_output_delay at RemoteController.out.sdc(82): Argument -clock is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 82
-Warning (332174): Ignored filter at RemoteController.out.sdc(83): tecla[2] could not be matched with a port File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 83
-Warning (332049): Ignored set_output_delay at RemoteController.out.sdc(83): Argument <targets> is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 83
-    Info (332050): set_output_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {tecla[2]}] File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 83
-Warning (332049): Ignored set_output_delay at RemoteController.out.sdc(83): Argument -clock is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 83
-Warning (332174): Ignored filter at RemoteController.out.sdc(84): tecla[3] could not be matched with a port File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 84
-Warning (332049): Ignored set_output_delay at RemoteController.out.sdc(84): Argument <targets> is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 84
-    Info (332050): set_output_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {tecla[3]}] File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 84
-Warning (332049): Ignored set_output_delay at RemoteController.out.sdc(84): Argument -clock is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 84
-Warning (332174): Ignored filter at RemoteController.out.sdc(85): tecla[4] could not be matched with a port File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 85
-Warning (332049): Ignored set_output_delay at RemoteController.out.sdc(85): Argument <targets> is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 85
-    Info (332050): set_output_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {tecla[4]}] File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 85
-Warning (332049): Ignored set_output_delay at RemoteController.out.sdc(85): Argument -clock is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 85
-Warning (332174): Ignored filter at RemoteController.out.sdc(86): tecla[5] could not be matched with a port File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 86
-Warning (332049): Ignored set_output_delay at RemoteController.out.sdc(86): Argument <targets> is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 86
-    Info (332050): set_output_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {tecla[5]}] File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 86
-Warning (332049): Ignored set_output_delay at RemoteController.out.sdc(86): Argument -clock is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 86
-Warning (332174): Ignored filter at RemoteController.out.sdc(87): tecla[6] could not be matched with a port File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 87
-Warning (332049): Ignored set_output_delay at RemoteController.out.sdc(87): Argument <targets> is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 87
-    Info (332050): set_output_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {tecla[6]}] File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 87
-Warning (332049): Ignored set_output_delay at RemoteController.out.sdc(87): Argument -clock is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 87
-Warning (332174): Ignored filter at RemoteController.out.sdc(88): tecla[7] could not be matched with a port File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 88
-Warning (332049): Ignored set_output_delay at RemoteController.out.sdc(88): Argument <targets> is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 88
-    Info (332050): set_output_delay -add_delay  -clock [get_clocks {clk}]  2600.000 [get_ports {tecla[7]}] File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 88
-Warning (332049): Ignored set_output_delay at RemoteController.out.sdc(88): Argument -clock is an empty collection File: E:/ENGG56/RemoteController/RemoteController.out.sdc Line: 88
-Info (332144): No user constrained generated clocks found in the design
-Info (332144): No user constrained base clocks found in the design
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
-Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
-Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
+Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
+Info (332111): Found 2 clocks
+    Info (332111):   Period   Clock Name
+    Info (332111): ======== ============
+    Info (332111):   20.000     CLOCK_50
+    Info (332111): 26000.377 inst2|altpll_component|auto_generated|pll1|clk[0]
 Info (176233): Starting register packing
 Warning (176250): Ignoring invalid fast I/O register assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (176251): Ignoring some wildcard destinations of fast I/O register assignments
@@ -3081,7 +3015,6 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "HSMC_TX_D_P[9]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "I2C_SCLK" is assigned to location or region, but does not exist in design
     Warning (15706): Node "I2C_SDAT" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "KEY[0]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "KEY[1]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "KEY[2]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "KEY[3]" is assigned to location or region, but does not exist in design
@@ -3201,6 +3134,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "SRAM_OE_N" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SRAM_UB_N" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SRAM_WE_N" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "SW[0]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SW[10]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SW[11]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SW[12]" is assigned to location or region, but does not exist in design
@@ -3288,9 +3222,9 @@ Warning (169177): 2 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2
     Info (169178): Pin IRDA_RXD uses I/O standard 3.3-V LVTTL at Y15
     Info (169178): Pin CLOCK_50 uses I/O standard 3.3-V LVTTL at Y2
 Info (144001): Generated suppressed messages file E:/ENGG56/RemoteController/output_files/RemoteController.fit.smsg
-Info: Quartus Prime Fitter was successful. 0 errors, 567 warnings
-    Info: Peak virtual memory: 6304 megabytes
-    Info: Processing ended: Wed Dec 01 19:30:24 2021
+Info: Quartus Prime Fitter was successful. 0 errors, 521 warnings
+    Info: Peak virtual memory: 6306 megabytes
+    Info: Processing ended: Thu Dec 02 14:58:37 2021
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:15
 

@@ -20,7 +20,7 @@
 ## PROGRAM "Quartus Prime"
 ## VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
-## DATE    "Wed Dec 01 19:32:05 2021"
+## DATE    "Thu Dec 02 14:58:15 2021"
 
 ##
 ## DEVICE  "EP4CE115F29C7"
@@ -71,7 +71,7 @@ set_clock_uncertainty -fall_from [get_clocks {inst2|altpll_component|auto_genera
 
 set_input_delay -add_delay  -clock [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  2600.000 [get_ports {CLOCK_50}]
 set_input_delay -add_delay  -clock [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  2600.000 [get_ports {IRDA_RXD}]
-set_input_delay -add_delay  -clock [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  2600.000 [get_ports {SW[0]}]
+set_input_delay -add_delay  -clock [get_clocks {inst2|altpll_component|auto_generated|pll1|clk[0]}]  2600.000 [get_ports {KEY[0]}]
 
 
 #**************************************************************

@@ -1,20 +1,20 @@
 # PCID - Alterações a fazer
 
-## RemoteController
-* Transformar comparações em `assign`
-* Refazer Timing Analysis
-* Automatizar validação do testbench
+## RemoteController (FINALIZADO)
+* **(OK)** Transformar comparações em `assign`
+* **(OK)** Refazer Timing Analysis
+* **(OK)** Automatizar validação do testbench
 
-## Somador
+## Somador (A FAZER)
 * Corrigir lista de sensibilidade da FSM
 * Refazer Timing Analysis
 * Incorporar memória RAM no testbench do módulo TOP
 * Automatizar validação dos três testbenches
 
-## MPEG
+## MPEG (A FAZER)
 * Corrigir lista de sensibilidade da FSM
 * Refazer Timing Analysis
 * Automatizar validação do testbench
 
-## Semaforo
+## Semaforo (A FAZER)
 * Automatizar validação do testbench
