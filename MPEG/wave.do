@@ -13,7 +13,7 @@ add wave -noupdate -label ADDRESS -radix unsigned /FSM_Control_TB/address
 add wave -noupdate -label X -radix unsigned /FSM_Control_TB/x
 add wave -noupdate -label Y -radix unsigned /FSM_Control_TB/y
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {734 ns} 0}
+WaveRestoreCursors {{Cursor 1} {644117 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 172
 configure wave -valuecolwidth 100
@@ -29,4 +29,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ns} {15208 ns}
+WaveRestoreZoom {635553 ns} {650761 ns}

@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at FSM_Control.v(105): always construct contains both blocking and non-blocking assignments File: E:/ENGG56/MPEG/FSM_Control.v Line: 105

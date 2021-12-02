@@ -12,8 +12,8 @@
 * Automatizar validação dos três testbenches
 
 ## MPEG (A FAZER)
-* Corrigir lista de sensibilidade da FSM
-* Refazer Timing Analysis
+* **(OK)** Corrigir lista de sensibilidade da FSM
+* **(OK)** Refazer Timing Analysis
 * Automatizar validação do testbench
 
 ## Semaforo (A FAZER)

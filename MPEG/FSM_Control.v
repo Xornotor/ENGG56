@@ -4,6 +4,12 @@ output reg ready, act_mac, rd_en, rst_out;
 output reg [2:0] u, v, x, y;
 output reg [5:0] address;
 
+reg u_zero, u_inc;
+reg v_zero, v_inc;
+reg x_zero, x_inc;
+reg y_zero, y_inc;
+reg address_zero, address_inc;
+
 reg [3:0] EstadoAtual, ProxEstado;
 
 parameter 	Inicio = 4'b0000,
@@ -14,113 +20,158 @@ parameter 	Inicio = 4'b0000,
 				DesativaMac = 4'b0101,
 				DesativaRden = 4'b0110,
 				Inc_UV_Addr = 4'b0111,
-				AtivaReady = 4'b1000,
-				DesativaReady = 4'b1001,
-				Inc_XY = 4'b1010;
-
-always @ (negedge clk) begin
+				Wait_UV_Addr = 4'b1000,
+				AtivaReady = 4'b1001,
+				DesativaReady = 4'b1010,
+				Inc_XY = 4'b1011;		
+				
+always @ (EstadoAtual or start or u or v or x or y) begin
 
 	case (EstadoAtual)
 	
 		Inicio: begin
-			ready <= 0;
-			act_mac <= 0;
-			rd_en <= 0;
-			rst_out <= 0;
-			u <= 0;
-			v <= 0;
-			x <= 0;
-			y <= 0;
-			address <= 0;
 			if (start == 1)
-				ProxEstado <= ResetInit;
+				ProxEstado = ResetInit;
 			else
-				ProxEstado <= Inicio;
+				ProxEstado = Inicio;
 		end
 		
-		ResetInit: begin
-			rst_out <= 0;
-			ProxEstado <= TiraResetInit;
-		end
+		ResetInit: ProxEstado = TiraResetInit;
 		
-		TiraResetInit: begin
-			rst_out <= 1;
-			ProxEstado <= AtivaRden;
-		end
+		TiraResetInit: ProxEstado = AtivaRden;
 		
-		AtivaRden: begin
-			rd_en <= 1;
-			ProxEstado <= AtivaMac;
-		end
+		AtivaRden: ProxEstado = AtivaMac;
 		
-		AtivaMac: begin
-			act_mac <= 1;
-			ProxEstado <= DesativaMac;
-		end
+		AtivaMac: ProxEstado = DesativaMac;
 		
-		DesativaMac: begin
-			act_mac <= 0;
-			ProxEstado <= DesativaRden;
-		end
+		DesativaMac: ProxEstado = DesativaRden;
 		
 		DesativaRden: begin
-			rd_en <= 0;
 			if(u == 7 && v == 7)
-				ProxEstado <= AtivaReady;
+				ProxEstado = AtivaReady;
 			else
-				ProxEstado <= Inc_UV_Addr;
+				ProxEstado = Inc_UV_Addr;
 		end
 		
-		Inc_UV_Addr: begin
-			address <= address + 1;
-			if(v == 7) begin
-				u <= u + 1;
-				v <= 0;
-			end
-			else begin
-				u <= u;
-				v <= v + 1;
-			end
-			ProxEstado <= AtivaRden;
-		end
+		Inc_UV_Addr: ProxEstado = Wait_UV_Addr;
 		
-		AtivaReady: begin
-			u <= 0;
-			v <= 0;
-			address <= 0;
-			ready <= 1;
-			ProxEstado <= DesativaReady;
-		end
+		Wait_UV_Addr: ProxEstado = AtivaRden;
+		
+		AtivaReady: ProxEstado = DesativaReady;
 		
 		DesativaReady: begin
-			ready <= 0;
 			if(x == 7 && y == 7)
-				ProxEstado <= Inicio;
+				ProxEstado = Inicio;
 			else
-				ProxEstado <= Inc_XY;
+				ProxEstado = Inc_XY;
 		end
 		
-		Inc_XY: begin
-			if(x == 7) begin
-				x <= 0;
-				y <= y + 1;
-			end
-			else begin
-				x <= x + 1;
-				y <= y;
-			end
-			ProxEstado <= ResetInit;
-		end
+		Inc_XY: ProxEstado = ResetInit;
 	
 	endcase
 
 end
 
-always @ (posedge clk or negedge rst_in) begin
+always @ (negedge clk or negedge rst_in) begin
 	if(rst_in == 0)
-		EstadoAtual = Inicio;
+		EstadoAtual <= Inicio;
 	else
-		EstadoAtual = ProxEstado;
+		EstadoAtual <= ProxEstado;
+end
+
+always @ (EstadoAtual) begin
+
+	if(EstadoAtual == AtivaMac)
+		act_mac = 1;
+	else
+		act_mac = 0;
+		
+	if(EstadoAtual == AtivaReady)
+		ready = 1;
+	else
+		ready = 0;
+		
+	if(EstadoAtual == Inicio || EstadoAtual == ResetInit)
+		rst_out = 0;
+	else
+		rst_out = 1;
+		
+	if(EstadoAtual == AtivaRden || EstadoAtual == AtivaMac || EstadoAtual == DesativaMac)
+		rd_en = 1;
+	else
+		rd_en = 0;
+
+end
+
+always @ (EstadoAtual) begin
+
+	if (EstadoAtual == Inicio || EstadoAtual == AtivaReady)
+		u_zero = 1'b1;
+	else
+		u_zero = 1'b0;
+
+	if (EstadoAtual == Inicio || EstadoAtual == AtivaReady || (EstadoAtual == Inc_UV_Addr && v == 7))
+		v_zero = 1'b1;
+	else
+		v_zero = 1'b0;
+
+	if (EstadoAtual == Inicio || (EstadoAtual == Inc_XY && x == 7))
+		x_zero = 1'b1;
+	else
+		x_zero = 1'b0;
+
+	if (EstadoAtual == Inicio)
+		y_zero = 1'b1;
+	else
+		y_zero = 1'b0;
+
+	if (EstadoAtual == Inicio || EstadoAtual == AtivaReady)
+		address_zero = 1'b1;
+	else
+		address_zero = 1'b0;
+
+	if (EstadoAtual == Inc_UV_Addr && v == 7)
+		u_inc = 1'b1;
+	else
+		u_inc = 1'b0;
+
+	if (EstadoAtual == Inc_UV_Addr && v != 7)
+		v_inc = 1'b1;
+	else
+		v_inc = 1'b0;
+
+	if (EstadoAtual == Inc_XY && x != 7)
+		x_inc = 1'b1;
+	else
+		x_inc = 1'b0;
+
+	if (EstadoAtual == Inc_XY && x == 7)
+		y_inc = 1'b1;
+	else
+		y_inc = 1'b0;
+
+	if (EstadoAtual == Inc_UV_Addr)
+		address_inc = 1'b1;
+	else
+		address_inc = 1'b0;
+	
+end
+
+always @ (negedge clk) begin
+	if (x_zero) x <= 0;
+	else if (x_inc) x <= x + 1;
+	
+	if (y_zero) y <= 0;
+	else if (y_inc) y <= y + 1;
+
+	if (u_zero) u <= 0;
+	else if (u_inc) u <= u + 1;
+	
+	if (v_zero) v <= 0;
+	else if (v_inc) v <= v + 1;
+	
+	if (address_zero) address <= 0;
+	else if (address_inc) address <= address + 1;
 end
 
 endmodule
