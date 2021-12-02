@@ -1,30 +1,20 @@
-# PCID - Etapas
+# PCID - Alterações a fazer
 
-## RemoteController (PRONTO)
-* Módulo Remote Controller pronto, testbench e testes efetuados
-* Conexão com pinos físicos do FPGA efetuada
-* Timing Analyzer ajustado
+## RemoteController
+* Transformar comparações em `assign`
+* Refazer Timing Analysis
+* Automatizar validação do testbench
 
-## Somador (ALTERAR)
-* Módulo Acumulador pronto, testbench e testes efetuados
-* Módulo FSM pronto, testbench e testes efetuados
-* Módulo TOP pronto, testbench e testes efetuados
-* Conexão com pinos físicos do FPGA efetuada
-* Criado arquivo `.mif` de dados para a memória RAM e arquivo `data.txt` correspondente para testbench
-* Timing Analyzer ajustado
+## Somador
+* Corrigir lista de sensibilidade da FSM
+* Refazer Timing Analysis
+* Incorporar memória RAM no testbench do módulo TOP
+* Automatizar validação dos três testbenches
 
-## MPEG (ALTERAR)
-* Módulo FSM_Control pronto, testbench e testes efetuados
-* Conexão com pinos físicos do FPGA efetuada
-* Timing Analyzer ajustado
+## MPEG
+* Corrigir lista de sensibilidade da FSM
+* Refazer Timing Analysis
+* Automatizar validação do testbench
 
-## Semaforo (PRONTO)
-* Módulo Semaforo pronto, testbench e testes efetuados
-* Conexão com pinos físicos do FPGA efetuada
-* Timing Analyzer não necessário, já que o circuito é assíncrono
-
-## Alterações a fazer
-* Conferir lista de sensibilidade das FSM's
-* Refazer testbench do TOP e instanciar memória
-* Reestruturar comparações do RemoteController
-* Automatização de diagnóstico das FSM's
+## Semaforo
+* Automatizar validação do testbench
