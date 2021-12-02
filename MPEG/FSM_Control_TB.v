@@ -15,6 +15,8 @@ initial begin
     #10 clk = 1;
     #10 clk = 0;
     rst_in = 1;
+    #10 clk = 1;
+    #10 clk = 0;
     start = 1;
     #10 clk = 1;
     #10 clk = 0;

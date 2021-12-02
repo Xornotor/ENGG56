@@ -1,5 +1,5 @@
 Fitter report for MPEG
-Thu Dec 02 18:48:16 2021
+Thu Dec 02 20:17:05 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -68,17 +68,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Thu Dec 02 18:48:16 2021       ;
+; Fitter Status                      ; Successful - Thu Dec 02 20:17:05 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; MPEG                                        ;
 ; Top-level Entity Name              ; MPEG_Diagrama                               ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 29 / 114,480 ( < 1 % )                      ;
-;     Total combinational functions  ; 26 / 114,480 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 21 / 114,480 ( < 1 % )                      ;
-; Total registers                    ; 35                                          ;
+; Total logic elements               ; 42 / 114,480 ( < 1 % )                      ;
+;     Total combinational functions  ; 37 / 114,480 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 30 / 114,480 ( < 1 % )                      ;
+; Total registers                    ; 50                                          ;
 ; Total pins                         ; 25 / 529 ( 5 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
@@ -165,40 +165,52 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Netlist Optimizations                                                                                                                                                                                                                      ;
-+-------------------------------------------+-----------------+------------------+---------------------------------+-----------+----------------+--------------------------------------------------------+------------------+-----------------------+
-; Node                                      ; Action          ; Operation        ; Reason                          ; Node Port ; Node Port Name ; Destination Node                                       ; Destination Port ; Destination Port Name ;
-+-------------------------------------------+-----------------+------------------+---------------------------------+-----------+----------------+--------------------------------------------------------+------------------+-----------------------+
-; FSM_Control:inst|EstadoAtual.AtivaMac     ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|EstadoAtual.AtivaMac~_Duplicate_1     ; Q                ;                       ;
-; FSM_Control:inst|EstadoAtual.AtivaMac     ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDG[1]~output                                         ; I                ;                       ;
-; FSM_Control:inst|EstadoAtual.Wait_UV_Addr ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|EstadoAtual.Wait_UV_Addr~_Duplicate_1 ; Q                ;                       ;
-; FSM_Control:inst|EstadoAtual.Wait_UV_Addr ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDG[0]~output                                         ; I                ;                       ;
-; FSM_Control:inst|address[0]               ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|address[0]~_Duplicate_1               ; Q                ;                       ;
-; FSM_Control:inst|address[0]               ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[12]~output                                        ; I                ;                       ;
-; FSM_Control:inst|address[1]               ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|address[1]~_Duplicate_1               ; Q                ;                       ;
-; FSM_Control:inst|address[1]               ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[13]~output                                        ; I                ;                       ;
-; FSM_Control:inst|address[2]               ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|address[2]~_Duplicate_1               ; Q                ;                       ;
-; FSM_Control:inst|address[2]               ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[14]~output                                        ; I                ;                       ;
-; FSM_Control:inst|address[3]               ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|address[3]~_Duplicate_1               ; Q                ;                       ;
-; FSM_Control:inst|address[3]               ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[15]~output                                        ; I                ;                       ;
-; FSM_Control:inst|address[4]               ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|address[4]~_Duplicate_1               ; Q                ;                       ;
-; FSM_Control:inst|address[4]               ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[16]~output                                        ; I                ;                       ;
-; FSM_Control:inst|address[5]               ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|address[5]~_Duplicate_1               ; Q                ;                       ;
-; FSM_Control:inst|address[5]               ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[17]~output                                        ; I                ;                       ;
-; FSM_Control:inst|u[0]                     ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|u[0]~_Duplicate_1                     ; Q                ;                       ;
-; FSM_Control:inst|u[0]                     ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[3]~output                                         ; I                ;                       ;
-; FSM_Control:inst|u[1]                     ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|u[1]~_Duplicate_1                     ; Q                ;                       ;
-; FSM_Control:inst|u[1]                     ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[4]~output                                         ; I                ;                       ;
-; FSM_Control:inst|u[2]                     ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|u[2]~_Duplicate_1                     ; Q                ;                       ;
-; FSM_Control:inst|u[2]                     ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[5]~output                                         ; I                ;                       ;
-; FSM_Control:inst|v[0]                     ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|v[0]~_Duplicate_1                     ; Q                ;                       ;
-; FSM_Control:inst|v[0]                     ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[0]~output                                         ; I                ;                       ;
-; FSM_Control:inst|v[1]                     ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|v[1]~_Duplicate_1                     ; Q                ;                       ;
-; FSM_Control:inst|v[1]                     ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[1]~output                                         ; I                ;                       ;
-; FSM_Control:inst|v[2]                     ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|v[2]~_Duplicate_1                     ; Q                ;                       ;
-; FSM_Control:inst|v[2]                     ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[2]~output                                         ; I                ;                       ;
-+-------------------------------------------+-----------------+------------------+---------------------------------+-----------+----------------+--------------------------------------------------------+------------------+-----------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Netlist Optimizations                                                                                                                                                                                                                  ;
++-----------------------------------------+-----------------+------------------+---------------------------------+-----------+----------------+------------------------------------------------------+------------------+-----------------------+
+; Node                                    ; Action          ; Operation        ; Reason                          ; Node Port ; Node Port Name ; Destination Node                                     ; Destination Port ; Destination Port Name ;
++-----------------------------------------+-----------------+------------------+---------------------------------+-----------+----------------+------------------------------------------------------+------------------+-----------------------+
+; FSM_Control:inst|EstadoAtual.AtivaMac   ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|EstadoAtual.AtivaMac~_Duplicate_1   ; Q                ;                       ;
+; FSM_Control:inst|EstadoAtual.AtivaMac   ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDG[1]~output                                       ; I                ;                       ;
+; FSM_Control:inst|EstadoAtual.AtivaReady ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|EstadoAtual.AtivaReady~_Duplicate_1 ; Q                ;                       ;
+; FSM_Control:inst|EstadoAtual.AtivaReady ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDG[0]~output                                       ; I                ;                       ;
+; FSM_Control:inst|address[0]             ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|address[0]~_Duplicate_1             ; Q                ;                       ;
+; FSM_Control:inst|address[0]             ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[12]~output                                      ; I                ;                       ;
+; FSM_Control:inst|address[1]             ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|address[1]~_Duplicate_1             ; Q                ;                       ;
+; FSM_Control:inst|address[1]             ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[13]~output                                      ; I                ;                       ;
+; FSM_Control:inst|address[2]             ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|address[2]~_Duplicate_1             ; Q                ;                       ;
+; FSM_Control:inst|address[2]             ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[14]~output                                      ; I                ;                       ;
+; FSM_Control:inst|address[3]             ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|address[3]~_Duplicate_1             ; Q                ;                       ;
+; FSM_Control:inst|address[3]             ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[15]~output                                      ; I                ;                       ;
+; FSM_Control:inst|address[4]             ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|address[4]~_Duplicate_1             ; Q                ;                       ;
+; FSM_Control:inst|address[4]             ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[16]~output                                      ; I                ;                       ;
+; FSM_Control:inst|address[5]             ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|address[5]~_Duplicate_1             ; Q                ;                       ;
+; FSM_Control:inst|address[5]             ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[17]~output                                      ; I                ;                       ;
+; FSM_Control:inst|u[0]                   ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|u[0]~_Duplicate_1                   ; Q                ;                       ;
+; FSM_Control:inst|u[0]                   ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[3]~output                                       ; I                ;                       ;
+; FSM_Control:inst|u[1]                   ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|u[1]~_Duplicate_1                   ; Q                ;                       ;
+; FSM_Control:inst|u[1]                   ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[4]~output                                       ; I                ;                       ;
+; FSM_Control:inst|u[2]                   ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|u[2]~_Duplicate_1                   ; Q                ;                       ;
+; FSM_Control:inst|u[2]                   ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[5]~output                                       ; I                ;                       ;
+; FSM_Control:inst|v[0]                   ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|v[0]~_Duplicate_1                   ; Q                ;                       ;
+; FSM_Control:inst|v[0]                   ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[0]~output                                       ; I                ;                       ;
+; FSM_Control:inst|v[1]                   ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|v[1]~_Duplicate_1                   ; Q                ;                       ;
+; FSM_Control:inst|v[1]                   ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[1]~output                                       ; I                ;                       ;
+; FSM_Control:inst|v[2]                   ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|v[2]~_Duplicate_1                   ; Q                ;                       ;
+; FSM_Control:inst|v[2]                   ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[2]~output                                       ; I                ;                       ;
+; FSM_Control:inst|x[0]                   ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|x[0]~_Duplicate_1                   ; Q                ;                       ;
+; FSM_Control:inst|x[0]                   ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[6]~output                                       ; I                ;                       ;
+; FSM_Control:inst|x[1]                   ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|x[1]~_Duplicate_1                   ; Q                ;                       ;
+; FSM_Control:inst|x[1]                   ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[7]~output                                       ; I                ;                       ;
+; FSM_Control:inst|x[2]                   ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|x[2]~_Duplicate_1                   ; Q                ;                       ;
+; FSM_Control:inst|x[2]                   ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[8]~output                                       ; I                ;                       ;
+; FSM_Control:inst|y[0]                   ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|y[0]~_Duplicate_1                   ; Q                ;                       ;
+; FSM_Control:inst|y[0]                   ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[9]~output                                       ; I                ;                       ;
+; FSM_Control:inst|y[1]                   ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|y[1]~_Duplicate_1                   ; Q                ;                       ;
+; FSM_Control:inst|y[1]                   ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[10]~output                                      ; I                ;                       ;
+; FSM_Control:inst|y[2]                   ; Duplicated      ; Register Packing ; Fast Output Register assignment ; Q         ;                ; FSM_Control:inst|y[2]~_Duplicate_1                   ; Q                ;                       ;
+; FSM_Control:inst|y[2]                   ; Packed Register ; Register Packing ; Fast Output Register assignment ; Q         ;                ; LEDR[11]~output                                      ; I                ;                       ;
++-----------------------------------------+-----------------+------------------+---------------------------------+-----------+----------------+------------------------------------------------------+------------------+-----------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------+
@@ -1220,8 +1232,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 109 ) ; 0.00 % ( 0 / 109 )         ; 0.00 % ( 0 / 109 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 109 ) ; 0.00 % ( 0 / 109 )         ; 0.00 % ( 0 / 109 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 129 ) ; 0.00 % ( 0 / 129 )         ; 0.00 % ( 0 / 129 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 129 ) ; 0.00 % ( 0 / 129 )         ; 0.00 % ( 0 / 129 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -1244,7 +1256,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 99 )     ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 119 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -1260,26 +1272,26 @@ The pin-out file can be found in E:/ENGG56/MPEG/output_files/MPEG.pin.
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 29 / 114,480 ( < 1 % ) ;
-;     -- Combinational with no register       ; 8                      ;
-;     -- Register only                        ; 3                      ;
-;     -- Combinational with a register        ; 18                     ;
+; Total logic elements                        ; 42 / 114,480 ( < 1 % ) ;
+;     -- Combinational with no register       ; 12                     ;
+;     -- Register only                        ; 5                      ;
+;     -- Combinational with a register        ; 25                     ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 8                      ;
-;     -- 3 input functions                    ; 4                      ;
-;     -- <=2 input functions                  ; 14                     ;
-;     -- Register only                        ; 3                      ;
+;     -- 4 input functions                    ; 13                     ;
+;     -- 3 input functions                    ; 8                      ;
+;     -- <=2 input functions                  ; 16                     ;
+;     -- Register only                        ; 5                      ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 21                     ;
+;     -- normal mode                          ; 32                     ;
 ;     -- arithmetic mode                      ; 5                      ;
 ;                                             ;                        ;
-; Total registers*                            ; 35 / 117,053 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 21 / 114,480 ( < 1 % ) ;
-;     -- I/O registers                        ; 14 / 2,573 ( < 1 % )   ;
+; Total registers*                            ; 50 / 117,053 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 30 / 114,480 ( < 1 % ) ;
+;     -- I/O registers                        ; 20 / 2,573 ( < 1 % )   ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 3 / 7,155 ( < 1 % )    ;
+; Total LABs:  partially or completely used   ; 4 / 7,155 ( < 1 % )    ;
 ; Virtual pins                                ; 0                      ;
 ; I/O pins                                    ; 25 / 529 ( 5 % )       ;
 ;     -- Clock pins                           ; 1 / 7 ( 14 % )         ;
@@ -1298,11 +1310,11 @@ The pin-out file can be found in E:/ENGG56/MPEG/output_files/MPEG.pin.
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )          ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )          ;
 ; Average interconnect usage (total/H/V)      ; 0.0% / 0.0% / 0.0%     ;
-; Peak interconnect usage (total/H/V)         ; 0.3% / 0.4% / 0.2%     ;
-; Maximum fan-out                             ; 35                     ;
-; Highest non-global fan-out                  ; 15                     ;
-; Total fan-out                               ; 231                    ;
-; Average fan-out                             ; 1.86                   ;
+; Peak interconnect usage (total/H/V)         ; 0.5% / 0.8% / 0.2%     ;
+; Maximum fan-out                             ; 50                     ;
+; Highest non-global fan-out                  ; 17                     ;
+; Total fan-out                               ; 313                    ;
+; Average fan-out                             ; 2.07                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -1315,26 +1327,26 @@ The pin-out file can be found in E:/ENGG56/MPEG/output_files/MPEG.pin.
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 29 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 8                     ; 0                              ;
-;     -- Register only                        ; 3                     ; 0                              ;
-;     -- Combinational with a register        ; 18                    ; 0                              ;
+; Total logic elements                        ; 42 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 12                    ; 0                              ;
+;     -- Register only                        ; 5                     ; 0                              ;
+;     -- Combinational with a register        ; 25                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 8                     ; 0                              ;
-;     -- 3 input functions                    ; 4                     ; 0                              ;
-;     -- <=2 input functions                  ; 14                    ; 0                              ;
-;     -- Register only                        ; 3                     ; 0                              ;
+;     -- 4 input functions                    ; 13                    ; 0                              ;
+;     -- 3 input functions                    ; 8                     ; 0                              ;
+;     -- <=2 input functions                  ; 16                    ; 0                              ;
+;     -- Register only                        ; 5                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 21                    ; 0                              ;
+;     -- normal mode                          ; 32                    ; 0                              ;
 ;     -- arithmetic mode                      ; 5                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 35                    ; 0                              ;
-;     -- Dedicated logic registers            ; 21 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- I/O registers                        ; 28                    ; 0                              ;
+; Total registers                             ; 50                    ; 0                              ;
+;     -- Dedicated logic registers            ; 30 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- I/O registers                        ; 40                    ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 3 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 4 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 25                    ; 0                              ;
@@ -1342,7 +1354,7 @@ The pin-out file can be found in E:/ENGG56/MPEG/output_files/MPEG.pin.
 ; Total memory bits                           ; 0                     ; 0                              ;
 ; Total RAM block bits                        ; 0                     ; 0                              ;
 ; Clock control block                         ; 1 / 24 ( 4 % )        ; 0 / 24 ( 0 % )                 ;
-; Double Data Rate I/O output circuitry       ; 14 / 516 ( 2 % )      ; 0 / 516 ( 0 % )                ;
+; Double Data Rate I/O output circuitry       ; 20 / 516 ( 3 % )      ; 0 / 516 ( 0 % )                ;
 ;                                             ;                       ;                                ;
 ; Connections                                 ;                       ;                                ;
 ;     -- Input Connections                    ; 0                     ; 0                              ;
@@ -1351,8 +1363,8 @@ The pin-out file can be found in E:/ENGG56/MPEG/output_files/MPEG.pin.
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 226                   ; 5                              ;
-;     -- Registered Connections               ; 68                    ; 0                              ;
+;     -- Total Connections                    ; 308                   ; 5                              ;
+;     -- Registered Connections               ; 118                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 0                              ;
@@ -1384,8 +1396,8 @@ The pin-out file can be found in E:/ENGG56/MPEG/output_files/MPEG.pin.
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
-; CLOCK_50 ; Y2    ; 2        ; 0            ; 36           ; 14           ; 35                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; no        ;
-; KEY[0]   ; M23   ; 6        ; 115          ; 40           ; 7            ; 11                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; CLOCK_50 ; Y2    ; 2        ; 0            ; 36           ; 14           ; 50                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; no        ;
+; KEY[0]   ; M23   ; 6        ; 115          ; 40           ; 7            ; 14                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; SW[0]    ; AB28  ; 5        ; 115          ; 17           ; 0            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
@@ -1400,8 +1412,8 @@ The pin-out file can be found in E:/ENGG56/MPEG/output_files/MPEG.pin.
 ; LEDG[2]  ; E25   ; 7        ; 83           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; LEDG[3]  ; E24   ; 7        ; 85           ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; LEDR[0]  ; G19   ; 7        ; 69           ; 73           ; 14           ; yes             ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; LEDR[10] ; J15   ; 7        ; 60           ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; LEDR[11] ; H16   ; 7        ; 65           ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; LEDR[10] ; J15   ; 7        ; 60           ; 73           ; 21           ; yes             ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; LEDR[11] ; H16   ; 7        ; 65           ; 73           ; 21           ; yes             ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; LEDR[12] ; J16   ; 7        ; 65           ; 73           ; 14           ; yes             ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; LEDR[13] ; H17   ; 7        ; 67           ; 73           ; 7            ; yes             ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; LEDR[14] ; F15   ; 7        ; 58           ; 73           ; 0            ; yes             ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
@@ -1413,10 +1425,10 @@ The pin-out file can be found in E:/ENGG56/MPEG/output_files/MPEG.pin.
 ; LEDR[3]  ; F21   ; 7        ; 107          ; 73           ; 14           ; yes             ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; LEDR[4]  ; F18   ; 7        ; 87           ; 73           ; 14           ; yes             ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; LEDR[5]  ; E18   ; 7        ; 87           ; 73           ; 7            ; yes             ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; LEDR[6]  ; J19   ; 7        ; 72           ; 73           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; LEDR[7]  ; H19   ; 7        ; 72           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; LEDR[8]  ; J17   ; 7        ; 69           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; LEDR[9]  ; G17   ; 7        ; 83           ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; LEDR[6]  ; J19   ; 7        ; 72           ; 73           ; 7            ; yes             ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; LEDR[7]  ; H19   ; 7        ; 72           ; 73           ; 0            ; yes             ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; LEDR[8]  ; J17   ; 7        ; 69           ; 73           ; 0            ; yes             ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; LEDR[9]  ; G17   ; 7        ; 83           ; 73           ; 21           ; yes             ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
@@ -2281,8 +2293,8 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------+---------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name             ; Entity Name   ; Library Name ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------+---------------+--------------+
-; |MPEG_Diagrama             ; 29 (0)      ; 21 (0)                    ; 14 (14)       ; 0           ; 0    ; 0            ; 0       ; 0         ; 25   ; 0            ; 8 (0)        ; 3 (0)             ; 18 (0)           ; |MPEG_Diagrama                  ; MPEG_Diagrama ; work         ;
-;    |FSM_Control:inst|      ; 29 (29)     ; 21 (21)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 3 (3)             ; 18 (18)          ; |MPEG_Diagrama|FSM_Control:inst ; FSM_Control   ; work         ;
+; |MPEG_Diagrama             ; 42 (0)      ; 30 (0)                    ; 20 (20)       ; 0           ; 0    ; 0            ; 0       ; 0         ; 25   ; 0            ; 12 (0)       ; 5 (0)             ; 25 (0)           ; |MPEG_Diagrama                  ; MPEG_Diagrama ; work         ;
+;    |FSM_Control:inst|      ; 42 (42)     ; 30 (30)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 5 (5)             ; 25 (25)          ; |MPEG_Diagrama|FSM_Control:inst ; FSM_Control   ; work         ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -2302,12 +2314,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LEDR[14] ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
 ; LEDR[13] ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
 ; LEDR[12] ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
-; LEDR[11] ; Output   ; --            ; --            ; --                    ; --       ; --   ;
-; LEDR[10] ; Output   ; --            ; --            ; --                    ; --       ; --   ;
-; LEDR[9]  ; Output   ; --            ; --            ; --                    ; --       ; --   ;
-; LEDR[8]  ; Output   ; --            ; --            ; --                    ; --       ; --   ;
-; LEDR[7]  ; Output   ; --            ; --            ; --                    ; --       ; --   ;
-; LEDR[6]  ; Output   ; --            ; --            ; --                    ; --       ; --   ;
+; LEDR[11] ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
+; LEDR[10] ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
+; LEDR[9]  ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
+; LEDR[8]  ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
+; LEDR[7]  ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
+; LEDR[6]  ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
 ; LEDR[5]  ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
 ; LEDR[4]  ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
 ; LEDR[3]  ; Output   ; --            ; --            ; --                    ; (0) 0 ps ; --   ;
@@ -2320,41 +2332,45 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+----------+---------------+---------------+-----------------------+----------+------+
 
 
-+---------------------------------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                                              ;
-+---------------------------------------------------------------+-------------------+---------+
-; Source Pin / Fanout                                           ; Pad To Core Index ; Setting ;
-+---------------------------------------------------------------+-------------------+---------+
-; SW[0]                                                         ;                   ;         ;
-;      - FSM_Control:inst|Selector1~0                           ; 0                 ; 0       ;
-;      - FSM_Control:inst|EstadoAtual.Inicio~0                  ; 0                 ; 0       ;
-; CLOCK_50                                                      ;                   ;         ;
-; KEY[0]                                                        ;                   ;         ;
-;      - FSM_Control:inst|EstadoAtual.Inicio                    ; 1                 ; 0       ;
-;      - FSM_Control:inst|EstadoAtual.ResetInit                 ; 1                 ; 0       ;
-;      - FSM_Control:inst|EstadoAtual.AtivaRden                 ; 1                 ; 0       ;
-;      - FSM_Control:inst|EstadoAtual.AtivaMac~_Duplicate_1     ; 1                 ; 0       ;
-;      - FSM_Control:inst|EstadoAtual.DesativaMac               ; 1                 ; 0       ;
-;      - FSM_Control:inst|EstadoAtual.Wait_UV_Addr~_Duplicate_1 ; 1                 ; 0       ;
-;      - FSM_Control:inst|EstadoAtual.TiraResetInit             ; 1                 ; 0       ;
-;      - FSM_Control:inst|EstadoAtual.Inc_UV_Addr               ; 1                 ; 0       ;
-;      - FSM_Control:inst|EstadoAtual.DesativaRden              ; 1                 ; 0       ;
-;      - FSM_Control:inst|EstadoAtual.AtivaMac                  ; 1                 ; 0       ;
-;      - FSM_Control:inst|EstadoAtual.Wait_UV_Addr              ; 1                 ; 0       ;
-+---------------------------------------------------------------+-------------------+---------+
++-------------------------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                                            ;
++-------------------------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                                         ; Pad To Core Index ; Setting ;
++-------------------------------------------------------------+-------------------+---------+
+; SW[0]                                                       ;                   ;         ;
+;      - FSM_Control:inst|Selector1~0                         ; 0                 ; 0       ;
+;      - FSM_Control:inst|Selector0~0                         ; 0                 ; 0       ;
+; CLOCK_50                                                    ;                   ;         ;
+; KEY[0]                                                      ;                   ;         ;
+;      - FSM_Control:inst|EstadoAtual.Inicio                  ; 1                 ; 0       ;
+;      - FSM_Control:inst|EstadoAtual.ResetInit               ; 1                 ; 0       ;
+;      - FSM_Control:inst|EstadoAtual.AtivaRden               ; 1                 ; 0       ;
+;      - FSM_Control:inst|EstadoAtual.AtivaMac~_Duplicate_1   ; 1                 ; 0       ;
+;      - FSM_Control:inst|EstadoAtual.DesativaMac             ; 1                 ; 0       ;
+;      - FSM_Control:inst|EstadoAtual.AtivaReady~_Duplicate_1 ; 1                 ; 0       ;
+;      - FSM_Control:inst|EstadoAtual.Inc_XY                  ; 1                 ; 0       ;
+;      - FSM_Control:inst|EstadoAtual.Compara_XY              ; 1                 ; 0       ;
+;      - FSM_Control:inst|EstadoAtual.TiraResetInit           ; 1                 ; 0       ;
+;      - FSM_Control:inst|EstadoAtual.Inc_UV_Addr             ; 1                 ; 0       ;
+;      - FSM_Control:inst|EstadoAtual.DesativaRden            ; 1                 ; 0       ;
+;      - FSM_Control:inst|EstadoAtual.DesativaReady           ; 1                 ; 0       ;
+;      - FSM_Control:inst|EstadoAtual.AtivaMac                ; 1                 ; 0       ;
+;      - FSM_Control:inst|EstadoAtual.AtivaReady              ; 1                 ; 0       ;
++-------------------------------------------------------------+-------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                             ;
-+--------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                           ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+--------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; CLOCK_50                       ; PIN_Y2             ; 35      ; Clock        ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; FSM_Control:inst|address[5]~18 ; LCCOMB_X84_Y72_N28 ; 14      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; FSM_Control:inst|always3~0     ; LCCOMB_X84_Y72_N26 ; 15      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; FSM_Control:inst|v[2]~0        ; LCCOMB_X84_Y72_N22 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; KEY[0]                         ; PIN_M23            ; 11      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-+--------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                       ;
++------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                                     ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; CLOCK_50                                 ; PIN_Y2             ; 50      ; Clock        ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; FSM_Control:inst|EstadoAtual.Inc_UV_Addr ; FF_X72_Y72_N17     ; 17      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; FSM_Control:inst|address[5]~18           ; LCCOMB_X72_Y72_N20 ; 14      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; FSM_Control:inst|u[2]~2                  ; LCCOMB_X83_Y72_N26 ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; FSM_Control:inst|y[2]~2                  ; LCCOMB_X84_Y72_N10 ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; KEY[0]                                   ; PIN_M23            ; 14      ; Async. clear ; no     ; --                   ; --               ; --                        ;
++------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2362,7 +2378,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name     ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; CLOCK_50 ; PIN_Y2   ; 35      ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
+; CLOCK_50 ; PIN_Y2   ; 50      ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
 +----------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -2371,48 +2387,48 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 45 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 9 / 10,120 ( < 1 % )   ;
-; C4 interconnects      ; 27 / 209,544 ( < 1 % ) ;
-; Direct links          ; 9 / 342,891 ( < 1 % )  ;
+; Block interconnects   ; 66 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 11 / 10,120 ( < 1 % )  ;
+; C4 interconnects      ; 37 / 209,544 ( < 1 % ) ;
+; Direct links          ; 11 / 342,891 ( < 1 % ) ;
 ; Global clocks         ; 1 / 20 ( 5 % )         ;
-; Local interconnects   ; 25 / 119,088 ( < 1 % ) ;
-; R24 interconnects     ; 12 / 9,963 ( < 1 % )   ;
-; R4 interconnects      ; 43 / 289,782 ( < 1 % ) ;
+; Local interconnects   ; 33 / 119,088 ( < 1 % ) ;
+; R24 interconnects     ; 13 / 9,963 ( < 1 % )   ;
+; R4 interconnects      ; 84 / 289,782 ( < 1 % ) ;
 +-----------------------+------------------------+
 
 
-+--------------------------------------------------------------------------+
-; LAB Logic Elements                                                       ;
-+--------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 9.67) ; Number of LABs  (Total = 3) ;
-+--------------------------------------------+-----------------------------+
-; 1                                          ; 0                           ;
-; 2                                          ; 0                           ;
-; 3                                          ; 0                           ;
-; 4                                          ; 0                           ;
-; 5                                          ; 0                           ;
-; 6                                          ; 1                           ;
-; 7                                          ; 0                           ;
-; 8                                          ; 0                           ;
-; 9                                          ; 0                           ;
-; 10                                         ; 0                           ;
-; 11                                         ; 1                           ;
-; 12                                         ; 1                           ;
-; 13                                         ; 0                           ;
-; 14                                         ; 0                           ;
-; 15                                         ; 0                           ;
-; 16                                         ; 0                           ;
-+--------------------------------------------+-----------------------------+
++---------------------------------------------------------------------------+
+; LAB Logic Elements                                                        ;
++---------------------------------------------+-----------------------------+
+; Number of Logic Elements  (Average = 10.50) ; Number of LABs  (Total = 4) ;
++---------------------------------------------+-----------------------------+
+; 1                                           ; 0                           ;
+; 2                                           ; 0                           ;
+; 3                                           ; 0                           ;
+; 4                                           ; 0                           ;
+; 5                                           ; 0                           ;
+; 6                                           ; 1                           ;
+; 7                                           ; 0                           ;
+; 8                                           ; 0                           ;
+; 9                                           ; 1                           ;
+; 10                                          ; 0                           ;
+; 11                                          ; 1                           ;
+; 12                                          ; 0                           ;
+; 13                                          ; 0                           ;
+; 14                                          ; 0                           ;
+; 15                                          ; 0                           ;
+; 16                                          ; 1                           ;
++---------------------------------------------+-----------------------------+
 
 
 +------------------------------------------------------------------+
 ; LAB-wide Signals                                                 ;
 +------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 2.00) ; Number of LABs  (Total = 3) ;
+; LAB-wide Signals  (Average = 2.25) ; Number of LABs  (Total = 4) ;
 +------------------------------------+-----------------------------+
-; 1 Async. clear                     ; 1                           ;
-; 1 Clock                            ; 3                           ;
+; 1 Async. clear                     ; 3                           ;
+; 1 Clock                            ; 4                           ;
 ; 1 Clock enable                     ; 1                           ;
 ; 1 Sync. clear                      ; 1                           ;
 +------------------------------------+-----------------------------+
@@ -2421,7 +2437,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 16.33) ; Number of LABs  (Total = 3) ;
+; Number of Signals Sourced  (Average = 17.50) ; Number of LABs  (Total = 4) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 0                           ;
@@ -2438,18 +2454,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 12                                           ; 1                           ;
 ; 13                                           ; 0                           ;
 ; 14                                           ; 0                           ;
-; 15                                           ; 0                           ;
+; 15                                           ; 1                           ;
 ; 16                                           ; 0                           ;
-; 17                                           ; 0                           ;
-; 18                                           ; 1                           ;
-; 19                                           ; 1                           ;
+; 17                                           ; 1                           ;
+; 18                                           ; 0                           ;
+; 19                                           ; 0                           ;
+; 20                                           ; 0                           ;
+; 21                                           ; 0                           ;
+; 22                                           ; 0                           ;
+; 23                                           ; 0                           ;
+; 24                                           ; 0                           ;
+; 25                                           ; 0                           ;
+; 26                                           ; 1                           ;
 +----------------------------------------------+-----------------------------+
 
 
 +-------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                       ;
 +-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 7.67) ; Number of LABs  (Total = 3) ;
+; Number of Signals Sourced Out  (Average = 8.50) ; Number of LABs  (Total = 4) ;
 +-------------------------------------------------+-----------------------------+
 ; 0                                               ; 0                           ;
 ; 1                                               ; 0                           ;
@@ -2458,23 +2481,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 4                                               ; 0                           ;
 ; 5                                               ; 0                           ;
 ; 6                                               ; 1                           ;
-; 7                                               ; 1                           ;
-; 8                                               ; 0                           ;
+; 7                                               ; 0                           ;
+; 8                                               ; 1                           ;
 ; 9                                               ; 0                           ;
-; 10                                              ; 1                           ;
+; 10                                              ; 2                           ;
 +-------------------------------------------------+-----------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 3.67) ; Number of LABs  (Total = 3) ;
+; Number of Distinct Inputs  (Average = 4.75) ; Number of LABs  (Total = 4) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 0                           ;
 ; 2                                           ; 0                           ;
 ; 3                                           ; 1                           ;
-; 4                                           ; 2                           ;
+; 4                                           ; 1                           ;
+; 5                                           ; 0                           ;
+; 6                                           ; 2                           ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -2535,9 +2560,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 ; Pin/Rules          ; IO_000001 ; IO_000002    ; IO_000003 ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007 ; IO_000008    ; IO_000009 ; IO_000010 ; IO_000011    ; IO_000012    ; IO_000013    ; IO_000014    ; IO_000015    ; IO_000018    ; IO_000019    ; IO_000020    ; IO_000021    ; IO_000022    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000046    ; IO_000047    ; IO_000033 ; IO_000034    ; IO_000042    ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
-; Total Pass         ; 25        ; 14           ; 25        ; 0            ; 0            ; 25        ; 25        ; 0            ; 25        ; 25        ; 0            ; 22           ; 0            ; 0            ; 3            ; 0            ; 22           ; 3            ; 0            ; 0            ; 0            ; 22           ; 0            ; 0            ; 0            ; 0            ; 0            ; 25        ; 0            ; 0            ;
+; Total Pass         ; 25        ; 20           ; 25        ; 0            ; 0            ; 25        ; 25        ; 0            ; 25        ; 25        ; 0            ; 22           ; 0            ; 0            ; 3            ; 0            ; 22           ; 3            ; 0            ; 0            ; 0            ; 22           ; 0            ; 0            ; 0            ; 0            ; 0            ; 25        ; 0            ; 0            ;
 ; Total Unchecked    ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
-; Total Inapplicable ; 0         ; 11           ; 0         ; 25           ; 25           ; 0         ; 0         ; 25           ; 0         ; 0         ; 25           ; 3            ; 25           ; 25           ; 22           ; 25           ; 3            ; 22           ; 25           ; 25           ; 25           ; 3            ; 25           ; 25           ; 25           ; 25           ; 25           ; 0         ; 25           ; 25           ;
+; Total Inapplicable ; 0         ; 5            ; 0         ; 25           ; 25           ; 0         ; 0         ; 25           ; 0         ; 0         ; 25           ; 3            ; 25           ; 25           ; 22           ; 25           ; 3            ; 22           ; 25           ; 25           ; 25           ; 3            ; 25           ; 25           ; 25           ; 25           ; 25           ; 0         ; 25           ; 25           ;
 ; Total Fail         ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
 ; LEDG[3]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDG[2]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -2549,12 +2574,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LEDR[14]           ; Pass      ; Pass         ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDR[13]           ; Pass      ; Pass         ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDR[12]           ; Pass      ; Pass         ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; LEDR[11]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; LEDR[10]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; LEDR[9]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; LEDR[8]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; LEDR[7]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; LEDR[6]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; LEDR[11]           ; Pass      ; Pass         ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; LEDR[10]           ; Pass      ; Pass         ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; LEDR[9]            ; Pass      ; Pass         ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; LEDR[8]            ; Pass      ; Pass         ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; LEDR[7]            ; Pass      ; Pass         ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; LEDR[6]            ; Pass      ; Pass         ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDR[5]            ; Pass      ; Pass         ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDR[4]            ; Pass      ; Pass         ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDR[3]            ; Pass      ; Pass         ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -2643,8 +2668,8 @@ Warning (176250): Ignoring invalid fast I/O register assignments. See the Ignore
 Warning (176251): Ignoring some wildcard destinations of fast I/O register assignments
     Info (176252): Wildcard assignment "Fast Output Register=ON" to "*" matches multiple destination nodes -- some destinations are not valid targets for this assignment
 Info (176235): Finished register packing
-    Extra Info (176218): Packed 14 registers into blocks of type I/O Output Buffer
-    Extra Info (176220): Created 14 register duplicates
+    Extra Info (176218): Packed 20 registers into blocks of type I/O Output Buffer
+    Extra Info (176220): Created 20 register duplicates
 Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "AUD_ADCDAT" is assigned to location or region, but does not exist in design
     Warning (15706): Node "AUD_ADCLRCK" is assigned to location or region, but does not exist in design
@@ -3155,11 +3180,11 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:05
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X81_Y61 to location X91_Y73
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X69_Y61 to location X80_Y73
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.11 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.12 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -3170,8 +3195,8 @@ Warning (169177): 1 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2
     Info (169178): Pin CLOCK_50 uses I/O standard 3.3-V LVTTL at Y2
 Info (144001): Generated suppressed messages file E:/ENGG56/MPEG/output_files/MPEG.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 508 warnings
-    Info: Peak virtual memory: 6314 megabytes
-    Info: Processing ended: Thu Dec 02 18:48:16 2021
+    Info: Peak virtual memory: 6305 megabytes
+    Info: Processing ended: Thu Dec 02 20:17:05 2021
     Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:23
 

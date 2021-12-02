@@ -23,7 +23,8 @@ parameter 	Inicio = 4'b0000,
 				Wait_UV_Addr = 4'b1000,
 				AtivaReady = 4'b1001,
 				DesativaReady = 4'b1010,
-				Inc_XY = 4'b1011;		
+				Compara_XY = 4'b1011,
+				Inc_XY = 4'b1100;		
 				
 always @ (EstadoAtual or start or u or v or x or y) begin
 
@@ -53,13 +54,15 @@ always @ (EstadoAtual or start or u or v or x or y) begin
 				ProxEstado = Inc_UV_Addr;
 		end
 		
+		AtivaReady: ProxEstado = DesativaReady;
+		
+		DesativaReady: ProxEstado = Compara_XY;
+		
 		Inc_UV_Addr: ProxEstado = Wait_UV_Addr;
 		
 		Wait_UV_Addr: ProxEstado = AtivaRden;
 		
-		AtivaReady: ProxEstado = DesativaReady;
-		
-		DesativaReady: begin
+		Compara_XY: begin
 			if(x == 7 && y == 7)
 				ProxEstado = Inicio;
 			else
@@ -67,6 +70,8 @@ always @ (EstadoAtual or start or u or v or x or y) begin
 		end
 		
 		Inc_XY: ProxEstado = ResetInit;
+		
+		default: ProxEstado = Inicio;
 	
 	endcase
 
@@ -159,19 +164,19 @@ end
 
 always @ (negedge clk) begin
 	if (x_zero) x <= 0;
-	else if (x_inc) x <= x + 1;
+	if (x_inc) x <= x + 1;
 	
 	if (y_zero) y <= 0;
-	else if (y_inc) y <= y + 1;
+	if (y_inc) y <= y + 1;
 
 	if (u_zero) u <= 0;
-	else if (u_inc) u <= u + 1;
+	if (u_inc) u <= u + 1;
 	
 	if (v_zero) v <= 0;
-	else if (v_inc) v <= v + 1;
+	if (v_inc) v <= v + 1;
 	
 	if (address_zero) address <= 0;
-	else if (address_inc) address <= address + 1;
+	if (address_inc) address <= address + 1;
 end
 
 endmodule
