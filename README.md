@@ -18,5 +18,5 @@
 * **(OK)** Refazer Timing Analysis
 * Automatizar validação do testbench
 
-## Semaforo (A FAZER)
-* Automatizar validação do testbench
+## Semaforo (FINALIZADO)
+* **(OK)** Automatizar validação do testbench

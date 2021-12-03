@@ -1,9 +1,11 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
+add wave -noupdate -divider Inputs
 add wave -noupdate -label A -radix binary /Semaforo_TB/a
 add wave -noupdate -label B -radix binary /Semaforo_TB/b
 add wave -noupdate -label C -radix binary /Semaforo_TB/c
 add wave -noupdate -label D -radix binary /Semaforo_TB/d
+add wave -noupdate -divider Outputs
 add wave -noupdate -label N_S -radix binary /Semaforo_TB/n_s
 add wave -noupdate -label L_O -radix binary /Semaforo_TB/l_o
 TreeUpdate [SetDefaultTree]
