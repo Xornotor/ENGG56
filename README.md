@@ -13,10 +13,10 @@
 * Automatizar validação do testbench da FSM
 * Automatizar validação do testbenhc do TOP
 
-## MPEG (A FAZER)
+## MPEG (FINALIZADO)
 * **(OK)** Corrigir lista de sensibilidade da FSM
 * **(OK)** Refazer Timing Analysis
-* Automatizar validação do testbench
+* **(OK)** Automatizar validação do testbench
 
 ## Semaforo (FINALIZADO)
 * **(OK)** Automatizar validação do testbench
