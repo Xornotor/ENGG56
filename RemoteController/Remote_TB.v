@@ -1,4 +1,4 @@
-/*TESTBENCH DO ACUMULADOR*/
+/*TESTBENCH DO CONTROLE REMOTO*/
 
 `timescale 1us/1us
 module Remote_TB;
