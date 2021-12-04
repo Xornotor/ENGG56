@@ -1,11 +1,11 @@
 
 State Machine - |MPEG_Diagrama|FSM_Control:inst|EstadoAtual
-Name EstadoAtual.Compara_XY EstadoAtual.Inc_XY EstadoAtual.DesativaReady EstadoAtual.AtivaReady EstadoAtual.Inc_UV_Addr EstadoAtual.DesativaRden EstadoAtual.DesativaMac EstadoAtual.AtivaMac EstadoAtual.AtivaRden EstadoAtual.TiraResetInit EstadoAtual.ResetInit EstadoAtual.Inicio 
+Name EstadoAtual.Compara_XY EstadoAtual.Inc_XY EstadoAtual.DesativaReady EstadoAtual.AtivaReady EstadoAtual.Inc_UV_Addr EstadoAtual.DesativaRden EstadoAtual.DesativaMac EstadoAtual.WaitRden EstadoAtual.AtivaRden EstadoAtual.TiraResetInit EstadoAtual.ResetInit EstadoAtual.Inicio 
 EstadoAtual.Inicio 0 0 0 0 0 0 0 0 0 0 0 0 
 EstadoAtual.ResetInit 0 0 0 0 0 0 0 0 0 0 1 1 
 EstadoAtual.TiraResetInit 0 0 0 0 0 0 0 0 0 1 0 1 
 EstadoAtual.AtivaRden 0 0 0 0 0 0 0 0 1 0 0 1 
-EstadoAtual.AtivaMac 0 0 0 0 0 0 0 1 0 0 0 1 
+EstadoAtual.WaitRden 0 0 0 0 0 0 0 1 0 0 0 1 
 EstadoAtual.DesativaMac 0 0 0 0 0 0 1 0 0 0 0 1 
 EstadoAtual.DesativaRden 0 0 0 0 0 1 0 0 0 0 0 1 
 EstadoAtual.Inc_UV_Addr 0 0 0 0 1 0 0 0 0 0 0 1 

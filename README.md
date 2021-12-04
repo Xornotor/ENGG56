@@ -14,12 +14,12 @@
 * **(OK)** Automatizar validação do testbench do TOP
 * **(OK)** Refazer Timing Analysis
 
-## MPEG (ALTERAR)
+## MPEG (FINALIZADO)
 * **(OK)** Corrigir lista de sensibilidade da FSM
 * **(OK)** Automatizar validação do testbench
-* Inserir estado de espera após ativação de RDEN
-* Refazer Timing Analysis
-* Rechecar testbench
+* **(OK)** Inserir estado de espera após ativação de RDEN
+* **(OK)** Refazer Timing Analysis
+* **(OK)** Rechecar testbench
 
 ## Semaforo (FINALIZADO)
 * **(OK)** Automatizar validação do testbench

@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Thu Dec 02 20:16:43 2021
+Analysis & Synthesis Status : Successful - Sat Dec 04 15:50:04 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : MPEG
 Top-level Entity Name : MPEG_Diagrama
 Family : Cyclone IV E
-Total logic elements : 44
-    Total combinational functions : 37
-    Dedicated logic registers : 30
-Total registers : 30
+Total logic elements : 7
+    Total combinational functions : 5
+    Dedicated logic registers : 5
+Total registers : 5
 Total pins : 25
 Total virtual pins : 0
 Total memory bits : 0

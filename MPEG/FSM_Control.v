@@ -16,15 +16,16 @@ parameter 	Inicio = 4'b0000,
 				ResetInit = 4'b0001,
 				TiraResetInit = 4'b0010,
 				AtivaRden = 4'b0011,
-				AtivaMac = 4'b0100,
-				DesativaMac = 4'b0101,
-				DesativaRden = 4'b0110,
-				Inc_UV_Addr = 4'b0111,
-				Wait_UV_Addr = 4'b1000,
-				AtivaReady = 4'b1001,
-				DesativaReady = 4'b1010,
-				Compara_XY = 4'b1011,
-				Inc_XY = 4'b1100;		
+				WaitRden = 4'b0100,
+				AtivaMac = 4'b0101,
+				DesativaMac = 4'b0110,
+				DesativaRden = 4'b0111,
+				Inc_UV_Addr = 4'b1000,
+				Wait_UV_Addr = 4'b1001,
+				AtivaReady = 4'b1010,
+				DesativaReady = 4'b1011,
+				Compara_XY = 4'b1100,
+				Inc_XY = 4'b1101;
 				
 always @ (EstadoAtual or start or u or v or x or y) begin
 
@@ -41,7 +42,9 @@ always @ (EstadoAtual or start or u or v or x or y) begin
 		
 		TiraResetInit: ProxEstado = AtivaRden;
 		
-		AtivaRden: ProxEstado = AtivaMac;
+		AtivaRden: ProxEstado = WaitRden;
+		
+		WaitRden: ProxEstado = AtivaMac;
 		
 		AtivaMac: ProxEstado = DesativaMac;
 		
@@ -101,7 +104,7 @@ always @ (EstadoAtual) begin
 	else
 		rst_out = 1;
 		
-	if(EstadoAtual == AtivaRden || EstadoAtual == AtivaMac || EstadoAtual == DesativaMac)
+	if(EstadoAtual == AtivaRden || EstadoAtual == WaitRden || EstadoAtual == AtivaMac || EstadoAtual == DesativaMac)
 		rd_en = 1;
 	else
 		rd_en = 0;
