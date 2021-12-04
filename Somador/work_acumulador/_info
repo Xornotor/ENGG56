@@ -10,50 +10,50 @@ z2
 cModel Technology
 dE:/ENGG56/Semaforo
 vAcumulador
-!s110 1638323125
+!s110 1638624528
 !i10b 1
-!s100 _h:O5OA=ja:18<U6:0:nP0
+!s100 knA^W97XT3ZWMFY9GX^le2
 Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
-II:`kiL;@=];NhL2GJ20CG3
+IG[T6HNfS<RYEPG0]@A>e90
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dE:/ENGG56/Somador
-w1638236480
+w1638622284
 8E:/ENGG56/Somador/Acumulador.v
 FE:/ENGG56/Somador/Acumulador.v
-!i122 19
+!i122 36
 L0 1 23
 Z3 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z4 !s108 1638323125.000000
+!s108 1638624528.000000
 !s107 E:/ENGG56/Somador/Acumulador.v|
 !s90 -reportprogress|300|-work|work_acumulador|-stats=none|E:/ENGG56/Somador/Acumulador.v|
 !i113 1
-Z5 o-work work_acumulador
-Z6 tCvgOpt 0
+Z4 o-work work_acumulador
+Z5 tCvgOpt 0
 n@acumulador
 vAcumulador_TB
-!s110 1638323126
+!s110 1638625950
 !i10b 1
-!s100 g33oIdANAk81E9W8TFHfz0
+!s100 3e0l[7`[hX0n2LGn=eHmo1
 R0
-INQTk97i3c;eZS`ZjZ^dWe0
+IOWh:PfbecXTc@3CbcemYR3
 R1
 R2
-w1638300556
+w1638625945
 8E:/ENGG56/Somador/Acumulador_TB.v
 FE:/ENGG56/Somador/Acumulador_TB.v
-!i122 20
-L0 4 35
+!i122 49
+L0 4 84
 R3
 r1
 !s85 0
 31
-R4
+!s108 1638625949.000000
 !s107 E:/ENGG56/Somador/Acumulador_TB.v|
 !s90 -reportprogress|300|-work|work_acumulador|-stats=none|E:/ENGG56/Somador/Acumulador_TB.v|
 !i113 1
+R4
 R5
-R6
 n@acumulador_@t@b
