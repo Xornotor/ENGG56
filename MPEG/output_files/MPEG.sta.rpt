@@ -1,5 +1,5 @@
 Timing Analyzer report for MPEG
-Wed Dec 01 19:35:54 2021
+Sat Dec 04 15:50:26 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -104,12 +104,13 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Average used               ; 1.04        ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.5%      ;
+;     Processor 2            ;   0.4%      ;
+;     Processors 3-12        ;   0.4%      ;
 +----------------------------+-------------+
 
 
@@ -118,7 +119,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; MPEG.out.sdc  ; OK     ; Wed Dec 01 19:35:53 2021 ;
+; MPEG.out.sdc  ; OK     ; Sat Dec 04 15:50:26 2021 ;
 +---------------+--------+--------------------------+
 
 
@@ -136,7 +137,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------+-----------------+------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
 +-----------+-----------------+------------+------+
-; 52.35 MHz ; 52.35 MHz       ; CLOCK_50   ;      ;
+; 51.47 MHz ; 51.47 MHz       ; CLOCK_50   ;      ;
 +-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -152,7 +153,7 @@ HTML report is unavailable in plain text report export.
 +----------+-------+------------------+
 ; Clock    ; Slack ; End Point TNS    ;
 +----------+-------+------------------+
-; CLOCK_50 ; 0.449 ; 0.000            ;
+; CLOCK_50 ; 0.286 ; 0.000            ;
 +----------+-------+------------------+
 
 
@@ -161,26 +162,26 @@ HTML report is unavailable in plain text report export.
 +----------+-------+-----------------+
 ; Clock    ; Slack ; End Point TNS   ;
 +----------+-------+-----------------+
-; CLOCK_50 ; 0.402 ; 0.000           ;
+; CLOCK_50 ; 0.404 ; 0.000           ;
 +----------+-------+-----------------+
 
 
 +----------------------------------------+
 ; Slow 1200mV 85C Model Recovery Summary ;
-+----------+--------+--------------------+
-; Clock    ; Slack  ; End Point TNS      ;
-+----------+--------+--------------------+
-; CLOCK_50 ; 13.804 ; 0.000              ;
-+----------+--------+--------------------+
++----------+-------+---------------------+
+; Clock    ; Slack ; End Point TNS       ;
++----------+-------+---------------------+
+; CLOCK_50 ; 6.348 ; 0.000               ;
++----------+-------+---------------------+
 
 
 +---------------------------------------+
 ; Slow 1200mV 85C Model Removal Summary ;
-+----------+-------+--------------------+
-; Clock    ; Slack ; End Point TNS      ;
-+----------+-------+--------------------+
-; CLOCK_50 ; 4.242 ; 0.000              ;
-+----------+-------+--------------------+
++----------+--------+-------------------+
+; Clock    ; Slack  ; End Point TNS     ;
++----------+--------+-------------------+
+; CLOCK_50 ; 12.338 ; 0.000             ;
++----------+--------+-------------------+
 
 
 +---------------------------------------------------+
@@ -188,262 +189,94 @@ HTML report is unavailable in plain text report export.
 +----------+-------+--------------------------------+
 ; Clock    ; Slack ; End Point TNS                  ;
 +----------+-------+--------------------------------+
-; CLOCK_50 ; 9.620 ; 0.000                          ;
+; CLOCK_50 ; 9.627 ; 0.000                          ;
 +----------+-------+--------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Setup: 'CLOCK_50'                                                                                                                             ;
-+-------+--------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                                  ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+--------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.449 ; FSM_Control:inst|address[3]                ; LEDR[15]                                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.152     ; 4.379      ;
-; 0.457 ; FSM_Control:inst|y[0]                      ; LEDR[9]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.134     ; 4.389      ;
-; 1.805 ; FSM_Control:inst|rst_out                   ; LEDG[3]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.137     ; 3.038      ;
-; 1.813 ; FSM_Control:inst|v[0]                      ; LEDR[0]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.149     ; 3.018      ;
-; 1.818 ; FSM_Control:inst|rd_en                     ; LEDG[2]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.134     ; 3.028      ;
-; 1.840 ; FSM_Control:inst|address[0]                ; LEDR[12]                                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.152     ; 2.988      ;
-; 1.842 ; FSM_Control:inst|address[2]                ; LEDR[14]                                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.160     ; 2.978      ;
-; 1.846 ; FSM_Control:inst|x[0]                      ; LEDR[6]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.146     ; 2.988      ;
-; 1.851 ; FSM_Control:inst|act_mac                   ; LEDG[1]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.161     ; 2.968      ;
-; 1.854 ; FSM_Control:inst|ready                     ; LEDG[0]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.158     ; 2.968      ;
-; 1.856 ; FSM_Control:inst|x[1]                      ; LEDR[7]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.146     ; 2.978      ;
-; 1.860 ; FSM_Control:inst|y[2]                      ; LEDR[11]                                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.152     ; 2.968      ;
-; 1.863 ; FSM_Control:inst|y[1]                      ; LEDR[10]                                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.159     ; 2.958      ;
-; 1.863 ; FSM_Control:inst|address[5]                ; LEDR[17]                                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.159     ; 2.958      ;
-; 1.864 ; FSM_Control:inst|u[0]                      ; LEDR[3]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.158     ; 2.958      ;
-; 1.872 ; FSM_Control:inst|address[1]                ; LEDR[13]                                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.150     ; 2.958      ;
-; 1.873 ; FSM_Control:inst|u[2]                      ; LEDR[5]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.139     ; 2.968      ;
-; 1.877 ; FSM_Control:inst|v[1]                      ; LEDR[1]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.145     ; 2.958      ;
-; 1.877 ; FSM_Control:inst|v[2]                      ; LEDR[2]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.145     ; 2.958      ;
-; 1.882 ; FSM_Control:inst|address[4]                ; LEDR[16]                                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.150     ; 2.948      ;
-; 1.883 ; FSM_Control:inst|u[1]                      ; LEDR[4]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.139     ; 2.958      ;
-; 1.883 ; FSM_Control:inst|x[2]                      ; LEDR[8]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.149     ; 2.948      ;
-; 4.339 ; SW[0]                                      ; FSM_Control:inst|ProxEstado.Inicio       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 3.084      ; 6.743      ;
-; 4.341 ; SW[0]                                      ; FSM_Control:inst|ProxEstado.ResetInit    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 3.084      ; 6.741      ;
-; 6.126 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[3]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.056      ; 3.813      ;
-; 6.156 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[3]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.056      ; 3.783      ;
-; 6.321 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[1]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.054      ; 3.616      ;
-; 6.340 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[4]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.054      ; 3.597      ;
-; 6.349 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[5]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.062      ; 3.596      ;
-; 6.351 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[1]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.054      ; 3.586      ;
-; 6.370 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[4]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.054      ; 3.567      ;
-; 6.373 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[3]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.056      ; 3.566      ;
-; 6.379 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[5]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.062      ; 3.566      ;
-; 6.397 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[0]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.056      ; 3.542      ;
-; 6.427 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[0]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.056      ; 3.512      ;
-; 6.504 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|ready                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.062      ; 3.441      ;
-; 6.537 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|u[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.043      ; 3.389      ;
-; 6.559 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[4]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.054      ; 3.378      ;
-; 6.564 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[5]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.062      ; 3.381      ;
-; 6.567 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|u[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.043      ; 3.359      ;
-; 6.569 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[2]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.064      ; 3.378      ;
-; 6.580 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|v[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.049      ; 3.352      ;
-; 6.587 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|y[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.056      ; 3.352      ;
-; 6.597 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|v[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.049      ; 3.335      ;
-; 6.599 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[2]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.064      ; 3.348      ;
-; 6.610 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|v[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.049      ; 3.322      ;
-; 6.617 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[1]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.054      ; 3.320      ;
-; 6.627 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|v[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.049      ; 3.305      ;
-; 6.637 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|u[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.062      ; 3.308      ;
-; 6.638 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|y[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.062      ; 3.307      ;
-; 6.660 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|x[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.053      ; 3.276      ;
-; 6.667 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|u[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.062      ; 3.278      ;
-; 6.670 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[0]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.056      ; 3.269      ;
-; 6.680 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|ready                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.062      ; 3.265      ;
-; 6.714 ; FSM_Control:inst|EstadoAtual.AtivaMac      ; FSM_Control:inst|act_mac                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.320     ; 2.849      ;
-; 6.719 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|act_mac                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.065      ; 3.229      ;
-; 6.732 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|u[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.043      ; 3.194      ;
-; 6.751 ; FSM_Control:inst|EstadoAtual.DesativaReady ; FSM_Control:inst|ready                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.323     ; 2.809      ;
-; 6.762 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|u[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.043      ; 3.164      ;
-; 6.812 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|v[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.049      ; 3.120      ;
-; 6.814 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[2]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.064      ; 3.133      ;
-; 6.854 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|u[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.043      ; 3.072      ;
-; 6.859 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|v[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.049      ; 3.073      ;
-; 6.861 ; FSM_Control:inst|EstadoAtual.Inc_XY        ; FSM_Control:inst|y[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.056      ; 3.078      ;
-; 6.908 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|u[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.062      ; 3.037      ;
-; 6.909 ; FSM_Control:inst|EstadoAtual.Inc_XY        ; FSM_Control:inst|y[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.062      ; 3.036      ;
-; 6.930 ; FSM_Control:inst|EstadoAtual.DesativaMac   ; FSM_Control:inst|act_mac                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.320     ; 2.633      ;
-; 6.976 ; FSM_Control:inst|EstadoAtual.AtivaRden     ; FSM_Control:inst|rd_en                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.343     ; 2.564      ;
-; 6.989 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|u[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.043      ; 2.937      ;
-; 6.997 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|v[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.053      ; 2.939      ;
-; 7.110 ; FSM_Control:inst|EstadoAtual.TiraResetInit ; FSM_Control:inst|rst_out                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.340     ; 2.433      ;
-; 7.115 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|rd_en                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.039      ; 2.807      ;
-; 7.117 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|u[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.091      ; 2.972      ;
-; 7.143 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|v[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.091      ; 2.946      ;
-; 7.147 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|u[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.091      ; 2.942      ;
-; 7.160 ; FSM_Control:inst|EstadoAtual.Inc_XY        ; FSM_Control:inst|x[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.050      ; 2.773      ;
-; 7.173 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|v[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.091      ; 2.916      ;
-; 7.174 ; FSM_Control:inst|EstadoAtual.DesativaRden  ; FSM_Control:inst|rd_en                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.343     ; 2.366      ;
-; 7.177 ; FSM_Control:inst|EstadoAtual.Inc_XY        ; FSM_Control:inst|x[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.050      ; 2.756      ;
-; 7.196 ; FSM_Control:inst|EstadoAtual.Inc_XY        ; FSM_Control:inst|x[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.053      ; 2.740      ;
-; 7.236 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|rst_out                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.042      ; 2.689      ;
-; 7.271 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|v[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.053      ; 2.665      ;
-; 7.305 ; FSM_Control:inst|EstadoAtual.ResetInit     ; FSM_Control:inst|rst_out                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.340     ; 2.238      ;
-; 7.347 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|u[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.091      ; 2.742      ;
-; 7.392 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|v[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.053      ; 2.544      ;
-; 7.418 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|x[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.050      ; 2.515      ;
-; 7.443 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|v[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.091      ; 2.646      ;
-; 7.461 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|x[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.050      ; 2.472      ;
-; 7.542 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[1]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.093      ; 2.549      ;
-; 7.572 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[1]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.093      ; 2.519      ;
-; 7.710 ; FSM_Control:inst|EstadoAtual.DesativaRden  ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.289     ; 1.999      ;
-; 7.770 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|x[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.105      ; 2.333      ;
-; 7.782 ; FSM_Control:inst|EstadoAtual.DesativaRden  ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.289     ; 1.927      ;
-; 7.784 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|y[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.039      ; 2.138      ;
-; 7.796 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[1]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.093      ; 2.295      ;
-; 7.829 ; FSM_Control:inst|EstadoAtual.Inc_XY        ; FSM_Control:inst|y[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.039      ; 2.093      ;
-; 7.964 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|v[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.091      ; 2.125      ;
-; 8.052 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|y[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.105      ; 2.051      ;
-; 8.057 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.105      ; 2.046      ;
-; 8.104 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[3]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.091      ; 1.985      ;
-+-------+--------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'CLOCK_50'                                                                                                                                                ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.286  ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; LEDG[2]                                            ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.174     ; 4.520      ;
+; 0.465  ; FSM_Control:inst|EstadoAtual.Inicio                ; LEDG[3]                                            ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.174     ; 4.341      ;
+; 0.625  ; FSM_Control:inst|EstadoAtual.AtivaRden             ; LEDG[2]                                            ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.174     ; 4.181      ;
+; 0.650  ; FSM_Control:inst|EstadoAtual.ResetInit             ; LEDG[3]                                            ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.174     ; 4.156      ;
+; 1.851  ; FSM_Control:inst|EstadoAtual.WaitRden              ; LEDG[1]                                            ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -3.161     ; 2.968      ;
+; 6.522  ; SW[0]                                              ; FSM_Control:inst|EstadoAtual.Inicio                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 3.062      ; 4.538      ;
+; 6.704  ; SW[0]                                              ; FSM_Control:inst|EstadoAtual.ResetInit             ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 3.062      ; 4.356      ;
+; 16.223 ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.071     ; 3.589      ;
+; 16.291 ; FSM_Control:inst|EstadoAtual.ResetInit             ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.071     ; 3.521      ;
+; 16.663 ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.071     ; 3.149      ;
+; 16.853 ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.071     ; 2.959      ;
+; 17.044 ; FSM_Control:inst|EstadoAtual.AtivaRden             ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.071     ; 2.768      ;
+; 17.554 ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.079     ; 2.365      ;
+; 17.686 ; FSM_Control:inst|EstadoAtual.ResetInit             ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.079     ; 2.233      ;
+; 18.058 ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.079     ; 1.861      ;
+; 18.221 ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.079     ; 1.698      ;
+; 18.241 ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; FSM_Control:inst|EstadoAtual.AtivaRden             ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.079     ; 1.678      ;
+; 18.439 ; FSM_Control:inst|EstadoAtual.AtivaRden             ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.079     ; 1.480      ;
+; 18.741 ; FSM_Control:inst|EstadoAtual.ResetInit             ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.079     ; 1.178      ;
+; 18.914 ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.ResetInit             ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.079     ; 1.005      ;
+; 19.185 ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.Inicio                ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.079     ; 0.734      ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Hold: 'CLOCK_50'                                                                                                                            ;
-+-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                                ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.402 ; FSM_Control:inst|y[2]~_Duplicate_1       ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; FSM_Control:inst|y[1]~_Duplicate_1       ; FSM_Control:inst|y[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; FSM_Control:inst|x[2]~_Duplicate_1       ; FSM_Control:inst|x[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; FSM_Control:inst|x[1]~_Duplicate_1       ; FSM_Control:inst|x[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|x[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.403 ; FSM_Control:inst|u[1]~_Duplicate_1       ; FSM_Control:inst|u[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.404 ; FSM_Control:inst|ready~_Duplicate_1      ; FSM_Control:inst|ready~_Duplicate_1      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; FSM_Control:inst|act_mac~_Duplicate_1    ; FSM_Control:inst|act_mac~_Duplicate_1    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; FSM_Control:inst|rd_en~_Duplicate_1      ; FSM_Control:inst|rd_en~_Duplicate_1      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; FSM_Control:inst|rst_out~_Duplicate_1    ; FSM_Control:inst|rst_out~_Duplicate_1    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; FSM_Control:inst|address[5]~_Duplicate_1 ; FSM_Control:inst|address[5]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; FSM_Control:inst|address[4]~_Duplicate_1 ; FSM_Control:inst|address[4]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; FSM_Control:inst|address[3]~_Duplicate_1 ; FSM_Control:inst|address[3]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; FSM_Control:inst|address[2]~_Duplicate_1 ; FSM_Control:inst|address[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; FSM_Control:inst|v[2]~_Duplicate_1       ; FSM_Control:inst|v[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; FSM_Control:inst|u[0]~_Duplicate_1       ; FSM_Control:inst|u[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
-; 0.655 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|x[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.922      ;
-; 0.656 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|x[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.923      ;
-; 0.828 ; FSM_Control:inst|x[2]~_Duplicate_1       ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 1.095      ;
-; 0.828 ; FSM_Control:inst|x[2]~_Duplicate_1       ; FSM_Control:inst|y[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 1.095      ;
-; 0.885 ; FSM_Control:inst|v[1]~_Duplicate_1       ; FSM_Control:inst|v[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.150      ;
-; 0.897 ; FSM_Control:inst|x[1]~_Duplicate_1       ; FSM_Control:inst|x[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 1.164      ;
-; 0.929 ; FSM_Control:inst|x[1]~_Duplicate_1       ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 1.196      ;
-; 0.929 ; FSM_Control:inst|x[1]~_Duplicate_1       ; FSM_Control:inst|y[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 1.196      ;
-; 0.932 ; FSM_Control:inst|u[0]~_Duplicate_1       ; FSM_Control:inst|u[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.082      ; 1.200      ;
-; 1.003 ; FSM_Control:inst|u[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.082      ; 1.271      ;
-; 1.013 ; FSM_Control:inst|u[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.082      ; 1.281      ;
-; 1.030 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 1.297      ;
-; 1.030 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|y[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 1.297      ;
-; 1.145 ; FSM_Control:inst|v[1]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.082      ; 1.413      ;
-; 1.156 ; FSM_Control:inst|v[1]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.082      ; 1.424      ;
-; 1.192 ; FSM_Control:inst|u[0]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.082      ; 1.460      ;
-; 1.199 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|v[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.464      ;
-; 1.231 ; FSM_Control:inst|u[1]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.497      ;
-; 1.238 ; FSM_Control:inst|u[0]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.082      ; 1.506      ;
-; 1.277 ; FSM_Control:inst|u[1]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.543      ;
-; 1.309 ; FSM_Control:inst|address[1]~_Duplicate_1 ; FSM_Control:inst|address[1]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.575      ;
-; 1.339 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.082      ; 1.607      ;
-; 1.340 ; FSM_Control:inst|v[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.082      ; 1.608      ;
-; 1.350 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.082      ; 1.618      ;
-; 1.351 ; FSM_Control:inst|v[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.082      ; 1.619      ;
-; 1.397 ; FSM_Control:inst|y[1]~_Duplicate_1       ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 1.664      ;
-; 1.465 ; FSM_Control:inst|y[0]~_Duplicate_1       ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.095      ; 1.746      ;
-; 1.465 ; FSM_Control:inst|y[0]~_Duplicate_1       ; FSM_Control:inst|y[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.095      ; 1.746      ;
-; 1.574 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|v[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.839      ;
-; 1.613 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|v[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.878      ;
-; 1.633 ; FSM_Control:inst|v[1]~_Duplicate_1       ; FSM_Control:inst|u[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.898      ;
-; 1.656 ; FSM_Control:inst|rst_out~_Duplicate_1    ; FSM_Control:inst|rst_out                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.020      ; 1.786      ;
-; 1.663 ; FSM_Control:inst|address[3]~_Duplicate_1 ; FSM_Control:inst|address[4]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.928      ;
-; 1.666 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|x[0]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.003      ; 1.779      ;
-; 1.673 ; FSM_Control:inst|address[4]~_Duplicate_1 ; FSM_Control:inst|address[5]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.938      ;
-; 1.704 ; FSM_Control:inst|x[1]~_Duplicate_1       ; FSM_Control:inst|x[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.003      ; 1.817      ;
-; 1.723 ; FSM_Control:inst|v[1]~_Duplicate_1       ; FSM_Control:inst|u[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.082      ; 1.991      ;
-; 1.743 ; FSM_Control:inst|address[1]~_Duplicate_1 ; FSM_Control:inst|address[3]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.077      ; 2.006      ;
-; 1.749 ; FSM_Control:inst|address[1]~_Duplicate_1 ; FSM_Control:inst|address[4]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.077      ; 2.012      ;
-; 1.757 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[3]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 2.022      ;
-; 1.763 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[4]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 2.028      ;
-; 1.785 ; FSM_Control:inst|address[3]~_Duplicate_1 ; FSM_Control:inst|address[5]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 2.050      ;
-; 1.787 ; FSM_Control:inst|rd_en~_Duplicate_1      ; FSM_Control:inst|rd_en                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.017      ; 1.914      ;
-; 1.827 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|u[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 2.092      ;
-; 1.828 ; FSM_Control:inst|v[2]~_Duplicate_1       ; FSM_Control:inst|u[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 2.093      ;
-; 1.860 ; FSM_Control:inst|u[1]~_Duplicate_1       ; FSM_Control:inst|u[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.008      ; 1.978      ;
-; 1.871 ; FSM_Control:inst|address[1]~_Duplicate_1 ; FSM_Control:inst|address[5]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.077      ; 2.134      ;
-; 1.885 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[5]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 2.150      ;
-; 1.917 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|u[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.082      ; 2.185      ;
-; 1.918 ; FSM_Control:inst|v[2]~_Duplicate_1       ; FSM_Control:inst|u[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.082      ; 2.186      ;
-; 1.958 ; FSM_Control:inst|address[2]~_Duplicate_1 ; FSM_Control:inst|address[3]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 2.223      ;
-; 1.964 ; FSM_Control:inst|address[2]~_Duplicate_1 ; FSM_Control:inst|address[4]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 2.229      ;
-; 1.974 ; FSM_Control:inst|y[0]~_Duplicate_1       ; FSM_Control:inst|y[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 2.239      ;
-; 1.984 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|x[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.003      ; 2.097      ;
-; 2.010 ; FSM_Control:inst|ready~_Duplicate_1      ; FSM_Control:inst|ready                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.039      ; 2.159      ;
-; 2.033 ; FSM_Control:inst|u[2]~_Duplicate_1       ; FSM_Control:inst|u[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 2.298      ;
-; 2.037 ; FSM_Control:inst|act_mac~_Duplicate_1    ; FSM_Control:inst|act_mac                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 2.189      ;
-; 2.079 ; FSM_Control:inst|u[0]~_Duplicate_1       ; FSM_Control:inst|u[0]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.029      ; 2.218      ;
-; 2.080 ; FSM_Control:inst|v[2]~_Duplicate_1       ; FSM_Control:inst|v[2]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.016      ; 2.206      ;
-; 2.082 ; FSM_Control:inst|address[1]~_Duplicate_1 ; FSM_Control:inst|address[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.077      ; 2.345      ;
-; 2.086 ; FSM_Control:inst|address[2]~_Duplicate_1 ; FSM_Control:inst|address[5]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 2.351      ;
-; 2.096 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 2.361      ;
-; 2.098 ; FSM_Control:inst|address[5]~_Duplicate_1 ; FSM_Control:inst|address[5]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.030      ; 2.238      ;
-; 2.102 ; FSM_Control:inst|address[4]~_Duplicate_1 ; FSM_Control:inst|address[4]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.021      ; 2.233      ;
-; 2.124 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|v[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.016      ; 2.250      ;
-; 2.151 ; FSM_Control:inst|address[2]~_Duplicate_1 ; FSM_Control:inst|address[2]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.031      ; 2.292      ;
-; 2.206 ; FSM_Control:inst|x[2]~_Duplicate_1       ; FSM_Control:inst|y[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.065      ; 2.457      ;
-; 2.213 ; FSM_Control:inst|y[0]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_XY       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.067      ; 2.466      ;
-; 2.213 ; FSM_Control:inst|y[0]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inicio       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.067      ; 2.466      ;
-; 2.280 ; FSM_Control:inst|address[3]~_Duplicate_1 ; FSM_Control:inst|address[3]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.023      ; 2.413      ;
-; 2.301 ; FSM_Control:inst|y[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_XY       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.053      ; 2.540      ;
-; 2.301 ; FSM_Control:inst|y[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inicio       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.053      ; 2.540      ;
-; 2.303 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[0]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.023      ; 2.436      ;
-; 2.307 ; FSM_Control:inst|x[1]~_Duplicate_1       ; FSM_Control:inst|y[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.065      ; 2.558      ;
-; 2.357 ; FSM_Control:inst|y[1]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_XY       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.053      ; 2.596      ;
-; 2.357 ; FSM_Control:inst|y[1]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inicio       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.053      ; 2.596      ;
-; 2.383 ; FSM_Control:inst|x[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_XY       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.053      ; 2.622      ;
-; 2.383 ; FSM_Control:inst|x[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inicio       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.053      ; 2.622      ;
-; 2.389 ; FSM_Control:inst|u[0]~_Duplicate_1       ; FSM_Control:inst|u[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.010      ; 2.509      ;
-; 2.391 ; FSM_Control:inst|u[2]~_Duplicate_1       ; FSM_Control:inst|u[2]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.010      ; 2.511      ;
-; 2.398 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[1]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.082      ; 2.666      ;
-; 2.408 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|y[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.065      ; 2.659      ;
-; 2.451 ; FSM_Control:inst|address[1]~_Duplicate_1 ; FSM_Control:inst|address[1]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.019      ; 2.580      ;
-+-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'CLOCK_50'                                                                                                                                                 ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.404  ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.Inicio                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
+; 0.633  ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.ResetInit             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.898      ;
+; 0.823  ; FSM_Control:inst|EstadoAtual.ResetInit             ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.088      ;
+; 1.140  ; FSM_Control:inst|EstadoAtual.AtivaRden             ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.405      ;
+; 1.340  ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; FSM_Control:inst|EstadoAtual.AtivaRden             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.605      ;
+; 1.349  ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.614      ;
+; 1.414  ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.679      ;
+; 1.792  ; FSM_Control:inst|EstadoAtual.ResetInit             ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 2.057      ;
+; 1.913  ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 2.178      ;
+; 2.400  ; FSM_Control:inst|EstadoAtual.AtivaRden             ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.066      ; 2.576      ;
+; 2.634  ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.066      ; 2.810      ;
+; 2.674  ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.066      ; 2.850      ;
+; 3.052  ; FSM_Control:inst|EstadoAtual.ResetInit             ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.066      ; 3.228      ;
+; 3.230  ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.066      ; 3.406      ;
+; 12.598 ; SW[0]                                              ; FSM_Control:inst|EstadoAtual.ResetInit             ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 3.174      ; 3.978      ;
+; 12.684 ; SW[0]                                              ; FSM_Control:inst|EstadoAtual.Inicio                ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 3.174      ; 4.064      ;
+; 17.965 ; FSM_Control:inst|EstadoAtual.WaitRden              ; LEDG[1]                                            ; CLOCK_50     ; CLOCK_50    ; -10.000      ; -3.070     ; 2.915      ;
+; 19.020 ; FSM_Control:inst|EstadoAtual.ResetInit             ; LEDG[3]                                            ; CLOCK_50     ; CLOCK_50    ; -10.000      ; -3.062     ; 3.978      ;
+; 19.067 ; FSM_Control:inst|EstadoAtual.AtivaRden             ; LEDG[2]                                            ; CLOCK_50     ; CLOCK_50    ; -10.000      ; -3.062     ; 4.025      ;
+; 19.086 ; FSM_Control:inst|EstadoAtual.Inicio                ; LEDG[3]                                            ; CLOCK_50     ; CLOCK_50    ; -10.000      ; -3.062     ; 4.044      ;
+; 19.363 ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; LEDG[2]                                            ; CLOCK_50     ; CLOCK_50    ; -10.000      ; -3.062     ; 4.321      ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Recovery: 'CLOCK_50'                                                                                            ;
-+--------+-----------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node ; To Node                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 13.804 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 2.925      ; 7.119      ;
-; 13.804 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaReady    ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 2.925      ; 7.119      ;
-; 13.804 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inicio        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 2.925      ; 7.119      ;
-; 13.804 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inc_XY        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 2.925      ; 7.119      ;
-; 14.685 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaMac      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 3.294      ; 6.607      ;
-; 14.685 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.DesativaMac   ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 3.294      ; 6.607      ;
-; 14.685 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.DesativaReady ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 3.294      ; 6.607      ;
-; 14.719 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.ResetInit     ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 3.292      ; 6.571      ;
-; 14.719 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.TiraResetInit ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 3.292      ; 6.571      ;
-; 14.719 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaRden     ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 3.292      ; 6.571      ;
-; 14.719 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.DesativaRden  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 3.292      ; 6.571      ;
-+--------+-----------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Recovery: 'CLOCK_50'                                                                                                   ;
++-------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 6.348 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 3.070      ; 4.605      ;
+; 7.020 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inicio                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 3.062      ; 4.040      ;
+; 7.020 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.ResetInit             ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 3.062      ; 4.040      ;
+; 7.020 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 3.062      ; 4.040      ;
+; 7.020 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaRden             ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 3.062      ; 4.040      ;
+; 7.020 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 3.062      ; 4.040      ;
++-------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Removal: 'CLOCK_50'                                                                                            ;
-+-------+-----------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node ; To Node                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 4.242 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.ResetInit     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 3.419      ; 5.847      ;
-; 4.242 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.TiraResetInit ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 3.419      ; 5.847      ;
-; 4.242 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaRden     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 3.419      ; 5.847      ;
-; 4.242 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.DesativaRden  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 3.419      ; 5.847      ;
-; 4.262 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaMac      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 3.422      ; 5.870      ;
-; 4.262 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.DesativaMac   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 3.422      ; 5.870      ;
-; 4.262 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.DesativaReady ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 3.422      ; 5.870      ;
-; 5.171 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 3.037      ; 6.394      ;
-; 5.171 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaReady    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 3.037      ; 6.394      ;
-; 5.171 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inicio        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 3.037      ; 6.394      ;
-; 5.171 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inc_XY        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 3.037      ; 6.394      ;
-+-------+-----------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Removal: 'CLOCK_50'                                                                                                     ;
++--------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 12.338 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inicio                ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 3.174      ; 3.718      ;
+; 12.338 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.ResetInit             ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 3.174      ; 3.718      ;
+; 12.338 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 3.174      ; 3.718      ;
+; 12.338 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaRden             ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 3.174      ; 3.718      ;
+; 12.338 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 3.174      ; 3.718      ;
+; 12.983 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 3.161      ; 4.274      ;
++--------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 -----------------------------------------------
@@ -452,13 +285,13 @@ HTML report is unavailable in plain text report export.
 No synchronizer chains to report.
 
 
-+------------------------------------------------+
-; Slow 1200mV 0C Model Fmax Summary              ;
-+----------+-----------------+------------+------+
-; Fmax     ; Restricted Fmax ; Clock Name ; Note ;
-+----------+-----------------+------------+------+
-; 57.4 MHz ; 57.4 MHz        ; CLOCK_50   ;      ;
-+----------+-----------------+------------+------+
++-------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary               ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 55.98 MHz ; 55.98 MHz       ; CLOCK_50   ;      ;
++-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -467,7 +300,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+-------+-----------------+
 ; Clock    ; Slack ; End Point TNS   ;
 +----------+-------+-----------------+
-; CLOCK_50 ; 1.289 ; 0.000           ;
+; CLOCK_50 ; 1.068 ; 0.000           ;
 +----------+-------+-----------------+
 
 
@@ -476,26 +309,26 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+-------+----------------+
 ; Clock    ; Slack ; End Point TNS  ;
 +----------+-------+----------------+
-; CLOCK_50 ; 0.355 ; 0.000          ;
+; CLOCK_50 ; 0.357 ; 0.000          ;
 +----------+-------+----------------+
 
 
 +---------------------------------------+
 ; Slow 1200mV 0C Model Recovery Summary ;
-+----------+--------+-------------------+
-; Clock    ; Slack  ; End Point TNS     ;
-+----------+--------+-------------------+
-; CLOCK_50 ; 14.372 ; 0.000             ;
-+----------+--------+-------------------+
++----------+-------+--------------------+
+; Clock    ; Slack ; End Point TNS      ;
++----------+-------+--------------------+
+; CLOCK_50 ; 6.511 ; 0.000              ;
++----------+-------+--------------------+
 
 
 +--------------------------------------+
 ; Slow 1200mV 0C Model Removal Summary ;
-+----------+-------+-------------------+
-; Clock    ; Slack ; End Point TNS     ;
-+----------+-------+-------------------+
-; CLOCK_50 ; 4.007 ; 0.000             ;
-+----------+-------+-------------------+
++----------+--------+------------------+
+; Clock    ; Slack  ; End Point TNS    ;
++----------+--------+------------------+
+; CLOCK_50 ; 12.413 ; 0.000            ;
++----------+--------+------------------+
 
 
 +--------------------------------------------------+
@@ -503,262 +336,94 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+-------+-------------------------------+
 ; Clock    ; Slack ; End Point TNS                 ;
 +----------+-------+-------------------------------+
-; CLOCK_50 ; 9.643 ; 0.000                         ;
+; CLOCK_50 ; 9.645 ; 0.000                         ;
 +----------+-------+-------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Setup: 'CLOCK_50'                                                                                                                              ;
-+-------+--------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                                  ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+--------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 1.289 ; FSM_Control:inst|address[3]                ; LEDR[15]                                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.864     ; 3.827      ;
-; 1.296 ; FSM_Control:inst|y[0]                      ; LEDR[9]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.847     ; 3.837      ;
-; 2.455 ; FSM_Control:inst|rst_out                   ; LEDG[3]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.852     ; 2.673      ;
-; 2.466 ; FSM_Control:inst|v[0]                      ; LEDR[0]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.861     ; 2.653      ;
-; 2.470 ; FSM_Control:inst|rd_en                     ; LEDG[2]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.847     ; 2.663      ;
-; 2.493 ; FSM_Control:inst|address[0]                ; LEDR[12]                                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.864     ; 2.623      ;
-; 2.494 ; FSM_Control:inst|address[2]                ; LEDR[14]                                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.873     ; 2.613      ;
-; 2.499 ; FSM_Control:inst|x[0]                      ; LEDR[6]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.858     ; 2.623      ;
-; 2.504 ; FSM_Control:inst|act_mac                   ; LEDG[1]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.873     ; 2.603      ;
-; 2.505 ; FSM_Control:inst|ready                     ; LEDG[0]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.872     ; 2.603      ;
-; 2.509 ; FSM_Control:inst|x[1]                      ; LEDR[7]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.858     ; 2.613      ;
-; 2.513 ; FSM_Control:inst|y[2]                      ; LEDR[11]                                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.864     ; 2.603      ;
-; 2.515 ; FSM_Control:inst|u[0]                      ; LEDR[3]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.872     ; 2.593      ;
-; 2.516 ; FSM_Control:inst|y[1]                      ; LEDR[10]                                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.871     ; 2.593      ;
-; 2.516 ; FSM_Control:inst|address[5]                ; LEDR[17]                                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.871     ; 2.593      ;
-; 2.523 ; FSM_Control:inst|v[1]                      ; LEDR[1]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.864     ; 2.593      ;
-; 2.523 ; FSM_Control:inst|v[2]                      ; LEDR[2]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.864     ; 2.593      ;
-; 2.523 ; FSM_Control:inst|u[2]                      ; LEDR[5]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.854     ; 2.603      ;
-; 2.524 ; FSM_Control:inst|address[1]                ; LEDR[13]                                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.863     ; 2.593      ;
-; 2.533 ; FSM_Control:inst|u[1]                      ; LEDR[4]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.854     ; 2.593      ;
-; 2.534 ; FSM_Control:inst|address[4]                ; LEDR[16]                                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.863     ; 2.583      ;
-; 2.536 ; FSM_Control:inst|x[2]                      ; LEDR[8]                                  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.861     ; 2.583      ;
-; 4.849 ; SW[0]                                      ; FSM_Control:inst|ProxEstado.Inicio       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.794      ; 5.944      ;
-; 4.851 ; SW[0]                                      ; FSM_Control:inst|ProxEstado.ResetInit    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.794      ; 5.942      ;
-; 6.433 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[3]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.061      ; 3.515      ;
-; 6.459 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[3]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.061      ; 3.489      ;
-; 6.595 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[1]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.060      ; 3.352      ;
-; 6.621 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[1]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.060      ; 3.326      ;
-; 6.637 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[4]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.060      ; 3.310      ;
-; 6.646 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[5]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.068      ; 3.309      ;
-; 6.663 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[4]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.060      ; 3.284      ;
-; 6.672 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[5]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.068      ; 3.283      ;
-; 6.675 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[0]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.061      ; 3.273      ;
-; 6.701 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[0]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.061      ; 3.247      ;
-; 6.707 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[3]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.061      ; 3.241      ;
-; 6.758 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|ready                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.069      ; 3.198      ;
-; 6.815 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|y[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.061      ; 3.133      ;
-; 6.821 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|u[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.052      ; 3.118      ;
-; 6.843 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[2]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.069      ; 3.113      ;
-; 6.847 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|u[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.052      ; 3.092      ;
-; 6.869 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[1]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.060      ; 3.078      ;
-; 6.869 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[2]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.069      ; 3.087      ;
-; 6.872 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|v[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.061      ; 3.076      ;
-; 6.875 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|v[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.061      ; 3.073      ;
-; 6.898 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|v[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.061      ; 3.050      ;
-; 6.901 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|v[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.061      ; 3.047      ;
-; 6.906 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|u[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.069      ; 3.050      ;
-; 6.907 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|y[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.068      ; 3.048      ;
-; 6.907 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[4]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.060      ; 3.040      ;
-; 6.912 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[5]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.068      ; 3.043      ;
-; 6.917 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|ready                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.069      ; 3.039      ;
-; 6.932 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|u[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.069      ; 3.024      ;
-; 6.949 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|x[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.058      ; 2.996      ;
-; 6.949 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[0]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.061      ; 2.999      ;
-; 6.955 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|act_mac                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.070      ; 3.002      ;
-; 7.016 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|u[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.052      ; 2.923      ;
-; 7.036 ; FSM_Control:inst|EstadoAtual.AtivaMac      ; FSM_Control:inst|act_mac                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.281     ; 2.570      ;
-; 7.038 ; FSM_Control:inst|EstadoAtual.DesativaReady ; FSM_Control:inst|ready                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.282     ; 2.567      ;
-; 7.042 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|u[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.052      ; 2.897      ;
-; 7.095 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|u[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.052      ; 2.844      ;
-; 7.096 ; FSM_Control:inst|EstadoAtual.Inc_XY        ; FSM_Control:inst|y[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.061      ; 2.852      ;
-; 7.117 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[2]              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.069      ; 2.839      ;
-; 7.135 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|v[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.061      ; 2.813      ;
-; 7.149 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|v[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.061      ; 2.799      ;
-; 7.180 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|u[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.069      ; 2.776      ;
-; 7.189 ; FSM_Control:inst|EstadoAtual.Inc_XY        ; FSM_Control:inst|y[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.068      ; 2.766      ;
-; 7.190 ; FSM_Control:inst|EstadoAtual.DesativaMac   ; FSM_Control:inst|act_mac                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.281     ; 2.416      ;
-; 7.259 ; FSM_Control:inst|EstadoAtual.AtivaRden     ; FSM_Control:inst|rd_en                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.305     ; 2.323      ;
-; 7.287 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|v[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.058      ; 2.658      ;
-; 7.288 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|u[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.052      ; 2.651      ;
-; 7.320 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|rd_en                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.044      ; 2.611      ;
-; 7.347 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|u[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.083      ; 2.735      ;
-; 7.360 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|v[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.083      ; 2.722      ;
-; 7.367 ; FSM_Control:inst|EstadoAtual.TiraResetInit ; FSM_Control:inst|rst_out                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.300     ; 2.220      ;
-; 7.373 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|u[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.083      ; 2.709      ;
-; 7.386 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|v[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.083      ; 2.696      ;
-; 7.410 ; FSM_Control:inst|EstadoAtual.DesativaRden  ; FSM_Control:inst|rd_en                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.305     ; 2.172      ;
-; 7.417 ; FSM_Control:inst|EstadoAtual.Inc_XY        ; FSM_Control:inst|x[2]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.058      ; 2.528      ;
-; 7.425 ; FSM_Control:inst|EstadoAtual.Inc_XY        ; FSM_Control:inst|x[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.056      ; 2.518      ;
-; 7.433 ; FSM_Control:inst|EstadoAtual.Inc_XY        ; FSM_Control:inst|x[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.056      ; 2.510      ;
-; 7.434 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|rst_out                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.049      ; 2.502      ;
-; 7.475 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|v[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.058      ; 2.470      ;
-; 7.533 ; FSM_Control:inst|EstadoAtual.ResetInit     ; FSM_Control:inst|rst_out                 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.300     ; 2.054      ;
-; 7.591 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|v[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.058      ; 2.354      ;
-; 7.609 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|x[1]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.056      ; 2.334      ;
-; 7.617 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|u[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.083      ; 2.465      ;
-; 7.634 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|v[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.083      ; 2.448      ;
-; 7.646 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|x[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.056      ; 2.297      ;
-; 7.738 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[1]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.085      ; 2.346      ;
-; 7.764 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[1]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.085      ; 2.320      ;
-; 7.877 ; FSM_Control:inst|EstadoAtual.DesativaRden  ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.264     ; 1.858      ;
-; 7.941 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|x[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.098      ; 2.156      ;
-; 7.942 ; FSM_Control:inst|EstadoAtual.DesativaRden  ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.264     ; 1.793      ;
-; 7.952 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|y[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.044      ; 1.979      ;
-; 8.005 ; FSM_Control:inst|EstadoAtual.Inc_XY        ; FSM_Control:inst|y[0]                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.044      ; 1.926      ;
-; 8.012 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[1]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.085      ; 2.072      ;
-; 8.171 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|v[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.083      ; 1.911      ;
-; 8.217 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.098      ; 1.880      ;
-; 8.219 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|y[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.098      ; 1.878      ;
-; 8.264 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[3]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.083      ; 1.818      ;
-+-------+--------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'CLOCK_50'                                                                                                                                                 ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.068  ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; LEDG[2]                                            ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.874     ; 4.038      ;
+; 1.205  ; FSM_Control:inst|EstadoAtual.Inicio                ; LEDG[3]                                            ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.874     ; 3.901      ;
+; 1.356  ; FSM_Control:inst|EstadoAtual.AtivaRden             ; LEDG[2]                                            ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.874     ; 3.750      ;
+; 1.368  ; FSM_Control:inst|EstadoAtual.ResetInit             ; LEDG[3]                                            ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.874     ; 3.738      ;
+; 2.504  ; FSM_Control:inst|EstadoAtual.WaitRden              ; LEDG[1]                                            ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.873     ; 2.603      ;
+; 6.685  ; SW[0]                                              ; FSM_Control:inst|EstadoAtual.Inicio                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.776      ; 4.090      ;
+; 6.844  ; SW[0]                                              ; FSM_Control:inst|EstadoAtual.ResetInit             ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.776      ; 3.931      ;
+; 16.531 ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.053     ; 3.303      ;
+; 16.599 ; FSM_Control:inst|EstadoAtual.ResetInit             ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.053     ; 3.235      ;
+; 16.935 ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.053     ; 2.899      ;
+; 17.079 ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.053     ; 2.755      ;
+; 17.278 ; FSM_Control:inst|EstadoAtual.AtivaRden             ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.053     ; 2.556      ;
+; 17.773 ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.069     ; 2.157      ;
+; 17.898 ; FSM_Control:inst|EstadoAtual.ResetInit             ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.069     ; 2.032      ;
+; 18.234 ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.069     ; 1.696      ;
+; 18.378 ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.069     ; 1.552      ;
+; 18.384 ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; FSM_Control:inst|EstadoAtual.AtivaRden             ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.069     ; 1.546      ;
+; 18.577 ; FSM_Control:inst|EstadoAtual.AtivaRden             ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.069     ; 1.353      ;
+; 18.862 ; FSM_Control:inst|EstadoAtual.ResetInit             ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.069     ; 1.068      ;
+; 19.024 ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.ResetInit             ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.069     ; 0.906      ;
+; 19.271 ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.Inicio                ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.069     ; 0.659      ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Hold: 'CLOCK_50'                                                                                                                             ;
-+-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                                ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.355 ; FSM_Control:inst|address[5]~_Duplicate_1 ; FSM_Control:inst|address[5]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; FSM_Control:inst|address[4]~_Duplicate_1 ; FSM_Control:inst|address[4]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; FSM_Control:inst|address[3]~_Duplicate_1 ; FSM_Control:inst|address[3]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; FSM_Control:inst|address[2]~_Duplicate_1 ; FSM_Control:inst|address[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; FSM_Control:inst|y[2]~_Duplicate_1       ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; FSM_Control:inst|y[1]~_Duplicate_1       ; FSM_Control:inst|y[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; FSM_Control:inst|x[2]~_Duplicate_1       ; FSM_Control:inst|x[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; FSM_Control:inst|x[1]~_Duplicate_1       ; FSM_Control:inst|x[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|x[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; FSM_Control:inst|v[2]~_Duplicate_1       ; FSM_Control:inst|v[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; FSM_Control:inst|u[0]~_Duplicate_1       ; FSM_Control:inst|u[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; FSM_Control:inst|u[1]~_Duplicate_1       ; FSM_Control:inst|u[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.356 ; FSM_Control:inst|ready~_Duplicate_1      ; FSM_Control:inst|ready~_Duplicate_1      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.597      ;
-; 0.356 ; FSM_Control:inst|act_mac~_Duplicate_1    ; FSM_Control:inst|act_mac~_Duplicate_1    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.597      ;
-; 0.356 ; FSM_Control:inst|rd_en~_Duplicate_1      ; FSM_Control:inst|rd_en~_Duplicate_1      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.597      ;
-; 0.356 ; FSM_Control:inst|rst_out~_Duplicate_1    ; FSM_Control:inst|rst_out~_Duplicate_1    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.597      ;
-; 0.600 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|x[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.842      ;
-; 0.602 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|x[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.844      ;
-; 0.757 ; FSM_Control:inst|x[2]~_Duplicate_1       ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.999      ;
-; 0.757 ; FSM_Control:inst|x[2]~_Duplicate_1       ; FSM_Control:inst|y[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.999      ;
-; 0.784 ; FSM_Control:inst|v[1]~_Duplicate_1       ; FSM_Control:inst|v[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.026      ;
-; 0.811 ; FSM_Control:inst|x[1]~_Duplicate_1       ; FSM_Control:inst|x[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.053      ;
-; 0.848 ; FSM_Control:inst|x[1]~_Duplicate_1       ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.090      ;
-; 0.848 ; FSM_Control:inst|x[1]~_Duplicate_1       ; FSM_Control:inst|y[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.090      ;
-; 0.855 ; FSM_Control:inst|u[0]~_Duplicate_1       ; FSM_Control:inst|u[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 1.099      ;
-; 0.917 ; FSM_Control:inst|u[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 1.161      ;
-; 0.937 ; FSM_Control:inst|u[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 1.181      ;
-; 0.939 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.181      ;
-; 0.939 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|y[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.181      ;
-; 1.037 ; FSM_Control:inst|v[1]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 1.281      ;
-; 1.055 ; FSM_Control:inst|v[1]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 1.299      ;
-; 1.081 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|v[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.323      ;
-; 1.105 ; FSM_Control:inst|u[0]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 1.349      ;
-; 1.127 ; FSM_Control:inst|u[1]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.369      ;
-; 1.143 ; FSM_Control:inst|u[0]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 1.387      ;
-; 1.165 ; FSM_Control:inst|u[1]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.407      ;
-; 1.194 ; FSM_Control:inst|address[1]~_Duplicate_1 ; FSM_Control:inst|address[1]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.436      ;
-; 1.245 ; FSM_Control:inst|v[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 1.489      ;
-; 1.246 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 1.490      ;
-; 1.247 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 1.491      ;
-; 1.262 ; FSM_Control:inst|v[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 1.506      ;
-; 1.291 ; FSM_Control:inst|y[1]~_Duplicate_1       ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.533      ;
-; 1.349 ; FSM_Control:inst|y[0]~_Duplicate_1       ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.086      ; 1.606      ;
-; 1.350 ; FSM_Control:inst|y[0]~_Duplicate_1       ; FSM_Control:inst|y[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.086      ; 1.607      ;
-; 1.406 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|v[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.648      ;
-; 1.463 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|v[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.705      ;
-; 1.471 ; FSM_Control:inst|v[1]~_Duplicate_1       ; FSM_Control:inst|u[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.713      ;
-; 1.483 ; FSM_Control:inst|rst_out~_Duplicate_1    ; FSM_Control:inst|rst_out                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.029      ; 1.609      ;
-; 1.496 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|x[0]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.009      ; 1.602      ;
-; 1.505 ; FSM_Control:inst|address[4]~_Duplicate_1 ; FSM_Control:inst|address[5]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.747      ;
-; 1.516 ; FSM_Control:inst|address[3]~_Duplicate_1 ; FSM_Control:inst|address[4]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.758      ;
-; 1.533 ; FSM_Control:inst|x[1]~_Duplicate_1       ; FSM_Control:inst|x[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.009      ; 1.639      ;
-; 1.545 ; FSM_Control:inst|v[1]~_Duplicate_1       ; FSM_Control:inst|u[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 1.789      ;
-; 1.565 ; FSM_Control:inst|address[1]~_Duplicate_1 ; FSM_Control:inst|address[3]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.069      ; 1.805      ;
-; 1.582 ; FSM_Control:inst|address[1]~_Duplicate_1 ; FSM_Control:inst|address[4]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.069      ; 1.822      ;
-; 1.590 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[3]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.832      ;
-; 1.595 ; FSM_Control:inst|address[3]~_Duplicate_1 ; FSM_Control:inst|address[5]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.837      ;
-; 1.597 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[4]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.839      ;
-; 1.608 ; FSM_Control:inst|rd_en~_Duplicate_1      ; FSM_Control:inst|rd_en                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.024      ; 1.729      ;
-; 1.669 ; FSM_Control:inst|u[1]~_Duplicate_1       ; FSM_Control:inst|u[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.018      ; 1.784      ;
-; 1.678 ; FSM_Control:inst|address[1]~_Duplicate_1 ; FSM_Control:inst|address[5]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.069      ; 1.918      ;
-; 1.681 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|u[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.923      ;
-; 1.696 ; FSM_Control:inst|v[2]~_Duplicate_1       ; FSM_Control:inst|u[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.938      ;
-; 1.703 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[5]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.945      ;
-; 1.755 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|u[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 1.999      ;
-; 1.757 ; FSM_Control:inst|address[2]~_Duplicate_1 ; FSM_Control:inst|address[3]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.999      ;
-; 1.770 ; FSM_Control:inst|v[2]~_Duplicate_1       ; FSM_Control:inst|u[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 2.014      ;
-; 1.787 ; FSM_Control:inst|y[0]~_Duplicate_1       ; FSM_Control:inst|y[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 2.029      ;
-; 1.796 ; FSM_Control:inst|address[2]~_Duplicate_1 ; FSM_Control:inst|address[4]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 2.038      ;
-; 1.801 ; FSM_Control:inst|ready~_Duplicate_1      ; FSM_Control:inst|ready                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.047      ; 1.945      ;
-; 1.821 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|x[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.009      ; 1.927      ;
-; 1.824 ; FSM_Control:inst|act_mac~_Duplicate_1    ; FSM_Control:inst|act_mac                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.048      ; 1.969      ;
-; 1.860 ; FSM_Control:inst|v[2]~_Duplicate_1       ; FSM_Control:inst|v[2]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.030      ; 1.987      ;
-; 1.865 ; FSM_Control:inst|u[0]~_Duplicate_1       ; FSM_Control:inst|u[0]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.038      ; 2.000      ;
-; 1.870 ; FSM_Control:inst|address[2]~_Duplicate_1 ; FSM_Control:inst|address[5]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 2.112      ;
-; 1.873 ; FSM_Control:inst|u[2]~_Duplicate_1       ; FSM_Control:inst|u[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 2.115      ;
-; 1.883 ; FSM_Control:inst|address[5]~_Duplicate_1 ; FSM_Control:inst|address[5]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.037      ; 2.017      ;
-; 1.885 ; FSM_Control:inst|address[4]~_Duplicate_1 ; FSM_Control:inst|address[4]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.029      ; 2.011      ;
-; 1.893 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|v[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.030      ; 2.020      ;
-; 1.899 ; FSM_Control:inst|address[1]~_Duplicate_1 ; FSM_Control:inst|address[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.069      ; 2.139      ;
-; 1.914 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 2.156      ;
-; 1.942 ; FSM_Control:inst|address[2]~_Duplicate_1 ; FSM_Control:inst|address[2]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.039      ; 2.078      ;
-; 1.978 ; FSM_Control:inst|y[0]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_XY       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.059      ; 2.208      ;
-; 1.978 ; FSM_Control:inst|y[0]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inicio       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.059      ; 2.208      ;
-; 2.005 ; FSM_Control:inst|x[2]~_Duplicate_1       ; FSM_Control:inst|y[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.056      ; 2.232      ;
-; 2.044 ; FSM_Control:inst|address[3]~_Duplicate_1 ; FSM_Control:inst|address[3]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.030      ; 2.171      ;
-; 2.061 ; FSM_Control:inst|y[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_XY       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 2.276      ;
-; 2.061 ; FSM_Control:inst|y[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inicio       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 2.276      ;
-; 2.072 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[0]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.030      ; 2.199      ;
-; 2.109 ; FSM_Control:inst|y[1]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_XY       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 2.324      ;
-; 2.109 ; FSM_Control:inst|y[1]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inicio       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 2.324      ;
-; 2.128 ; FSM_Control:inst|x[1]~_Duplicate_1       ; FSM_Control:inst|y[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.056      ; 2.355      ;
-; 2.169 ; FSM_Control:inst|u[0]~_Duplicate_1       ; FSM_Control:inst|u[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.020      ; 2.286      ;
-; 2.170 ; FSM_Control:inst|x[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_XY       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 2.385      ;
-; 2.170 ; FSM_Control:inst|x[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inicio       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 2.385      ;
-; 2.177 ; FSM_Control:inst|u[2]~_Duplicate_1       ; FSM_Control:inst|u[2]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.020      ; 2.294      ;
-; 2.187 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[1]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 2.431      ;
-; 2.199 ; FSM_Control:inst|address[1]~_Duplicate_1 ; FSM_Control:inst|address[1]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.027      ; 2.323      ;
-; 2.209 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|y[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.056      ; 2.436      ;
-+-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'CLOCK_50'                                                                                                                                                  ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.357  ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.Inicio                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.069      ; 0.597      ;
+; 0.584  ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.ResetInit             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.069      ; 0.824      ;
+; 0.763  ; FSM_Control:inst|EstadoAtual.ResetInit             ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.069      ; 1.003      ;
+; 1.026  ; FSM_Control:inst|EstadoAtual.AtivaRden             ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.069      ; 1.266      ;
+; 1.224  ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; FSM_Control:inst|EstadoAtual.AtivaRden             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.069      ; 1.464      ;
+; 1.238  ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.069      ; 1.478      ;
+; 1.291  ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.069      ; 1.531      ;
+; 1.640  ; FSM_Control:inst|EstadoAtual.ResetInit             ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.069      ; 1.880      ;
+; 1.747  ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.069      ; 1.987      ;
+; 2.152  ; FSM_Control:inst|EstadoAtual.AtivaRden             ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.068      ; 2.317      ;
+; 2.364  ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.068      ; 2.529      ;
+; 2.417  ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.068      ; 2.582      ;
+; 2.766  ; FSM_Control:inst|EstadoAtual.ResetInit             ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.068      ; 2.931      ;
+; 2.923  ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.068      ; 3.088      ;
+; 12.679 ; SW[0]                                              ; FSM_Control:inst|EstadoAtual.ResetInit             ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 2.874      ; 3.744      ;
+; 12.756 ; SW[0]                                              ; FSM_Control:inst|EstadoAtual.Inicio                ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 2.874      ; 3.821      ;
+; 17.351 ; FSM_Control:inst|EstadoAtual.WaitRden              ; LEDG[1]                                            ; CLOCK_50     ; CLOCK_50    ; -10.000      ; -2.792     ; 2.579      ;
+; 18.292 ; FSM_Control:inst|EstadoAtual.ResetInit             ; LEDG[3]                                            ; CLOCK_50     ; CLOCK_50    ; -10.000      ; -2.776     ; 3.536      ;
+; 18.332 ; FSM_Control:inst|EstadoAtual.AtivaRden             ; LEDG[2]                                            ; CLOCK_50     ; CLOCK_50    ; -10.000      ; -2.776     ; 3.576      ;
+; 18.359 ; FSM_Control:inst|EstadoAtual.Inicio                ; LEDG[3]                                            ; CLOCK_50     ; CLOCK_50    ; -10.000      ; -2.776     ; 3.603      ;
+; 18.598 ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; LEDG[2]                                            ; CLOCK_50     ; CLOCK_50    ; -10.000      ; -2.776     ; 3.842      ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Recovery: 'CLOCK_50'                                                                                             ;
-+--------+-----------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node ; To Node                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 14.372 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 2.650      ; 6.277      ;
-; 14.372 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaReady    ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 2.650      ; 6.277      ;
-; 14.372 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inicio        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 2.650      ; 6.277      ;
-; 14.372 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inc_XY        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 2.650      ; 6.277      ;
-; 15.171 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaMac      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 2.987      ; 5.815      ;
-; 15.171 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.DesativaMac   ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 2.987      ; 5.815      ;
-; 15.171 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.DesativaReady ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 2.987      ; 5.815      ;
-; 15.199 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.ResetInit     ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 2.985      ; 5.785      ;
-; 15.199 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.TiraResetInit ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 2.985      ; 5.785      ;
-; 15.199 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaRden     ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 2.985      ; 5.785      ;
-; 15.199 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.DesativaRden  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 2.985      ; 5.785      ;
-+--------+-----------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Recovery: 'CLOCK_50'                                                                                                    ;
++-------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 6.511 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.792      ; 4.168      ;
+; 7.125 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inicio                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.776      ; 3.650      ;
+; 7.125 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.ResetInit             ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.776      ; 3.650      ;
+; 7.125 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.776      ; 3.650      ;
+; 7.125 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaRden             ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.776      ; 3.650      ;
+; 7.125 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.776      ; 3.650      ;
++-------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Removal: 'CLOCK_50'                                                                                             ;
-+-------+-----------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node ; To Node                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 4.007 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.ResetInit     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 3.099      ; 5.277      ;
-; 4.007 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.TiraResetInit ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 3.099      ; 5.277      ;
-; 4.007 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaRden     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 3.099      ; 5.277      ;
-; 4.007 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.DesativaRden  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 3.099      ; 5.277      ;
-; 4.030 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaMac      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 3.101      ; 5.302      ;
-; 4.030 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.DesativaMac   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 3.101      ; 5.302      ;
-; 4.030 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.DesativaReady ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 3.101      ; 5.302      ;
-; 4.872 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 2.750      ; 5.793      ;
-; 4.872 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaReady    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 2.750      ; 5.793      ;
-; 4.872 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inicio        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 2.750      ; 5.793      ;
-; 4.872 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inc_XY        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 2.750      ; 5.793      ;
-+-------+-----------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Removal: 'CLOCK_50'                                                                                                      ;
++--------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 12.413 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inicio                ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 2.874      ; 3.478      ;
+; 12.413 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.ResetInit             ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 2.874      ; 3.478      ;
+; 12.413 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 2.874      ; 3.478      ;
+; 12.413 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaRden             ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 2.874      ; 3.478      ;
+; 12.413 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 2.874      ; 3.478      ;
+; 13.011 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 2.873      ; 4.001      ;
++--------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 ----------------------------------------------
@@ -772,7 +437,7 @@ No synchronizer chains to report.
 +----------+-------+-----------------+
 ; Clock    ; Slack ; End Point TNS   ;
 +----------+-------+-----------------+
-; CLOCK_50 ; 3.284 ; 0.000           ;
+; CLOCK_50 ; 3.435 ; 0.000           ;
 +----------+-------+-----------------+
 
 
@@ -781,26 +446,26 @@ No synchronizer chains to report.
 +----------+-------+----------------+
 ; Clock    ; Slack ; End Point TNS  ;
 +----------+-------+----------------+
-; CLOCK_50 ; 0.179 ; 0.000          ;
+; CLOCK_50 ; 0.180 ; 0.000          ;
 +----------+-------+----------------+
 
 
 +---------------------------------------+
 ; Fast 1200mV 0C Model Recovery Summary ;
-+----------+--------+-------------------+
-; Clock    ; Slack  ; End Point TNS     ;
-+----------+--------+-------------------+
-; CLOCK_50 ; 15.340 ; 0.000             ;
-+----------+--------+-------------------+
++----------+-------+--------------------+
+; Clock    ; Slack ; End Point TNS      ;
++----------+-------+--------------------+
+; CLOCK_50 ; 7.248 ; 0.000              ;
++----------+-------+--------------------+
 
 
 +--------------------------------------+
 ; Fast 1200mV 0C Model Removal Summary ;
-+----------+-------+-------------------+
-; Clock    ; Slack ; End Point TNS     ;
-+----------+-------+-------------------+
-; CLOCK_50 ; 3.162 ; 0.000             ;
-+----------+-------+-------------------+
++----------+--------+------------------+
+; Clock    ; Slack  ; End Point TNS    ;
++----------+--------+------------------+
+; CLOCK_50 ; 11.599 ; 0.000            ;
++----------+--------+------------------+
 
 
 +--------------------------------------------------+
@@ -808,262 +473,94 @@ No synchronizer chains to report.
 +----------+-------+-------------------------------+
 ; Clock    ; Slack ; End Point TNS                 ;
 +----------+-------+-------------------------------+
-; CLOCK_50 ; 9.221 ; 0.000                         ;
+; CLOCK_50 ; 9.224 ; 0.000                         ;
 +----------+-------+-------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Setup: 'CLOCK_50'                                                                                                                                ;
-+-------+--------------------------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                                  ; To Node                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+--------------------------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 3.284 ; FSM_Control:inst|address[3]                ; LEDR[15]                                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.081     ; 2.615      ;
-; 3.294 ; FSM_Control:inst|y[0]                      ; LEDR[9]                                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.061     ; 2.625      ;
-; 4.198 ; FSM_Control:inst|rst_out                   ; LEDG[3]                                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.066     ; 1.716      ;
-; 4.204 ; FSM_Control:inst|v[0]                      ; LEDR[0]                                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.080     ; 1.696      ;
-; 4.213 ; FSM_Control:inst|rd_en                     ; LEDG[2]                                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.061     ; 1.706      ;
-; 4.233 ; FSM_Control:inst|address[0]                ; LEDR[12]                                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.081     ; 1.666      ;
-; 4.236 ; FSM_Control:inst|x[0]                      ; LEDR[6]                                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.078     ; 1.666      ;
-; 4.238 ; FSM_Control:inst|address[2]                ; LEDR[14]                                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.086     ; 1.656      ;
-; 4.246 ; FSM_Control:inst|x[1]                      ; LEDR[7]                                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.078     ; 1.656      ;
-; 4.247 ; FSM_Control:inst|act_mac                   ; LEDG[1]                                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.087     ; 1.646      ;
-; 4.249 ; FSM_Control:inst|ready                     ; LEDG[0]                                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.085     ; 1.646      ;
-; 4.253 ; FSM_Control:inst|y[2]                      ; LEDR[11]                                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.081     ; 1.646      ;
-; 4.259 ; FSM_Control:inst|u[0]                      ; LEDR[3]                                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.085     ; 1.636      ;
-; 4.259 ; FSM_Control:inst|y[1]                      ; LEDR[10]                                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.085     ; 1.636      ;
-; 4.259 ; FSM_Control:inst|address[5]                ; LEDR[17]                                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.085     ; 1.636      ;
-; 4.263 ; FSM_Control:inst|address[1]                ; LEDR[13]                                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.081     ; 1.636      ;
-; 4.266 ; FSM_Control:inst|v[1]                      ; LEDR[1]                                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.078     ; 1.636      ;
-; 4.266 ; FSM_Control:inst|v[2]                      ; LEDR[2]                                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.078     ; 1.636      ;
-; 4.266 ; FSM_Control:inst|u[2]                      ; LEDR[5]                                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.068     ; 1.646      ;
-; 4.273 ; FSM_Control:inst|address[4]                ; LEDR[16]                                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.081     ; 1.626      ;
-; 4.274 ; FSM_Control:inst|x[2]                      ; LEDR[8]                                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.080     ; 1.626      ;
-; 4.276 ; FSM_Control:inst|u[1]                      ; LEDR[4]                                    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.068     ; 1.636      ;
-; 6.081 ; SW[0]                                      ; FSM_Control:inst|ProxEstado.Inicio         ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.040      ; 3.946      ;
-; 6.082 ; SW[0]                                      ; FSM_Control:inst|ProxEstado.ResetInit      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.040      ; 3.945      ;
-; 8.576 ; FSM_Control:inst|ProxEstado.Inc_XY         ; FSM_Control:inst|EstadoAtual.Inc_XY        ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.604     ; 0.807      ;
-; 8.578 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[3]                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.509      ; 1.870      ;
-; 8.585 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[3]                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.509      ; 1.863      ;
-; 8.598 ; FSM_Control:inst|ProxEstado.Inicio         ; FSM_Control:inst|EstadoAtual.Inicio        ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.604     ; 0.785      ;
-; 8.647 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[3]                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.509      ; 1.801      ;
-; 8.679 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[5]                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.513      ; 1.773      ;
-; 8.681 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[4]                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.509      ; 1.767      ;
-; 8.686 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[5]                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.513      ; 1.766      ;
-; 8.688 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[4]                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.509      ; 1.760      ;
-; 8.696 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[0]                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.509      ; 1.752      ;
-; 8.703 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[0]                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.509      ; 1.745      ;
-; 8.709 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[1]                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.509      ; 1.739      ;
-; 8.713 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|ready                     ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.513      ; 1.739      ;
-; 8.716 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[1]                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.509      ; 1.732      ;
-; 8.748 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[5]                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.513      ; 1.704      ;
-; 8.750 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[4]                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.509      ; 1.698      ;
-; 8.753 ; FSM_Control:inst|ProxEstado.Inc_UV_Addr    ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.614     ; 0.620      ;
-; 8.759 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|y[2]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.509      ; 1.689      ;
-; 8.765 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|y[1]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.513      ; 1.687      ;
-; 8.765 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[0]                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.509      ; 1.683      ;
-; 8.778 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[1]                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.509      ; 1.670      ;
-; 8.782 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|address[2]                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.514      ; 1.671      ;
-; 8.789 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|address[2]                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.514      ; 1.664      ;
-; 8.800 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|ready                     ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.513      ; 1.652      ;
-; 8.803 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|x[2]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.508      ; 1.644      ;
-; 8.810 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|act_mac                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.515      ; 1.644      ;
-; 8.818 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|v[2]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.506      ; 1.627      ;
-; 8.825 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|v[2]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.506      ; 1.620      ;
-; 8.838 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|v[1]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.506      ; 1.607      ;
-; 8.838 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|u[1]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.497      ; 1.598      ;
-; 8.844 ; FSM_Control:inst|EstadoAtual.AtivaMac      ; FSM_Control:inst|act_mac                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.335      ; 1.430      ;
-; 8.845 ; FSM_Control:inst|ProxEstado.AtivaReady     ; FSM_Control:inst|EstadoAtual.AtivaReady    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.614     ; 0.528      ;
-; 8.845 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|v[1]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.506      ; 1.600      ;
-; 8.845 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|u[1]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.497      ; 1.591      ;
-; 8.851 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|address[2]                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.514      ; 1.602      ;
-; 8.852 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|u[0]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.513      ; 1.600      ;
-; 8.859 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|u[0]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.513      ; 1.593      ;
-; 8.887 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|v[2]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.506      ; 1.558      ;
-; 8.898 ; FSM_Control:inst|EstadoAtual.Inc_XY        ; FSM_Control:inst|y[2]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.509      ; 1.550      ;
-; 8.904 ; FSM_Control:inst|EstadoAtual.Inc_XY        ; FSM_Control:inst|y[1]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.513      ; 1.548      ;
-; 8.907 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|v[1]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.506      ; 1.538      ;
-; 8.907 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|u[1]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.497      ; 1.529      ;
-; 8.908 ; FSM_Control:inst|EstadoAtual.DesativaReady ; FSM_Control:inst|ready                     ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.333      ; 1.364      ;
-; 8.915 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|u[2]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.497      ; 1.521      ;
-; 8.921 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|u[0]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.513      ; 1.531      ;
-; 8.922 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|u[2]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.497      ; 1.514      ;
-; 8.968 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|v[0]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.508      ; 1.479      ;
-; 8.980 ; FSM_Control:inst|EstadoAtual.AtivaRden     ; FSM_Control:inst|rd_en                     ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.312      ; 1.271      ;
-; 8.984 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|u[2]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.497      ; 1.452      ;
-; 9.004 ; FSM_Control:inst|EstadoAtual.DesativaMac   ; FSM_Control:inst|act_mac                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.335      ; 1.270      ;
-; 9.008 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|rd_en                     ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.490      ; 1.421      ;
-; 9.050 ; FSM_Control:inst|EstadoAtual.Inc_XY        ; FSM_Control:inst|x[1]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.506      ; 1.395      ;
-; 9.061 ; FSM_Control:inst|EstadoAtual.Inc_XY        ; FSM_Control:inst|x[0]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.506      ; 1.384      ;
-; 9.063 ; FSM_Control:inst|EstadoAtual.TiraResetInit ; FSM_Control:inst|rst_out                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.316      ; 1.192      ;
-; 9.093 ; FSM_Control:inst|EstadoAtual.Inc_XY        ; FSM_Control:inst|x[2]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.508      ; 1.354      ;
-; 9.096 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|rst_out                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.494      ; 1.337      ;
-; 9.106 ; FSM_Control:inst|ProxEstado.TiraResetInit  ; FSM_Control:inst|EstadoAtual.TiraResetInit ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.433     ; 0.448      ;
-; 9.107 ; FSM_Control:inst|ProxEstado.AtivaRden      ; FSM_Control:inst|EstadoAtual.AtivaRden     ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.433     ; 0.447      ;
-; 9.108 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|u[2]~_Duplicate_1         ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.526      ; 1.405      ;
-; 9.109 ; FSM_Control:inst|ProxEstado.AtivaMac       ; FSM_Control:inst|EstadoAtual.AtivaMac      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.431     ; 0.447      ;
-; 9.115 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|u[2]~_Duplicate_1         ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.526      ; 1.398      ;
-; 9.123 ; FSM_Control:inst|EstadoAtual.DesativaRden  ; FSM_Control:inst|rd_en                     ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.312      ; 1.128      ;
-; 9.140 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|v[1]~_Duplicate_1         ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.526      ; 1.373      ;
-; 9.140 ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; FSM_Control:inst|v[0]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.508      ; 1.307      ;
-; 9.147 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|v[1]~_Duplicate_1         ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.526      ; 1.366      ;
-; 9.170 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|x[1]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.506      ; 1.275      ;
-; 9.177 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|u[2]~_Duplicate_1         ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.526      ; 1.336      ;
-; 9.178 ; FSM_Control:inst|ProxEstado.DesativaRden   ; FSM_Control:inst|EstadoAtual.DesativaRden  ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.433     ; 0.376      ;
-; 9.180 ; FSM_Control:inst|ProxEstado.DesativaReady  ; FSM_Control:inst|EstadoAtual.DesativaReady ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.433     ; 0.374      ;
-; 9.181 ; FSM_Control:inst|ProxEstado.DesativaMac    ; FSM_Control:inst|EstadoAtual.DesativaMac   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.433     ; 0.373      ;
-; 9.182 ; FSM_Control:inst|ProxEstado.ResetInit      ; FSM_Control:inst|EstadoAtual.ResetInit     ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -0.433     ; 0.372      ;
-; 9.182 ; FSM_Control:inst|EstadoAtual.AtivaReady    ; FSM_Control:inst|v[0]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.508      ; 1.265      ;
-; 9.199 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|x[0]                      ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.506      ; 1.246      ;
-; 9.199 ; FSM_Control:inst|EstadoAtual.ResetInit     ; FSM_Control:inst|rst_out                   ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.316      ; 1.056      ;
-; 9.209 ; FSM_Control:inst|EstadoAtual.Inicio        ; FSM_Control:inst|v[1]~_Duplicate_1         ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.526      ; 1.304      ;
-; 9.321 ; FSM_Control:inst|EstadoAtual.DesativaRden  ; FSM_Control:inst|ProxEstado.Inc_UV_Addr    ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 0.350      ; 1.016      ;
-+-------+--------------------------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'CLOCK_50'                                                                                                                                                 ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 3.435  ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; LEDG[2]                                            ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.088     ; 2.457      ;
+; 3.603  ; FSM_Control:inst|EstadoAtual.Inicio                ; LEDG[3]                                            ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.088     ; 2.289      ;
+; 3.615  ; FSM_Control:inst|EstadoAtual.AtivaRden             ; LEDG[2]                                            ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.088     ; 2.277      ;
+; 3.644  ; FSM_Control:inst|EstadoAtual.ResetInit             ; LEDG[3]                                            ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.088     ; 2.248      ;
+; 4.247  ; FSM_Control:inst|EstadoAtual.WaitRden              ; LEDG[1]                                            ; CLOCK_50     ; CLOCK_50    ; 10.000       ; -2.087     ; 1.646      ;
+; 7.268  ; SW[0]                                              ; FSM_Control:inst|EstadoAtual.Inicio                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.026      ; 2.745      ;
+; 7.364  ; SW[0]                                              ; FSM_Control:inst|EstadoAtual.ResetInit             ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.026      ; 2.649      ;
+; 18.135 ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.032     ; 1.772      ;
+; 18.228 ; FSM_Control:inst|EstadoAtual.ResetInit             ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.032     ; 1.679      ;
+; 18.405 ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.032     ; 1.502      ;
+; 18.424 ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.032     ; 1.483      ;
+; 18.537 ; FSM_Control:inst|EstadoAtual.AtivaRden             ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.032     ; 1.370      ;
+; 18.842 ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.043     ; 1.102      ;
+; 18.899 ; FSM_Control:inst|EstadoAtual.ResetInit             ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.043     ; 1.045      ;
+; 19.082 ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.043     ; 0.862      ;
+; 19.117 ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; FSM_Control:inst|EstadoAtual.AtivaRden             ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.043     ; 0.827      ;
+; 19.131 ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.043     ; 0.813      ;
+; 19.244 ; FSM_Control:inst|EstadoAtual.AtivaRden             ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.043     ; 0.700      ;
+; 19.390 ; FSM_Control:inst|EstadoAtual.ResetInit             ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.043     ; 0.554      ;
+; 19.462 ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.ResetInit             ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.043     ; 0.482      ;
+; 19.594 ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.Inicio                ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.043     ; 0.350      ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Hold: 'CLOCK_50'                                                                                                                             ;
-+-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                                ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.179 ; FSM_Control:inst|ready~_Duplicate_1      ; FSM_Control:inst|ready~_Duplicate_1      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.307      ;
-; 0.179 ; FSM_Control:inst|act_mac~_Duplicate_1    ; FSM_Control:inst|act_mac~_Duplicate_1    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.307      ;
-; 0.179 ; FSM_Control:inst|rd_en~_Duplicate_1      ; FSM_Control:inst|rd_en~_Duplicate_1      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.307      ;
-; 0.179 ; FSM_Control:inst|rst_out~_Duplicate_1    ; FSM_Control:inst|rst_out~_Duplicate_1    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.307      ;
-; 0.179 ; FSM_Control:inst|address[5]~_Duplicate_1 ; FSM_Control:inst|address[5]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.307      ;
-; 0.179 ; FSM_Control:inst|address[4]~_Duplicate_1 ; FSM_Control:inst|address[4]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.307      ;
-; 0.179 ; FSM_Control:inst|address[3]~_Duplicate_1 ; FSM_Control:inst|address[3]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.307      ;
-; 0.179 ; FSM_Control:inst|address[2]~_Duplicate_1 ; FSM_Control:inst|address[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.307      ;
-; 0.179 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.307      ;
-; 0.179 ; FSM_Control:inst|y[2]~_Duplicate_1       ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.307      ;
-; 0.179 ; FSM_Control:inst|y[1]~_Duplicate_1       ; FSM_Control:inst|y[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.307      ;
-; 0.179 ; FSM_Control:inst|x[2]~_Duplicate_1       ; FSM_Control:inst|x[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.307      ;
-; 0.179 ; FSM_Control:inst|x[1]~_Duplicate_1       ; FSM_Control:inst|x[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.307      ;
-; 0.179 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|x[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.307      ;
-; 0.179 ; FSM_Control:inst|v[2]~_Duplicate_1       ; FSM_Control:inst|v[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.307      ;
-; 0.179 ; FSM_Control:inst|u[0]~_Duplicate_1       ; FSM_Control:inst|u[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.307      ;
-; 0.179 ; FSM_Control:inst|u[1]~_Duplicate_1       ; FSM_Control:inst|u[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.307      ;
-; 0.300 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|x[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.428      ;
-; 0.301 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|x[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.429      ;
-; 0.371 ; FSM_Control:inst|x[2]~_Duplicate_1       ; FSM_Control:inst|y[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.499      ;
-; 0.372 ; FSM_Control:inst|x[2]~_Duplicate_1       ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.500      ;
-; 0.398 ; FSM_Control:inst|v[1]~_Duplicate_1       ; FSM_Control:inst|v[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.526      ;
-; 0.407 ; FSM_Control:inst|x[1]~_Duplicate_1       ; FSM_Control:inst|x[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.535      ;
-; 0.409 ; FSM_Control:inst|u[0]~_Duplicate_1       ; FSM_Control:inst|u[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 0.539      ;
-; 0.419 ; FSM_Control:inst|x[1]~_Duplicate_1       ; FSM_Control:inst|y[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.547      ;
-; 0.420 ; FSM_Control:inst|x[1]~_Duplicate_1       ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.548      ;
-; 0.443 ; FSM_Control:inst|u[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 0.573      ;
-; 0.446 ; FSM_Control:inst|u[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 0.576      ;
-; 0.471 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|y[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.599      ;
-; 0.472 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.600      ;
-; 0.501 ; FSM_Control:inst|v[1]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 0.631      ;
-; 0.503 ; FSM_Control:inst|v[1]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 0.633      ;
-; 0.531 ; FSM_Control:inst|u[0]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 0.661      ;
-; 0.544 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|v[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.672      ;
-; 0.554 ; FSM_Control:inst|u[0]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 0.684      ;
-; 0.564 ; FSM_Control:inst|u[1]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.692      ;
-; 0.570 ; FSM_Control:inst|address[1]~_Duplicate_1 ; FSM_Control:inst|address[1]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.698      ;
-; 0.587 ; FSM_Control:inst|u[1]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.715      ;
-; 0.597 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 0.727      ;
-; 0.598 ; FSM_Control:inst|v[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.AtivaReady   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 0.728      ;
-; 0.599 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 0.729      ;
-; 0.600 ; FSM_Control:inst|v[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_UV_Addr  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 0.730      ;
-; 0.629 ; FSM_Control:inst|y[1]~_Duplicate_1       ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.757      ;
-; 0.658 ; FSM_Control:inst|y[0]~_Duplicate_1       ; FSM_Control:inst|y[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.059      ; 0.801      ;
-; 0.659 ; FSM_Control:inst|y[0]~_Duplicate_1       ; FSM_Control:inst|y[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.059      ; 0.802      ;
-; 0.710 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|v[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.838      ;
-; 0.713 ; FSM_Control:inst|v[1]~_Duplicate_1       ; FSM_Control:inst|u[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.841      ;
-; 0.737 ; FSM_Control:inst|address[3]~_Duplicate_1 ; FSM_Control:inst|address[4]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.865      ;
-; 0.739 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|v[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.867      ;
-; 0.757 ; FSM_Control:inst|address[4]~_Duplicate_1 ; FSM_Control:inst|address[5]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.885      ;
-; 0.757 ; FSM_Control:inst|v[1]~_Duplicate_1       ; FSM_Control:inst|u[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 0.887      ;
-; 0.784 ; FSM_Control:inst|rst_out~_Duplicate_1    ; FSM_Control:inst|rst_out                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.007      ; 0.847      ;
-; 0.788 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|x[0]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 0.840      ;
-; 0.791 ; FSM_Control:inst|address[1]~_Duplicate_1 ; FSM_Control:inst|address[4]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.917      ;
-; 0.798 ; FSM_Control:inst|address[1]~_Duplicate_1 ; FSM_Control:inst|address[3]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.924      ;
-; 0.801 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[4]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.929      ;
-; 0.807 ; FSM_Control:inst|x[1]~_Duplicate_1       ; FSM_Control:inst|x[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 0.859      ;
-; 0.808 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[3]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.936      ;
-; 0.809 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|u[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.937      ;
-; 0.810 ; FSM_Control:inst|v[2]~_Duplicate_1       ; FSM_Control:inst|u[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.938      ;
-; 0.812 ; FSM_Control:inst|address[3]~_Duplicate_1 ; FSM_Control:inst|address[5]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 0.940      ;
-; 0.851 ; FSM_Control:inst|rd_en~_Duplicate_1      ; FSM_Control:inst|rd_en                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 0.909      ;
-; 0.853 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|u[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 0.983      ;
-; 0.854 ; FSM_Control:inst|v[2]~_Duplicate_1       ; FSM_Control:inst|u[1]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 0.984      ;
-; 0.866 ; FSM_Control:inst|address[1]~_Duplicate_1 ; FSM_Control:inst|address[5]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.992      ;
-; 0.872 ; FSM_Control:inst|y[0]~_Duplicate_1       ; FSM_Control:inst|y[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 1.000      ;
-; 0.875 ; FSM_Control:inst|address[2]~_Duplicate_1 ; FSM_Control:inst|address[4]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 1.003      ;
-; 0.876 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[5]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 1.004      ;
-; 0.882 ; FSM_Control:inst|address[2]~_Duplicate_1 ; FSM_Control:inst|address[3]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 1.010      ;
-; 0.893 ; FSM_Control:inst|u[1]~_Duplicate_1       ; FSM_Control:inst|u[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.948      ;
-; 0.903 ; FSM_Control:inst|u[2]~_Duplicate_1       ; FSM_Control:inst|u[2]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 1.031      ;
-; 0.929 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|x[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 0.981      ;
-; 0.932 ; FSM_Control:inst|address[1]~_Duplicate_1 ; FSM_Control:inst|address[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 1.058      ;
-; 0.942 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 1.070      ;
-; 0.950 ; FSM_Control:inst|address[2]~_Duplicate_1 ; FSM_Control:inst|address[5]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.044      ; 1.078      ;
-; 0.952 ; FSM_Control:inst|ready~_Duplicate_1      ; FSM_Control:inst|ready                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.024      ; 1.032      ;
-; 0.957 ; FSM_Control:inst|act_mac~_Duplicate_1    ; FSM_Control:inst|act_mac                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.026      ; 1.039      ;
-; 0.977 ; FSM_Control:inst|v[2]~_Duplicate_1       ; FSM_Control:inst|v[2]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.011      ; 1.044      ;
-; 0.984 ; FSM_Control:inst|u[0]~_Duplicate_1       ; FSM_Control:inst|u[0]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.018      ; 1.058      ;
-; 0.990 ; FSM_Control:inst|address[4]~_Duplicate_1 ; FSM_Control:inst|address[4]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.014      ; 1.060      ;
-; 0.991 ; FSM_Control:inst|address[5]~_Duplicate_1 ; FSM_Control:inst|address[5]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.018      ; 1.065      ;
-; 0.993 ; FSM_Control:inst|v[0]~_Duplicate_1       ; FSM_Control:inst|v[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.011      ; 1.060      ;
-; 1.005 ; FSM_Control:inst|x[2]~_Duplicate_1       ; FSM_Control:inst|y[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.029      ; 1.118      ;
-; 1.025 ; FSM_Control:inst|address[2]~_Duplicate_1 ; FSM_Control:inst|address[2]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.019      ; 1.100      ;
-; 1.034 ; FSM_Control:inst|y[0]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_XY       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.036      ; 1.154      ;
-; 1.034 ; FSM_Control:inst|y[0]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inicio       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.036      ; 1.154      ;
-; 1.053 ; FSM_Control:inst|x[1]~_Duplicate_1       ; FSM_Control:inst|y[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.029      ; 1.166      ;
-; 1.064 ; FSM_Control:inst|y[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_XY       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.021      ; 1.169      ;
-; 1.064 ; FSM_Control:inst|y[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inicio       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.021      ; 1.169      ;
-; 1.076 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[1]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 1.206      ;
-; 1.085 ; FSM_Control:inst|address[3]~_Duplicate_1 ; FSM_Control:inst|address[3]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.014      ; 1.155      ;
-; 1.085 ; FSM_Control:inst|y[1]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_XY       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.021      ; 1.190      ;
-; 1.085 ; FSM_Control:inst|y[1]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inicio       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.021      ; 1.190      ;
-; 1.101 ; FSM_Control:inst|address[0]~_Duplicate_1 ; FSM_Control:inst|address[0]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.014      ; 1.171      ;
-; 1.104 ; FSM_Control:inst|x[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inc_XY       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.021      ; 1.209      ;
-; 1.104 ; FSM_Control:inst|x[2]~_Duplicate_1       ; FSM_Control:inst|ProxEstado.Inicio       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.021      ; 1.209      ;
-; 1.105 ; FSM_Control:inst|x[0]~_Duplicate_1       ; FSM_Control:inst|y[0]~_Duplicate_1       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.029      ; 1.218      ;
-; 1.108 ; FSM_Control:inst|u[2]~_Duplicate_1       ; FSM_Control:inst|u[2]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.165      ;
-; 1.123 ; FSM_Control:inst|u[0]~_Duplicate_1       ; FSM_Control:inst|u[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.180      ;
-; 1.144 ; FSM_Control:inst|address[1]~_Duplicate_1 ; FSM_Control:inst|address[1]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.012      ; 1.212      ;
-+-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'CLOCK_50'                                                                                                                                                  ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.180  ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.Inicio                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.043      ; 0.307      ;
+; 0.289  ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.ResetInit             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.043      ; 0.416      ;
+; 0.362  ; FSM_Control:inst|EstadoAtual.ResetInit             ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.043      ; 0.489      ;
+; 0.506  ; FSM_Control:inst|EstadoAtual.AtivaRden             ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.043      ; 0.633      ;
+; 0.591  ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.043      ; 0.718      ;
+; 0.598  ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; FSM_Control:inst|EstadoAtual.AtivaRden             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.043      ; 0.725      ;
+; 0.656  ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.043      ; 0.783      ;
+; 0.825  ; FSM_Control:inst|EstadoAtual.ResetInit             ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.043      ; 0.952      ;
+; 0.880  ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.043      ; 1.007      ;
+; 1.144  ; FSM_Control:inst|EstadoAtual.AtivaRden             ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 1.242      ;
+; 1.229  ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 1.327      ;
+; 1.322  ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 1.420      ;
+; 1.497  ; FSM_Control:inst|EstadoAtual.ResetInit             ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 1.595      ;
+; 1.518  ; FSM_Control:inst|EstadoAtual.Inicio                ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 1.616      ;
+; 11.759 ; SW[0]                                              ; FSM_Control:inst|EstadoAtual.ResetInit             ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 2.088      ; 1.951      ;
+; 11.802 ; SW[0]                                              ; FSM_Control:inst|EstadoAtual.Inicio                ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 2.088      ; 1.994      ;
+; 15.651 ; FSM_Control:inst|EstadoAtual.WaitRden              ; LEDG[1]                                            ; CLOCK_50     ; CLOCK_50    ; -10.000      ; -2.037     ; 1.634      ;
+; 16.138 ; FSM_Control:inst|EstadoAtual.ResetInit             ; LEDG[3]                                            ; CLOCK_50     ; CLOCK_50    ; -10.000      ; -2.026     ; 2.132      ;
+; 16.154 ; FSM_Control:inst|EstadoAtual.AtivaRden             ; LEDG[2]                                            ; CLOCK_50     ; CLOCK_50    ; -10.000      ; -2.026     ; 2.148      ;
+; 16.212 ; FSM_Control:inst|EstadoAtual.Inicio                ; LEDG[3]                                            ; CLOCK_50     ; CLOCK_50    ; -10.000      ; -2.026     ; 2.206      ;
+; 16.287 ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; LEDG[2]                                            ; CLOCK_50     ; CLOCK_50    ; -10.000      ; -2.026     ; 2.281      ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Recovery: 'CLOCK_50'                                                                                             ;
-+--------+-----------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node ; To Node                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 15.340 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 1.480      ; 4.127      ;
-; 15.340 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaReady    ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 1.480      ; 4.127      ;
-; 15.340 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inicio        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 1.480      ; 4.127      ;
-; 15.340 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inc_XY        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 1.480      ; 4.127      ;
-; 15.801 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaMac      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 1.653      ; 3.839      ;
-; 15.801 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.DesativaMac   ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 1.653      ; 3.839      ;
-; 15.801 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.DesativaReady ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 1.653      ; 3.839      ;
-; 15.815 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.ResetInit     ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 1.651      ; 3.823      ;
-; 15.815 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.TiraResetInit ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 1.651      ; 3.823      ;
-; 15.815 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaRden     ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 1.651      ; 3.823      ;
-; 15.815 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.DesativaRden  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 1.651      ; 3.823      ;
-+--------+-----------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Recovery: 'CLOCK_50'                                                                                                    ;
++-------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 7.248 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.037      ; 2.728      ;
+; 7.565 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inicio                ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.026      ; 2.448      ;
+; 7.565 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.ResetInit             ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.026      ; 2.448      ;
+; 7.565 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.026      ; 2.448      ;
+; 7.565 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaRden             ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.026      ; 2.448      ;
+; 7.565 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 10.000       ; 2.026      ; 2.448      ;
++-------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Removal: 'CLOCK_50'                                                                                             ;
-+-------+-----------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node ; To Node                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 3.162 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.ResetInit     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 1.719      ; 2.965      ;
-; 3.162 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.TiraResetInit ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 1.719      ; 2.965      ;
-; 3.162 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaRden     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 1.719      ; 2.965      ;
-; 3.162 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.DesativaRden  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 1.719      ; 2.965      ;
-; 3.167 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaMac      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 1.721      ; 2.972      ;
-; 3.167 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.DesativaMac   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 1.721      ; 2.972      ;
-; 3.167 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.DesativaReady ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 1.721      ; 2.972      ;
-; 3.602 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inc_UV_Addr   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 1.541      ; 3.227      ;
-; 3.602 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaReady    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 1.541      ; 3.227      ;
-; 3.602 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inicio        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 1.541      ; 3.227      ;
-; 3.602 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inc_XY        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 1.541      ; 3.227      ;
-+-------+-----------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Removal: 'CLOCK_50'                                                                                                      ;
++--------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 11.599 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.Inicio                ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 2.088      ; 1.791      ;
+; 11.599 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.ResetInit             ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 2.088      ; 1.791      ;
+; 11.599 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.TiraResetInit         ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 2.088      ; 1.791      ;
+; 11.599 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.AtivaRden             ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 2.088      ; 1.791      ;
+; 11.599 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.WaitRden~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 2.088      ; 1.791      ;
+; 11.920 ; KEY[0]    ; FSM_Control:inst|EstadoAtual.WaitRden              ; CLOCK_50     ; CLOCK_50    ; -10.000      ; 2.087      ; 2.083      ;
++--------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 ----------------------------------------------
@@ -1077,8 +574,8 @@ No synchronizer chains to report.
 +------------------+-------+-------+----------+---------+---------------------+
 ; Clock            ; Setup ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+-------+-------+----------+---------+---------------------+
-; Worst-case Slack ; 0.449 ; 0.179 ; 13.804   ; 3.162   ; 9.221               ;
-;  CLOCK_50        ; 0.449 ; 0.179 ; 13.804   ; 3.162   ; 9.221               ;
+; Worst-case Slack ; 0.286 ; 0.180 ; 6.348    ; 11.599  ; 9.224               ;
+;  CLOCK_50        ; 0.286 ; 0.180 ; 6.348    ; 11.599  ; 9.224               ;
 ; Design-wide TNS  ; 0.0   ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  CLOCK_50        ; 0.000 ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
 +------------------+-------+-------+----------+---------+---------------------+
@@ -1121,9 +618,9 @@ No synchronizer chains to report.
 +-------------------------+--------------+-----------------+-----------------+
 ; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
 +-------------------------+--------------+-----------------+-----------------+
+; SW[0]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; CLOCK_50                ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; KEY[0]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; SW[0]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -1231,7 +728,7 @@ No synchronizer chains to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; CLOCK_50   ; CLOCK_50 ; 0        ; 33       ; 158      ; 188      ;
+; CLOCK_50   ; CLOCK_50 ; 0        ; 5        ; 2        ; 14       ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1241,7 +738,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; CLOCK_50   ; CLOCK_50 ; 0        ; 33       ; 158      ; 188      ;
+; CLOCK_50   ; CLOCK_50 ; 0        ; 5        ; 2        ; 14       ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1251,7 +748,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; CLOCK_50   ; CLOCK_50 ; 11       ; 0        ; 0        ; 0        ;
+; CLOCK_50   ; CLOCK_50 ; 0        ; 0        ; 6        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1261,7 +758,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; CLOCK_50   ; CLOCK_50 ; 11       ; 0        ; 0        ; 0        ;
+; CLOCK_50   ; CLOCK_50 ; 0        ; 0        ; 6        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1307,11 +804,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Dec 01 19:35:52 2021
+    Info: Processing started: Sat Dec 04 15:50:24 2021
 Info: Command: quartus_sta MPEG -c MPEG
 Info: qsta_default_script.tcl version: #1
-Info (293032): Detected changes in source files.
-    Info (293027): Source file: E:/ENGG56/MPEG/MPEG.out.sdc has changed.
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (21077): Low junction temperature is 0 degrees C
@@ -1319,74 +814,76 @@ Info (21077): High junction temperature is 85 degrees C
 Info (332104): Reading SDC File: 'MPEG.out.sdc'
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
-Info (332146): Worst-case setup slack is 0.449
+Info (332146): Worst-case setup slack is 0.286
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.449               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.402
+    Info (332119):     0.286               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.404
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.402               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is 13.804
+    Info (332119):     0.404               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is 6.348
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    13.804               0.000 CLOCK_50 
-Info (332146): Worst-case removal slack is 4.242
+    Info (332119):     6.348               0.000 CLOCK_50 
+Info (332146): Worst-case removal slack is 12.338
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     4.242               0.000 CLOCK_50 
-Info (332146): Worst-case minimum pulse width slack is 9.620
+    Info (332119):    12.338               0.000 CLOCK_50 
+Info (332146): Worst-case minimum pulse width slack is 9.627
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     9.620               0.000 CLOCK_50 
+    Info (332119):     9.627               0.000 CLOCK_50 
 Info: Analyzing Slow 1200mV 0C Model
-Info (332146): Worst-case setup slack is 1.289
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332146): Worst-case setup slack is 1.068
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.289               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.355
+    Info (332119):     1.068               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.357
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.355               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is 14.372
+    Info (332119):     0.357               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is 6.511
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    14.372               0.000 CLOCK_50 
-Info (332146): Worst-case removal slack is 4.007
+    Info (332119):     6.511               0.000 CLOCK_50 
+Info (332146): Worst-case removal slack is 12.413
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     4.007               0.000 CLOCK_50 
-Info (332146): Worst-case minimum pulse width slack is 9.643
+    Info (332119):    12.413               0.000 CLOCK_50 
+Info (332146): Worst-case minimum pulse width slack is 9.645
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     9.643               0.000 CLOCK_50 
+    Info (332119):     9.645               0.000 CLOCK_50 
 Info: Analyzing Fast 1200mV 0C Model
-Info (332146): Worst-case setup slack is 3.284
+Info (332146): Worst-case setup slack is 3.435
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     3.284               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.179
+    Info (332119):     3.435               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.180
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.179               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is 15.340
+    Info (332119):     0.180               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is 7.248
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    15.340               0.000 CLOCK_50 
-Info (332146): Worst-case removal slack is 3.162
+    Info (332119):     7.248               0.000 CLOCK_50 
+Info (332146): Worst-case removal slack is 11.599
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     3.162               0.000 CLOCK_50 
-Info (332146): Worst-case minimum pulse width slack is 9.221
+    Info (332119):    11.599               0.000 CLOCK_50 
+Info (332146): Worst-case minimum pulse width slack is 9.224
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     9.221               0.000 CLOCK_50 
+    Info (332119):     9.224               0.000 CLOCK_50 
 Info (332101): Design is fully constrained for setup requirements
 Info (332101): Design is fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4813 megabytes
-    Info: Processing ended: Wed Dec 01 19:35:54 2021
+    Info: Peak virtual memory: 4934 megabytes
+    Info: Processing ended: Sat Dec 04 15:50:26 2021
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 

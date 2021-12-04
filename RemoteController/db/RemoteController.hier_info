@@ -1,7 +1,7 @@
 |RemoteDiagrama
 LEDG[0] <= RemoteController:inst.ready
 CLOCK_50 => PLL:inst2.inclk0
-SW[0] => RemoteController:inst.rst
+KEY[0] => RemoteController:inst.rst
 IRDA_RXD => RemoteController:inst.serial
 LEDR[0] <= RemoteController:inst.tecla[0]
 LEDR[1] <= RemoteController:inst.tecla[1]
@@ -78,7 +78,7 @@ rst => data_inv.OUTPUTSELECT
 rst => data_inv.OUTPUTSELECT
 serial => data_inv.DATAB
 serial => data.DATAB
-serial => always0.IN1
+serial => cont_init.IN1
 tecla[0] <= tecla[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 tecla[1] <= tecla[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 tecla[2] <= tecla[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE

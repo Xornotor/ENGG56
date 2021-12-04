@@ -10,23 +10,23 @@ z2
 cModel Technology
 Z0 dE:/ENGG56/Somador
 vFSM
-Z1 !s110 1638320954
+Z1 !s110 1638632358
 !i10b 1
-!s100 ;^RB3:dCezBSkin27kR7c0
+!s100 EbWL_?ZW;JZY>FHNT]JRW3
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I[QAReM3XleMonNVHnM:Aj2
+IAoQ9]:OoD=@3NfaNR:VUJ1
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1638306561
+w1638483209
 8E:/ENGG56/Somador/FSM.v
 FE:/ENGG56/Somador/FSM.v
-!i122 0
-L0 1 128
+!i122 21
+L0 1 137
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1638320954.000000
+Z5 !s108 1638632358.000000
 !s107 E:/ENGG56/Somador/FSM.v|
 !s90 -reportprogress|300|-work|work_fsm|-stats=none|E:/ENGG56/Somador/FSM.v|
 !i113 1
@@ -36,16 +36,16 @@ n@f@s@m
 vFSM_TB
 R1
 !i10b 1
-!s100 l`MVk5gdo5KH4jfAVQkNg3
+!s100 ]a^NahHFS5?aiL_>KTWoz2
 R2
-I`6Jc3NJCJoc3HZn[W9[ah2
+Ia>2lL1Z9`hDm>I2`cneNi3
 R3
 R0
-w1638309874
+w1638632340
 8E:/ENGG56/Somador/FSM_TB.v
 FE:/ENGG56/Somador/FSM_TB.v
-!i122 1
-L0 4 21
+!i122 22
+L0 7 165
 R4
 r1
 !s85 0
