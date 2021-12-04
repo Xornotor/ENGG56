@@ -10,50 +10,50 @@ z2
 cModel Technology
 Z0 dE:/ENGG56/Somador
 vFSM
-!s110 1638483311
+Z1 !s110 1638632358
 !i10b 1
 !s100 EbWL_?ZW;JZY>FHNT]JRW3
-Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
 IAoQ9]:OoD=@3NfaNR:VUJ1
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
 w1638483209
 8E:/ENGG56/Somador/FSM.v
 FE:/ENGG56/Somador/FSM.v
-!i122 3
+!i122 21
 L0 1 137
-Z3 OV;L;2020.1;71
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1638483311.000000
+Z5 !s108 1638632358.000000
 !s107 E:/ENGG56/Somador/FSM.v|
 !s90 -reportprogress|300|-work|work_fsm|-stats=none|E:/ENGG56/Somador/FSM.v|
 !i113 1
-Z4 o-work work_fsm
-Z5 tCvgOpt 0
+Z6 o-work work_fsm
+Z7 tCvgOpt 0
 n@f@s@m
 vFSM_TB
-!s110 1638320954
-!i10b 1
-!s100 l`MVk5gdo5KH4jfAVQkNg3
 R1
-I`6Jc3NJCJoc3HZn[W9[ah2
+!i10b 1
+!s100 ]a^NahHFS5?aiL_>KTWoz2
 R2
+Ia>2lL1Z9`hDm>I2`cneNi3
+R3
 R0
-w1638309874
+w1638632340
 8E:/ENGG56/Somador/FSM_TB.v
 FE:/ENGG56/Somador/FSM_TB.v
-!i122 1
-L0 4 21
-R3
+!i122 22
+L0 7 165
+R4
 r1
 !s85 0
 31
-!s108 1638320954.000000
+R5
 !s107 E:/ENGG56/Somador/FSM_TB.v|
 !s90 -reportprogress|300|-work|work_fsm|-stats=none|E:/ENGG56/Somador/FSM_TB.v|
 !i113 1
-R4
-R5
+R6
+R7
 n@f@s@m_@t@b

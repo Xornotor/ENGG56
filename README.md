@@ -7,11 +7,11 @@
 
 ## Somador (A FAZER)
 * **(OK)** Corrigir lista de sensibilidade da FSM
-* **(OK)** Refazer Timing Analysis
-* Incorporar memória RAM no testbench do módulo TOP
 * **(OK)** Automatizar validação do testbench do Acumulador
-* Automatizar validação do testbench da FSM
+* **(OK)** Automatizar validação do testbench da FSM
+* Incorporar memória RAM no testbench do módulo TOP
 * Automatizar validação do testbench do TOP
+* Refazer Timing Analysis
 
 ## MPEG (FINALIZADO)
 * **(OK)** Corrigir lista de sensibilidade da FSM
