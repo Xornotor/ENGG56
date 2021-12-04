@@ -1,7 +1,7 @@
 /*TESTBENCH DO FSM*/
 
-`define periodo 30
-`define meioperiodo 15
+`define periodo 20
+`define meioperiodo 10
 
 `timescale 1ns/1ns
 module FSM_TB;
