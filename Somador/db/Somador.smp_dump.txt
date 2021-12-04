@@ -1,19 +1,20 @@
 
 State Machine - |SomadorDiagrama|TOP:inst|FSM:fsm|EstadoAtual
-Name EstadoAtual.DesativaReady EstadoAtual.AtivaReady EstadoAtual.DesativaWren EstadoAtual.AtivaWren EstadoAtual.ConfereAddress EstadoAtual.WaitAddress EstadoAtual.IncAddress EstadoAtual.DesativaTransf EstadoAtual.AtivaTransf EstadoAtual.DesativaRden EstadoAtual.DesativaLoad EstadoAtual.AtivaLoad EstadoAtual.AtivaRden EstadoAtual.TiraResetInit EstadoAtual.ResetInit EstadoAtual.Inicio 
-EstadoAtual.Inicio 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-EstadoAtual.ResetInit 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-EstadoAtual.TiraResetInit 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-EstadoAtual.AtivaRden 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-EstadoAtual.AtivaLoad 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-EstadoAtual.DesativaLoad 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-EstadoAtual.DesativaRden 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
-EstadoAtual.AtivaTransf 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
-EstadoAtual.DesativaTransf 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
-EstadoAtual.IncAddress 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
-EstadoAtual.WaitAddress 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
-EstadoAtual.ConfereAddress 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
-EstadoAtual.AtivaWren 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
-EstadoAtual.DesativaWren 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
-EstadoAtual.AtivaReady 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-EstadoAtual.DesativaReady 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Name EstadoAtual.AtivaReady EstadoAtual.DesativaWren EstadoAtual.AtivaWren EstadoAtual.ConfereAddress EstadoAtual.WaitAddress EstadoAtual.IncAddress EstadoAtual.DesativaTransf EstadoAtual.AtivaTransf EstadoAtual.DesativaRden EstadoAtual.DesativaLoad EstadoAtual.AtivaLoad EstadoAtual.WaitRden EstadoAtual.AtivaRden EstadoAtual.TiraResetInit EstadoAtual.ResetInit EstadoAtual.Inicio EstadoAtual.DesativaReady 
+EstadoAtual.Inicio 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+EstadoAtual.ResetInit 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 
+EstadoAtual.TiraResetInit 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 
+EstadoAtual.AtivaRden 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 
+EstadoAtual.WaitRden 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 
+EstadoAtual.AtivaLoad 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 
+EstadoAtual.DesativaLoad 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 
+EstadoAtual.DesativaRden 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 
+EstadoAtual.AtivaTransf 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 
+EstadoAtual.DesativaTransf 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 
+EstadoAtual.IncAddress 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 
+EstadoAtual.WaitAddress 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 
+EstadoAtual.ConfereAddress 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 
+EstadoAtual.AtivaWren 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+EstadoAtual.DesativaWren 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+EstadoAtual.AtivaReady 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+EstadoAtual.DesativaReady 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 

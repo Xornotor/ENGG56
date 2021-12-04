@@ -5,24 +5,25 @@ output reg rden, wren, load, clear, transf, ready;
 
 reg address_inc, address_zero;
 
-reg [3:0] EstadoAtual, ProxEstado;
+reg [4:0] EstadoAtual, ProxEstado;
 
-parameter	Inicio = 4'b0000,
-				ResetInit = 4'b0001,
-				TiraResetInit = 4'b0010,
-				AtivaRden = 4'b0011,
-				AtivaLoad = 4'b0100,
-				DesativaLoad = 4'b0101,
-				DesativaRden = 4'b0110,
-				AtivaTransf = 4'b0111,
-				DesativaTransf = 4'b1000,
-				IncAddress = 4'b1001,
-				WaitAddress = 4'b1010,
-				ConfereAddress = 4'b1011,
-				AtivaWren = 4'b1100,
-				DesativaWren = 4'b1101,
-				AtivaReady = 4'b1110,
-				DesativaReady = 4'b1111;
+parameter	Inicio = 5'b00000,
+				ResetInit = 5'b00001,
+				TiraResetInit = 5'b00010,
+				AtivaRden = 5'b00011,
+				WaitRden = 5'b00100,
+				AtivaLoad = 5'b00101,
+				DesativaLoad = 5'b00110,
+				DesativaRden = 5'b00111,
+				AtivaTransf = 5'b01000,
+				DesativaTransf = 5'b01001,
+				IncAddress = 5'b01010,
+				WaitAddress = 5'b01011,
+				ConfereAddress = 5'b01100,
+				AtivaWren = 5'b01101,
+				DesativaWren = 5'b01110,
+				AtivaReady = 5'b01111,
+				DesativaReady = 5'b10000;
 				
 always @ (EstadoAtual) begin
 
@@ -34,7 +35,9 @@ always @ (EstadoAtual) begin
 		
 		TiraResetInit: ProxEstado = AtivaRden;
 		
-		AtivaRden: ProxEstado = AtivaLoad;
+		AtivaRden: ProxEstado = WaitRden;
+		
+		WaitRden: ProxEstado = AtivaLoad;
 		
 		AtivaLoad: ProxEstado = DesativaLoad;
 		
@@ -87,7 +90,7 @@ end
 
 always @ (EstadoAtual) begin
 
-	if(EstadoAtual == AtivaRden || EstadoAtual == AtivaLoad || EstadoAtual == DesativaLoad)
+	if(EstadoAtual == AtivaRden || EstadoAtual == WaitRden || EstadoAtual == AtivaLoad || EstadoAtual == DesativaLoad)
 		rden = 1'b1;
 	else
 		rden = 1'b0;
