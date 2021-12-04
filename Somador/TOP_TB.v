@@ -20,9 +20,7 @@ wire clk_top;
 reg rden_tb;
 reg [15:0] r_mem [0:31];
 reg [4:0] cont_mem_read;
-reg [2:0] cont_aux;
 reg ativa_clk_top;
-reg [15:0] esperado [0:3];
 
 reg [13:0] time_addr, time_datain, time_dataout;
 reg [13:0] time_pos_rden, time_neg_rden;
@@ -61,19 +59,6 @@ initial begin
 		#(`meioperiodo/2) clk = 0;
 		#`meioperiodo clk = 1;
 		#`meioperiodo clk = 0;
-	end
-
-	cont_aux = 0;
-	esperado[0] = 0;
-	esperado[1] = 0;
-	esperado[2] = 0;
-	esperado[3] = 0;
-	repeat(7) begin
-		esperado[0] = esperado[0] + r_mem[cont_aux];
-		esperado[1] = esperado[1] + r_mem[cont_aux + 8];
-		esperado[2] = esperado[2] + r_mem[cont_aux + 16];
-		esperado[3] = esperado[3] + r_mem[cont_aux + 24];
-		cont_aux = cont_aux + 1;
 	end
 	$display("Memoria RAM Clonada.");
 	ativa_clk_top = 1;
