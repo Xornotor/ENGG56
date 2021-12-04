@@ -1,25 +1,10 @@
-# PCID - Alterações a fazer
+# PCID - Questões
 
-## RemoteController (FINALIZADO)
-* **(OK)** Transformar comparações em `assign`
-* **(OK)** Refazer Timing Analysis
-* **(OK)** Automatizar validação do testbench
+Neste repositório estão os arquivos de projeto do trio Ana Clara Batista, André Paiva e Júlia Carvalho, referentes ao trabalho em grupo da disciplina Projeto de Circuitos Integrados Digitais (PCID) - ENGG56.
 
-## Somador (FINALIZADO)
-* **(OK)** Corrigir lista de sensibilidade da FSM
-* **(OK)** Inserir estado de espera após ativação de RDEN
-* **(OK)** Automatizar validação do testbench do Acumulador
-* **(OK)** Automatizar validação do testbench da FSM
-* **(OK)** Incorporar memória RAM no testbench do módulo TOP
-* **(OK)** Automatizar validação do testbench do TOP
-* **(OK)** Refazer Timing Analysis
+Foram desenvolvidas soluções e testes para quatro questões, e para cada uma delas foi criado um arquivo em Markdown com mais detalhes. Os arquivos podem ser acessados abaixo:
 
-## MPEG (FINALIZADO)
-* **(OK)** Corrigir lista de sensibilidade da FSM
-* **(OK)** Automatizar validação do testbench
-* **(OK)** Inserir estado de espera após ativação de RDEN
-* **(OK)** Refazer Timing Analysis
-* **(OK)** Rechecar testbench
-
-## Semaforo (FINALIZADO)
-* **(OK)** Automatizar validação do testbench
+* [RemoteController](Doc/RemoteController.md)
+* [Somador](Doc/Somador.md)
+* [MPEG](Doc/MPEG.md)
+* [Semaforo](Doc/Semaforo.md)
