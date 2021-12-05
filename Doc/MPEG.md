@@ -6,6 +6,8 @@
 
 ## Implementação
 
+## Pin Assignments
+
 ## TimeQuest
 
 ## Testbenches e resultados

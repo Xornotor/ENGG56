@@ -16,13 +16,9 @@
 
 ### TOP
 
+## Pin Assignments
+
 ## TimeQuest
-
-### Acumulador
-
-### FSM
-
-### TOP
 
 ## Testbenches e resultados
 
