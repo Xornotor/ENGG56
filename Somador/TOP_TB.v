@@ -78,7 +78,7 @@ end
 
 always @ (datain) begin
 	time_datain = $time;
-	if(time_datain - time_pos_rden > (1.5)*`periodo) begin
+	if(time_datain - time_pos_rden > (2)*`periodo) begin
 		$display("ERRO - Input do acumulador nao estavel antes do proximo load.");
 		$display("Simulacao encerrada com erros.");
 		$stop;
