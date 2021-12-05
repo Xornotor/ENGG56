@@ -42,6 +42,10 @@ As equações foram extraídas a partir da tabela-verdade e sua projeção no ma
 
 Após a codificação do módulo foram efetuados os pin assignments (ou seja, conexão das entradas e saídas do módulo com pinos físicos do FPGA). 
 
+As entradas A, B, C e D foram conetadas aos Switches de 0 a 3 (SW[0], SW[1], SW[2], SW[3]), respectivamente. A saída N_S foi conectada ao LED verde 0 (LEDG[0]) e a saída L_O foi conectada ao LED verde 1 (LEDG[1]).
+
+Abaixo é possível visualizar o diagrama de conexões.
+
 ![Diagrama de conexões do semáforo](assets/Semaforo/fig-semaforo-conexoes.png)
 
 ## TimeQuest
