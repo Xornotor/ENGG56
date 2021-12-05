@@ -10,50 +10,50 @@ z2
 cModel Technology
 dE:/ENGG56/RemoteController
 vFSM_Control
-!s110 1638643846
+Z0 !s110 1638666214
 !i10b 1
 !s100 m0jIXnFomfF;XL@KV0RDD0
-Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
 IWo@SeZMI<@k[bnnzMA4n83
-Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 dE:/ENGG56/MPEG
-w1638643792
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dE:/ENGG56/MPEG
+Z4 w1638646829
 8E:/ENGG56/MPEG/FSM_Control.v
 FE:/ENGG56/MPEG/FSM_Control.v
-!i122 76
+!i122 78
 L0 1 185
-Z3 OV;L;2020.1;71
+Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z4 !s108 1638643846.000000
+Z6 !s108 1638666214.000000
 !s107 E:/ENGG56/MPEG/FSM_Control.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/ENGG56/MPEG/FSM_Control.v|
 !i113 1
-Z5 o-work work
-Z6 tCvgOpt 0
+Z7 o-work work
+Z8 tCvgOpt 0
 n@f@s@m_@control
 vFSM_Control_TB
-!s110 1638643847
+R0
 !i10b 1
 !s100 Kc3=4VVW_COiC7C8;=OZJ1
-R0
-IDc?hi]L6MfAj^fghnhHJe3
 R1
+IDc?hi]L6MfAj^fghnhHJe3
 R2
-w1638497846
+R3
+R4
 8E:/ENGG56/MPEG/FSM_Control_TB.v
 FE:/ENGG56/MPEG/FSM_Control_TB.v
-!i122 77
+!i122 79
 L0 6 229
-R3
+R5
 r1
 !s85 0
 31
-R4
+R6
 !s107 E:/ENGG56/MPEG/FSM_Control_TB.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/ENGG56/MPEG/FSM_Control_TB.v|
 !i113 1
-R5
-R6
+R7
+R8
 n@f@s@m_@control_@t@b

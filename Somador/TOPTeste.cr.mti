@@ -14,6 +14,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	TOP
 
+} {} {}} E:/ENGG56/Somador/TOP_TB.v {1 {vlog -work work_top -stats=none E:/ENGG56/Somador/TOP_TB.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TOP_TB
+
+Top level modules:
+	TOP_TB
+
 } {} {}} E:/ENGG56/Somador/Acumulador.v {1 {vlog -work work_top -stats=none E:/ENGG56/Somador/Acumulador.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Acumulador

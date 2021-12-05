@@ -11,28 +11,28 @@ z2
 cModel Technology
 Z0 dE:/ENGG56/Somador
 vAcumulador
-Z1 !s110 1638644169
+Z1 !s110 1638666556
 !i10b 1
 !s100 knA^W97XT3ZWMFY9GX^le2
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
 IRIR7QK<GLg^bazIz2eE5O0
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1638622284
+Z4 w1638646830
 8E:/ENGG56/Somador/Acumulador.v
 FE:/ENGG56/Somador/Acumulador.v
-!i122 68
+!i122 73
 L0 1 23
-Z4 OV;L;2020.1;71
+Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1638644169.000000
+Z6 !s108 1638666556.000000
 !s107 E:/ENGG56/Somador/Acumulador.v|
 !s90 -reportprogress|300|-work|work_top|-stats=none|E:/ENGG56/Somador/Acumulador.v|
 !i113 1
-Z6 o-work work_top
-Z7 tCvgOpt 0
+Z7 o-work work_top
+Z8 tCvgOpt 0
 n@acumulador
 vFSM
 R1
@@ -42,28 +42,28 @@ R2
 ImAIXBE21R2nY2PdOea:g>1
 R3
 R0
-w1638639508
+R4
 8E:/ENGG56/Somador/FSM.v
 FE:/ENGG56/Somador/FSM.v
-!i122 67
+!i122 72
 L0 1 140
-R4
+R5
 r1
 !s85 0
 31
-R5
+R6
 !s107 E:/ENGG56/Somador/FSM.v|
 !s90 -reportprogress|300|-work|work_top|-stats=none|E:/ENGG56/Somador/FSM.v|
 !i113 1
-R6
 R7
+R8
 n@f@s@m
 Emem
-Z8 w1638638697
+R4
 Z9 DPx9 altera_mf 20 altera_mf_components 0 22 BN6nPmY:UEbXa[^5b@FTW1
 Z10 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z11 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 69
+!i122 74
 R0
 Z12 8E:/ENGG56/Somador/Mem.vhd
 Z13 FE:/ENGG56/Somador/Mem.vhd
@@ -73,36 +73,36 @@ V:3IRGFOnaL]zFh31oLA>o3
 !s100 ^7[<2mPnH4S2Q99kYcP^]0
 Z14 OV;C;2020.1;71
 32
-Z15 !s110 1638644170
+Z15 !s110 1638666557
 !i10b 1
-R5
-Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/ENGG56/Somador/Mem.vhd|
-Z17 !s107 E:/ENGG56/Somador/Mem.vhd|
+Z16 !s108 1638666557.000000
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/ENGG56/Somador/Mem.vhd|
+Z18 !s107 E:/ENGG56/Somador/Mem.vhd|
 !i113 1
-Z18 o-work work -2002 -explicit
-Z19 tExplicit 1 CvgOpt 0
+Z19 o-work work -2002 -explicit
+Z20 tExplicit 1 CvgOpt 0
 Asyn
 R9
 R10
 R11
-Z20 DEx4 work 3 mem 0 22 :3IRGFOnaL]zFh31oLA>o3
-!i122 69
+Z21 DEx4 work 3 mem 0 22 :3IRGFOnaL]zFh31oLA>o3
+!i122 74
 l60
-Z21 L56 37
-Z22 VaHn?ld?kCdlJE]hITVRN71
-Z23 !s100 LPIJYkh1ea;z@;>IlJ=K82
+Z22 L56 37
+Z23 VaHn?ld?kCdlJE]hITVRN71
+Z24 !s100 LPIJYkh1ea;z@;>IlJ=K82
 R14
 32
 R15
 !i10b 1
-R5
 R16
 R17
-!i113 1
 R18
+!i113 1
 R19
+R20
 vTOP
-!s110 1638644167
+Z25 !s110 1638666555
 !i10b 1
 !s100 h?kY^ZJ^n^OXZkWMVadz]0
 R2
@@ -112,40 +112,40 @@ R0
 w1638316214
 8E:/ENGG56/Somador/TOP.v
 FE:/ENGG56/Somador/TOP.v
-!i122 65
+!i122 70
 L0 1 12
-R4
+R5
 r1
 !s85 0
 31
-!s108 1638644167.000000
+Z26 !s108 1638666555.000000
 !s107 E:/ENGG56/Somador/TOP.v|
 !s90 -reportprogress|300|-work|work_top|-stats=none|E:/ENGG56/Somador/TOP.v|
 !i113 1
-R6
 R7
+R8
 n@t@o@p
 vTOP_TB
-!s110 1638644168
+R25
 !i10b 1
 !s100 o:hIe?fklLTHf1:V0oCZ:1
 R2
 I0E6bLk=7MG<hSn:@4Q]cz3
 R3
 R0
-w1638644159
+R4
 8E:/ENGG56/Somador/TOP_TB.v
 FE:/ENGG56/Somador/TOP_TB.v
-!i122 66
+!i122 71
 L0 7 139
-R4
+R5
 r1
 !s85 0
 31
-!s108 1638644168.000000
+R26
 !s107 E:/ENGG56/Somador/TOP_TB.v|
 !s90 -reportprogress|300|-work|work_top|-stats=none|E:/ENGG56/Somador/TOP_TB.v|
 !i113 1
-R6
 R7
+R8
 n@t@o@p_@t@b

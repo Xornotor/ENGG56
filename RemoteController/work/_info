@@ -10,50 +10,50 @@ z2
 cModel Technology
 dE:/ENGG56/Semaforo
 vRemote_TB
-!s110 1638471005
+!s110 1638665852
 !i10b 1
 !s100 m0a?34Mz;XMiBhXl0ZO]k2
 Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IjhBoJJAf=8m3N?_abQ28<2
+IzPCX:fj]o:0NHeR;8_D5L0
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dE:/ENGG56/RemoteController
-w1638471001
-8E:\ENGG56\RemoteController\Remote_TB.v
-FE:\ENGG56\RemoteController\Remote_TB.v
-!i122 52
+Z3 w1638646829
+8E:/ENGG56/RemoteController/Remote_TB.v
+FE:/ENGG56/RemoteController/Remote_TB.v
+!i122 54
 L0 4 98
-Z3 OV;L;2020.1;71
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1638471005.000000
-!s107 E:\ENGG56\RemoteController\Remote_TB.v|
-!s90 -reportprogress|300|-work|work|-stats=none|E:\ENGG56\RemoteController\Remote_TB.v|
+!s108 1638665852.000000
+!s107 E:/ENGG56/RemoteController/Remote_TB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/ENGG56/RemoteController/Remote_TB.v|
 !i113 1
-Z4 o-work work
-Z5 tCvgOpt 0
+Z5 o-work work
+Z6 tCvgOpt 0
 n@remote_@t@b
 vRemoteController
-!s110 1638468362
+!s110 1638665851
 !i10b 1
 !s100 XzPgoblmV1aO6P<M6k>Ic3
 R0
 I<EPNad>E5[g2:c:<j^AZG1
 R1
 R2
-w1638406540
+R3
 8E:/ENGG56/RemoteController/RemoteController.v
 FE:/ENGG56/RemoteController/RemoteController.v
-!i122 43
+!i122 53
 L0 1 67
-R3
+R4
 r1
 !s85 0
 31
-!s108 1638468362.000000
+!s108 1638665851.000000
 !s107 E:/ENGG56/RemoteController/RemoteController.v|
 !s90 -reportprogress|300|-work|work|-stats=none|E:/ENGG56/RemoteController/RemoteController.v|
 !i113 1
-R4
 R5
+R6
 n@remote@controller
