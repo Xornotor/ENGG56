@@ -8,8 +8,15 @@
 
 Para a implementação do circuito do semáforo, foi utilizada lógica puramente combinacional, com as seguintes equações booleanas representando as saídas:
 
+***
+
 ![Equação da saída NS](assets/Semaforo/fig-equ-ns.png)
+
+***
+
 ![Equação da saída LO](assets/Semaforo/fig-equ-lo.png)
+
+***
 
 As equações foram extraídas a partir da tabela-verdade e sua projeção no mapa de Veitch-Karnaugh, ambos os quais podem ser visualizados logo abaixo.
 
