@@ -43,16 +43,21 @@ Foram estruturados 4 casos para teste, de modo que:
 Abaixo podem ser visualizados os waveforms da simulação dos 4 casos, bem como as mensagens de log exibidas pelo testbench no console.
 
 ***Caso 1***
+
 ![Waveform da simulação do caso 1 - RemoteController](assets/RemoteController/fig-testbench-remote-caso01.png)
 
 ***Caso 2***
+
 ![Waveform da simulação do caso 2 - RemoteController](assets/RemoteController/fig-testbench-remote-caso02.png)
 
 ***Caso 3***
+
 ![Waveform da simulação do caso 3 - RemoteController](assets/RemoteController/fig-testbench-remote-caso03.png)
 
 ***Caso 4***
+
 ![Waveform da simulação do caso 4 - RemoteController](assets/RemoteController/fig-testbench-remote-caso04.png)
 
 ***Console***
+
 ![Mensagens de console resultantes da simulação - RemoteController](assets/RemoteController/fig-testbench-remote-console.png)
